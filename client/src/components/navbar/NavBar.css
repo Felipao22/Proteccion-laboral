@@ -1,0 +1,32 @@
+@keyframes anim {
+    0%{
+        display: hidden;
+    }
+    100%{
+        display: visible;
+    } 
+}
+
+li{
+    text-decoration: none;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+.uli{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    background-color:#E9EEF4;
+    top: 40px;
+    padding-right: 20px;
+    border-radius: 12px;
+    animation-name: anim;
+    animation-duration: 2s;
+}
+
+
+
+

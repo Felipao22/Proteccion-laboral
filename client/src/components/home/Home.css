@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    outline: 1px;
+    border: 1px;
+    border-color: black;
+    width: 200px;
+    height: 100px;
+    border-width: 10px;
+    margin-top: 20px;
+}
