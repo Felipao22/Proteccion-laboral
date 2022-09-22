@@ -1,19 +1,4 @@
-@keyframes anim {
-    0%{
-        display: hidden;
-    }
-    100%{
-        display: visible;
-    } 
-}
-
-li{
-    text-decoration: none;
-    animation-name: anim;
-    animation-duration: 2s;
-}
-
-.uli{
+/* .uli{
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -25,7 +10,7 @@ li{
     border-radius: 12px;
     animation-name: anim;
     animation-duration: 2s;
-}
+} */
 
 
 

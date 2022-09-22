@@ -1,4 +1,4 @@
-.header{
+/* .header{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -9,4 +9,7 @@
     height: 100px;
     border-width: 10px;
     margin-top: 20px;
+} */
+.header{
+    margin:20px ;
 }

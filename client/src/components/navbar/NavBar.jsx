@@ -10,9 +10,14 @@ import IMAGE from '../../assets/LOGO CUADRADO.png'
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
 import './NavBar.css';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Drawer from '@mui/material/Drawer';
 
 export default function ButtonAppBar() {
   const [nav, setNav] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const links = [
     {
@@ -44,9 +49,48 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ backgroundColor: "#E9EEF4", color: "black", height: "15vw" }} position="static">
+      <AppBar style={{ backgroundColor: "#E9EEF4", color: "black"}} position="static">
         <Toolbar>
-        <ul className='desorder' style={{display:'none'}}>
+        <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={() => setIsDrawerOpen(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Drawer style={{height: '60vh', width: '50vw'}} open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+          <List style={{fontSize: '30px', fontWeight: '600', height: '250px'}}>
+            <ListItem button>
+              <ListItemText primary="Home" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Productos"/>
+            </ListItem>
+
+            <ListItem button>
+              <ListItemText primary="Catalogo" />
+            </ListItem>
+            </List>
+            </Drawer>
+            
+       
+          <div>
+            <img style={{height:'50px'}} src={IMAGE} alt="No image" />
+          </div>
+          <Button color="inherit">Login</Button>
+          <Link style={{color:'black', textDecoration:'none'}} to='/register'>
+          <Button color="inherit">Registrarse</Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
+
+ {/* <ul className='desorder' style={{display:'none'}}>
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -84,16 +128,4 @@ export default function ButtonAppBar() {
           ))}
         </ul>
         </div>
-      )}
-          <div>
-            <img style={{height:'50px'}} src={IMAGE} alt="No image" />
-          </div>
-          <Button color="inherit">Login</Button>
-          <Link style={{color:'black', textDecoration:'none'}} to='/register'>
-          <Button color="inherit">Registrarse</Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
-}
+      )} */}

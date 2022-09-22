@@ -1,30 +1,41 @@
 import React from 'react';
-import {Carousel} from 'antd';
-import carr from '../../assets/carr.png'
+import {
+  MDBCarousel,
+  MDBCarouselItem,
+} from 'mdb-react-ui-kit';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
-const contentStyle = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-  };
-
-export default function Carrusel() {
+export default function App() {
   return (
-    <Carousel autoplay>
-    <div>
-    <img src={carr} alt="no" />
-    </div>
-    <div>
-      <h3 style={contentStyle}>2</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
-    </div>
-  </Carousel>
-  )
+    <MDBCarousel showControls showIndicators dark fade>
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={1}
+        src='https://mdbootstrap.com/img/Photos/Slides/img%20(19).jpg'
+        alt='...'
+      >
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </MDBCarouselItem>
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={2}
+        src='https://mdbootstrap.com/img/Photos/Slides/img%20(35).jpg'
+        alt='...'
+      >
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </MDBCarouselItem>
+
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={3}
+        src='https://mdbootstrap.com/img/Photos/Slides/img%20(40).jpg'
+        alt='...'
+      >
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </MDBCarouselItem>
+    </MDBCarousel>
+  );
 }
