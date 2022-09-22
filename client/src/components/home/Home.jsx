@@ -3,7 +3,8 @@ import { SpinnerCircular } from "spinners-react";
 import Carrusel from "../carousel/Carousel";
 import NavBar from "../navbar/NavBar";
 import "./Home.css";
-import {useFirebaseApp} from 'reactfire'
+import {useFirebaseApp} from 'reactfire';
+import Footer from '../footer/Footer';
 
 export default function Home() {
   const firebase = useFirebaseApp();
@@ -11,12 +12,13 @@ export default function Home() {
   return (
     <div name="Home">
       <NavBar />
-      <div className="header">
+      {/* <div className="header">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
         corporis nemo vitae, mollitia hic harum repellat delectus aspernatur
         dolores ipsa iusto esse autem inventore totam consequatur libero ea.
         Dolor, saepe.
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 }

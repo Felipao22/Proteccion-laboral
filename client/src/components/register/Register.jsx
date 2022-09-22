@@ -16,7 +16,7 @@ export default function Register() {
         <div className="register">
             <div className="col-1">
                 <h2>Registrarse</h2>
-                <span>Registre su Empresa</span>
+                <span>Registre su empresa</span>
 
                 <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="mail">Ingrese su mail:</label>

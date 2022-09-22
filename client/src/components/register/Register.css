@@ -48,6 +48,10 @@
   
   .register span{
     color: #78A6C8;
+    display: inline;
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
   
   #form{
