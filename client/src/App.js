@@ -4,6 +4,8 @@ import Home from './components/home/Home.jsx'
 import Register from './components/register/Register.jsx';
 import Login from './components/login/Login'
 import Cliente from './components/cliente/Cliente.jsx';
+import Nosotros from './components/nosotros/Nosotros.jsx';
+import Contact from './components/contact/Contact.jsx';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route exact path= '/auth' component={Auth}/>
         <Route exact path= '/login' component={Login}/>
         <Route exact path= '/cliente' component={Cliente}/>
+        <Route exact path= '/nosotros' component={Nosotros}/>
+        <Route exact path= '/contact' component={Contact}/>
       </Switch>
     </div>
     </BrowserRouter>

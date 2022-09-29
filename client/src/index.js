@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {FirebaseAppProvider} from 'reactfire';
 import firebaseConfig from './firebase-config'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

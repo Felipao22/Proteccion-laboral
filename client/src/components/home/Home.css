@@ -1,15 +1,23 @@
-/* .header{
+.header{
+    margin:60px ;
+    font-size:large;
+    font-family: monospace;
+}
+
+.nosotros{
+    margin:60px;
+    font-family: monospace;
+}
+.texto{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.mas{
+    margin: 60px;
     display: flex;
     justify-content: center;
     align-content: center;
-    outline: 1px;
-    border: 1px;
-    border-color: black;
-    width: 200px;
-    height: 100px;
-    border-width: 10px;
-    margin-top: 20px;
-} */
-.header{
-    margin:20px ;
+    background-color: #326789;
 }

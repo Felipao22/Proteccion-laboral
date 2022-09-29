@@ -1,0 +1,29 @@
+.container-marcas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1% 40px;
+}
+.marca{
+    object-fit: contain;
+    margin: 30px;
+    width: 200px;
+    height: auto;
+    filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+   
+}
+
+
+/* Disable grayscale on hover */
+.marca:hover {
+  -webkit-filter: grayscale(0);
+  filter: none;
+}
+
+.texto{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
