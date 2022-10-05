@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
   : new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
+    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/proteccion`,
     { logging: false, native: false }
   );
 
@@ -60,6 +60,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 const { User } = sequelize.models;
+
+// User.hasOne(User)
 
 // Aca vendrian las relaciones
 // Country.belongsToMany(Activities,{through:'country_activities'});
