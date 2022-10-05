@@ -1,41 +1,44 @@
 import axios from 'axios';
-// export const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
-// export const GET_DETAIL = 'GET_DETAIL';
-// export const ORDER_BY_NAME = 'ORDER_BY_NAME';
-// export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
-// export const ORDER_BY_CONTINENT = 'ORDER_BY_CONTINENT';
-// export const GET_NAME_COUNTRIES = 'GET_NAME_COUNTRIES';
-// export const GET_ACTIVITIES = 'GET_ACTIVITIES';
-// export const POST_ACTIVITY = 'POST_ACTIVITY';
-// export const SET_DETAIL_COUNTRY = 'SET_DETAIL_COUNTRY';
-// export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
-// export const FILTER_ACTIVITY = 'FILTER_ACTIVITY';
-// export const ORDER_BY_UNDER_POPULATION = 'ORDER_BY_UNDER_POPULATION';
+import {GET_ALL_USERS, GET_USER_BY_EMAIL, POST_USER} from './actionsTypes';
 
 
-// export const getCountries = () => {
-//     return function (dispatch){
-//         return fetch('http://localhost:3001/countries')
-//         .then(res => res.json())
-//         .then(data => {
-//             dispatch({
-//                 type: GET_ALL_COUNTRIES,
-//                 payload: data
-//             })
-//         })
-//     }
-// }
 
-// export const getCountries = () => {
-//     return async function (dispatch) {
-//         const res = await axios('/countries');
-//         return dispatch({
-//             type: GET_ALL_COUNTRIES,
-//             payload: res.data
-//         })
-//     }
-// }
+export const getUsers = () => {
+    return async function (dispatch) {
+        const res = await axios('http://localhost:3001/user');
+        return dispatch({
+            type: GET_ALL_USERS,
+            payload: res.data
+        })
+    }
+}
+export const getUserByEmail = (email) => {
+    return async function (dispatch) {
+      try {
+        const res = await axios.get(`http://localhost:3001/user/${email}`);
+        return dispatch({
+          type: GET_USER_BY_EMAIL,
+          payload: res.data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
 
+  export const createUser = (body) => {
+    return async function (dispatch) {
+      try {
+        const res = await axios.post(`http://localhost:3001/user`, body);
+        return dispatch({
+          type: POST_USER,
+          payload: res.data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
 // export const orderByName = (payload) => {
 //     return {
 //         type: ORDER_BY_NAME,

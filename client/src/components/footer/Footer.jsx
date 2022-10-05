@@ -95,13 +95,13 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <a href="/clientes" className="text-reset" style={{textDecoration:'none'}}>
-                  Clientes
+                <a href="/services" className="text-reset" style={{textDecoration:'none'}}>
+                  Servicios
                 </a>
               </p>
               <p>
-                <a href="/trabajos" className="text-reset" style={{textDecoration:'none'}}>
-                  Trabajos
+                <a href="/contact" className="text-reset" style={{textDecoration:'none'}}>
+                  Contacto
                 </a>
               </p>
             </MDBCol>

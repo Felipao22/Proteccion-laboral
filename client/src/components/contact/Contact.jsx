@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <div>
         <NavBar />
-        <div>
+        <div className='container-contact'>
         <MDBInput label='Email input' id='typeEmail' type='email' />
         <MDBInput label='Name' id='formTexName' type='text' aria-describedby='textName' />
         <MDBTextArea label='Message' id='textAreaExample' rows={4} />

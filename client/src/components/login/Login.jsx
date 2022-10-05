@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import {
   MDBContainer,
   MDBCol,
@@ -9,9 +11,18 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-import NavBar from '../navbar/NavBar'
+import NavBar from '../navbar/NavBar';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 export default function Login() {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+    active: true
+  });
   return (
     <div>
       <NavBar />

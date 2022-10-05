@@ -2,24 +2,27 @@ import React, { useState, useEffect } from "react";
 import bgImg from "../../assets/img1.jpg";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {createUser} from '../../redux/actions/index'
 import "./Register.css";
 import NavBar from "../navbar/NavBar";
 import { Form, Input } from 'antd';
 export default function Register() {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [input, setInput] = useState({
     email: "",
     password: "",
     confirmPassword: "",
-    businessName: "",
+    nombreEmpresa: "",
     cuit: "",
-    establishment: "",
-    province: "",
-    cityId: "",
-    address: "",
-    province: "",
-    logo: "",
-    phone: "",
+    nombreEstablecimiento: "",
+    provincia: "",
+    ciudad: "",
+    direccion: "",
+    provincia: "",
+    // logo: "",
+    telefono: "",
     active: true,
   });
 
@@ -27,14 +30,14 @@ export default function Register() {
     erroremail: "",
     errorpassword: "",
     errorconfirmPassword: "",
-    errorbusinessName: "",
+    errornombreEmpresa: "",
     errorcuit: "",
-    errorestablishment: "",
-    errorprovince: "",
-    errorcityId: "",
-    erroraddress: "",
-    errorlogo: "",
-    errorphone: "",
+    errornombreEstablecimiento: "",
+    errorprovincia: "",
+    errorciudad: "",
+    errordireccion: "",
+    // errorlogo: "",
+    errortelefono: "",
   });
 
   useEffect(() => {
@@ -43,28 +46,28 @@ export default function Register() {
     input.email,
     input.password,
     input.confirmPassword,
-    input.businessName,
+    input.nombreEmpresa,
     input.cuit,
-    input.establishment,
-    input.province,
-    input.cityId,
-    input.address,
-    input.logo,
-    input.phone,
+    input.nombreEstablecimiento,
+    input.provincia,
+    input.ciudad,
+    input.direccion,
+    // input.logo,
+    input.telefono,
   ]);
 
   const validate = () => {
     let erroremail = "";
     let errorpassword = "";
     let errorconfirmPassword = "";
-    let errorbusinessName = "";
+    let errornombreEmpresa = "";
     let errorcuit = "";
-    let errorestablishment = "";
-    let errorprovince = "";
-    let errorcityId = "";
-    let erroraddress = "";
-    let errorlogo = "";
-    let errorphone = "";
+    let errornombreEstablecimiento = "";
+    let errorprovincia = "";
+    let errorciudad = "";
+    let errordireccion = "";
+    // let errorlogo = "";
+    let errortelefono = "";
     if (
       !input.email ||
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.email) ||
@@ -92,13 +95,13 @@ export default function Register() {
       errorconfirmPassword = "Hecho!";
     }
     if (
-      !input.businessName ||
-      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.businessName) ||
-      input.businessName[0] === " "
+      !input.nombreEmpresa ||
+      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.nombreEmpresa) ||
+      input.nombreEmpresa[0] === " "
     ) {
-      errorbusinessName = "La primera letra debe estar en mayúscula.";
+      errornombreEmpresa = "La primera letra debe estar en mayúscula.";
     } else {
-      errorbusinessName = "Hecho!";
+      errornombreEmpresa = "Hecho!";
     }
     if (
       !input.cuit ||
@@ -109,39 +112,39 @@ export default function Register() {
     } else {
       errorcuit = "Hecho!";
     }
-    if (!input.establishment) {
-      errorestablishment = "La primera letra debe estar en mayúscula.";
+    if (!input.nombreEstablecimiento) {
+      errornombreEstablecimiento = "La primera letra debe estar en mayúscula.";
     } else {
-      errorestablishment = "Hecho!";
+      errornombreEstablecimiento = "Hecho!";
     }
-    if (!input.province) {
-      errorprovince = "Seleccione una provincia.";
+    if (!input.provincia) {
+      errorprovincia = "Seleccione una provincia.";
     } else {
-      errorprovince = "Hecho!";
+      errorprovincia = "Hecho!";
     }
-    if (!input.cityId) {
-      errorcityId = "Seleccione una ciudad.";
+    if (!input.ciudad) {
+      errorciudad = "Seleccione una ciudad.";
     } else {
-      errorcityId = "Hecho!";
-    }
-    if (
-      !input.address ||
-      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.address) ||
-      input.address[0] == " "
-    ) {
-      erroraddress = "La primera letra debe estar en mayúscula.";
-    } else {
-      erroraddress = "Hecho!";
+      errorciudad = "Hecho!";
     }
     if (
-      !input.phone ||
-      !/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(input.phone) ||
-      input.phone[0] == "" ||
-      input.phone.length < 10
+      !input.direccion ||
+      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.direccion) ||
+      input.direccion[0] == " "
     ) {
-      errorphone = "";
+      errordireccion = "La primera letra debe estar en mayúscula.";
     } else {
-      errorphone = "Hecho!";
+      errordireccion = "Hecho!";
+    }
+    if (
+      !input.telefono ||
+      !/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(input.telefono) ||
+      input.telefono[0] == "" ||
+      input.telefono.length < 10
+    ) {
+      errortelefono = "";
+    } else {
+      errortelefono = "Hecho!";
     }
 
     setError((prevInput) => {
@@ -149,14 +152,14 @@ export default function Register() {
         erroremail: erroremail,
         errorpassword: errorpassword,
         errorconfirmPassword: errorconfirmPassword,
-        errorbusinessName: errorbusinessName,
+        errornombreEmpresa: errornombreEmpresa,
         errorcuit: errorcuit,
-        errorestablishment: errorestablishment,
-        errorprovince: errorprovince,
-        errorcityId: errorcityId,
-        erroraddress: erroraddress,
-        errorlogo: errorlogo,
-        errorphone: errorphone,
+        errornombreEstablecimiento: errornombreEstablecimiento,
+        errorprovincia: errorprovincia,
+        errorciudad: errorciudad,
+        errordireccion: errordireccion,
+        // errorlogo: errorlogo,
+        errortelefono: errortelefono,
       };
     });
   };
@@ -198,16 +201,17 @@ export default function Register() {
       input.password.length <= 16 &&
       input.confirmPassword.length >= 8 &&
       input.confirmPassword.length <= 16 &&
-      input.businessName !== "" &&
+      input.nombreEmpresa !== "" &&
       input.cuit !== "" &&
-      input.address !== "" &&
-      input.province !== "" &&
-      input.cityId !== "" &&
-      input.establishment !== "" &&
-      input.phone !== "" /* &&
-          input.phone.length <= 10 */
+      input.direccion !== "" &&
+      input.provincia !== "" &&
+      input.ciudad !== "" &&
+      input.nombreEstablecimiento !== "" &&
+      input.telefono !== "" /* &&
+          input.telefono.length <= 10 */
     ) {
-      Swal.fire("Buen trabajo", "Empresa creada con exito", "success");
+      dispatch(createUser(input))
+      Swal.fire("Buen trabajo", "Usuario creada con exito", "success");
       history.push("/");
     } else {
       Swal(
@@ -272,12 +276,12 @@ export default function Register() {
               type="text"
               placeholder="Ingrese el nombre de la empresa"
               onChange={(e) => handleChange(e)}
-              value={input.businessName}
-              name="businessName"
-              id="businessName"
+              value={input.nombreEmpresa}
+              name="nombreEmpresa"
+              id="nombreEmpresa"
               required
             />
-            {error.errorbusinessName && <small>{error.errorbusinessName}</small>}
+            {error.errornombreEmpresa && <small>{error.errornombreEmpresa}</small>}
             <label htmlFor="namebusiness">
               Ingrese el nombre del establecimiento: (*)
             </label>
@@ -285,12 +289,12 @@ export default function Register() {
               type="text"
               placeholder="Ingrese el nombre del establecimiento"
               onChange={(e) => handleChange(e)}
-              value={input.establishment}
-              name="establishment"
-              id="establishment"
+              value={input.nombreEstablecimiento}
+              name="nombreEstablecimiento"
+              id="nombreEstablecimiento"
               required
             />
-            {error.errorestablishment && <small>{error.errorestablishment}</small>}
+            {error.errornombreEstablecimiento && <small>{error.errornombreEstablecimiento}</small>}
             <label htmlFor="cuit">Ingrese su número de CUIT: (*)</label>
             <input
               type="number"
@@ -302,46 +306,48 @@ export default function Register() {
               onChange={(e) => handleChange(e)}
             />
             {error.errorcuit && <small>{error.errorcuit}</small>}
-            <label htmlFor="province">Provincia: (*)</label>
-            <select
-              name="province"
-              value={input.province}
+            <label htmlFor="provincia">Provincia: (*)</label>
+            <input type="text" name='provincia' id="provincia" value={input.provincia} onChange={(e) => handleInputChange(e)} />
+            {/* <select
+              name="provincia"
+              value={input.provincia}
               onChange={(e) => handleInputChange(e)}
             >
               <option value="">{} </option>
-            </select>
-            {error.errorprovince && <small>{error.errorprovince}</small>}
-            <label htmlFor="cityId">Ciudad: (*)</label>
-            <select
-              name="cityId"
-              value={input.cityId}
+            </select> */}
+            {error.errorprovincia && <small>{error.errorprovincia}</small>}
+            <label htmlFor="ciudad">Ciudad: (*)</label>
+            <input type="text" name='ciudad' id="ciudad" value={input.ciudad} onChange={(e) => handleInputChange(e)} />
+            {/* <select
+              name="ciudad"
+              value={input.ciudad}
               onChange={(e) => handleInputChange(e)}
             >
               <option value="">{} </option>
-            </select>
-            {error.errorcityId && <small>{error.errorcityId}</small>}
+            </select> */}
+            {error.errorciudad && <small>{error.errorciudad}</small>}
             <label htmlFor="adress">Dirección: (*)</label>
             <input
               type="text"
-              value={input.address}
-              name="address"
-              id="address"
+              value={input.direccion}
+              name="direccion"
+              id="direccion"
               required
               placeholder="Ingrese su dirección"
               onChange={(e) => handleChange(e)}
             />
-            {error.erroraddress && <small>{error.erroraddress}</small>}
-            <label htmlFor="phone">Teléfono: (*)</label>
+            {error.errordireccion && <small>{error.errordireccion}</small>}
+            <label htmlFor="telefono">Teléfono: (*)</label>
             <input
               type="text"
-              value={input.phone}
-              name="phone"
-              id="phone"
+              value={input.telefono}
+              name="telefono"
+              id="telefono"
               required
               placeholder="Ingresa tu número de contacto"
               onChange={(e) => handleChange(e)}
             />
-            {error.errorphone && <small>{error.errorphone}</small>}
+            {error.errortelefono && <small>{error.errortelefono}</small>}
             <button className="btn">Registrarse</button>
           </form>
         </div>

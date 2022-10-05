@@ -1,12 +1,5 @@
-.container-form{
-    width: 100%;
-    height: 100vh;
-
-}
-.container-text{
+.container-contact {
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
     justify-content: center;
-    height: 100%;
+    align-items: center;
 }
