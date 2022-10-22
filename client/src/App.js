@@ -6,6 +6,7 @@ import Login from './components/login/Login'
 import Cliente from './components/cliente/Cliente.jsx';
 import Nosotros from './components/nosotros/Nosotros.jsx';
 import Contact from './components/contact/Contact.jsx';
+import User from './components/user/User.jsx'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path= '/cliente' component={Cliente}/>
         <Route exact path= '/nosotros' component={Nosotros}/>
         <Route exact path= '/contact' component={Contact}/>
+        <Route exact path= '/user' component={User}/>
       </Switch>
     </div>
     </BrowserRouter>

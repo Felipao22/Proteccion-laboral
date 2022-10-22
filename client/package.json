@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/avatar": "^2.2.0",
+    "@chakra-ui/react": "^2.3.6",
     "@hookform/error-message": "^2.0.0",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
@@ -28,6 +30,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "spinners-react": "^1.0.7",
+    "sweetalert": "^2.1.2",
     "sweetalert2": "^11.4.33",
     "web-vitals": "^2.1.4"
   },

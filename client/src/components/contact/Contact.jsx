@@ -1,18 +1,25 @@
 import React from 'react';
-import { MDBInput, MDBTextArea } from 'mdb-react-ui-kit';
+import {MDBInput, MDBTextArea } from 'mdb-react-ui-kit';
 import NavBar from '../navbar/NavBar'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-
+import './Contact.css';
+import Footer from '../footer/Footer'
+import { Button } from 'react-bootstrap';
 export default function Contact() {
   return (
     <div>
         <NavBar />
+        <h3 className='container-text' style={{marginTop:'50px'}}>¿Que desea consultarnos?</h3>
         <div className='container-contact'>
-        <MDBInput label='Email input' id='typeEmail' type='email' />
-        <MDBInput label='Name' id='formTexName' type='text' aria-describedby='textName' />
-        <MDBTextArea label='Message' id='textAreaExample' rows={4} />
+        <MDBInput label='Email' id='typeEmail' type='email' />
+        <MDBInput label='Nombre' id='formTexName' type='text' aria-describedby='textName' />
+        <MDBInput label='Empresa' id='formTexName' type='text' aria-describedby='textName' />
+        <MDBTextArea label='Mensaje' id='textAreaExample' rows={4} />
+        <br />
+        <button>Enviar</button>
+        
         </div>
-       
+       <Footer />
     </div>
     
   )

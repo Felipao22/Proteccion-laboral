@@ -1,0 +1,17 @@
+.container-nosotros{
+    margin:60px;
+    font-family: monospace;
+}
+
+.container-pregunta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

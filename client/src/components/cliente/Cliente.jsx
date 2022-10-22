@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import NavBar from '../navbar/NavBar';
 
 export default function Cliente() {
   return (
-    <div>Cliente</div>
+    <div>
+      <NavBar />
+      Cliente</div>
   )
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ALL_USERS, GET_USER_BY_EMAIL, POST_USER} from './actionsTypes';
+import {GET_ALL_USERS, GET_USER_BY_EMAIL, POST_USER, GET_ACTIVE_USER, POST_LOGIN, CLEAN_USERS, ACTIVATE_USER} from './actionsTypes';
 
 
 
@@ -39,94 +39,42 @@ export const getUserByEmail = (email) => {
       }
     };
   };
-// export const orderByName = (payload) => {
-//     return {
-//         type: ORDER_BY_NAME,
-//         payload
-//     }
-// }
 
-// export const orderByPopulation = (payload) => {
-//     return {
-//         type: ORDER_BY_POPULATION,
-//         payload
-//     }
-// }
+  export const login = (body) => {
+    return async function (dispatch) {
+      try {
+        const res = await axios.post(`http://localhost:3001/user/login`, body);
+        return dispatch({
+          type: POST_LOGIN,
+          payload: res.data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
 
-// export const orderByContinent = (continents) => {
-//     return {
-//         type: ORDER_BY_CONTINENT,
-//         payload: continents
-//     }
-// }
+  export const getActiveUser = () => {
+    return {
+      type: GET_ACTIVE_USER,
+    };
+  };
 
-// // export const orderByUnderPopulation = (payload) => {
-// //     return{
-// //         type: ORDER_BY_UNDER_POPULATION,
-// //         payload: payload
-// //     }
-// // }
+  export const cleanUsers = () => {
+    return { type: CLEAN_USERS };
+  };
 
-// export const getNameCountries = (name) => {
-//     return async function(dispatch) {
-//         try {
-//             const res = await axios('/countries?name=' + name);
-//             return dispatch({
-//                 type: GET_NAME_COUNTRIES,
-//                 payload: res.data
-//             })
-//         } catch (error) {
-//             alert('No existe ese País')
-//         }
-//     }
-// }
-
-
-// export const getDetail = (id) => {
-//     return async function (dispatch) {
-//         try {
-//             const res = await axios('/countries/' + id);
-//             return dispatch({
-//                 type: GET_DETAIL,
-//                 payload: res.data
-//             })
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     }
-// }
-
-// export function setDetail() {
-//     return {
-//         type: SET_DETAIL_COUNTRY,
-//     }
-// }
-
-
-// export const getActivities = () => {
-//     return async function(dispatch) {
-//         const res = await axios.get('/activities');
-//         return dispatch({
-//             type: GET_ACTIVITIES,
-//             payload: res.data
-//         })
-//     }
-// }
-
-// export const postActivity = (payload) => {
-//     return async function() {
-//         const res = await axios.post('/activities', payload);
-//         return{
-//             type: POST_ACTIVITY,
-//             payload: res
-//         } 
-//     }
-// }
-
-// export const filterActivity = (payload) => {
-//     return{
-//         type: FILTER_ACTIVITY,
-//         payload: payload
-//     }
-// }
-
+  export const activateUser = (email) => {
+    return async function (dispatch) {
+      try {
+        const body = { active: true };
+        const res = await axios.put(`http://localhost:3001/user/${email}`, body);
+        return dispatch({
+          type: ACTIVATE_USER,
+          payload: res.data,
+        });
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+  };
