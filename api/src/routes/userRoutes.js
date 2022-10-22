@@ -94,6 +94,45 @@ router.post("/", async (req, res) => {
   // }
 });
 
+//POST / LOG IN para ingreso de usuario
+// http://localhost:3001/user/login
+// router.post("/login", async (req, res) => {
+//   try {
+//     const userLogin = await User.findByPk(req.body.email);
+//     if (!userLogin) return res.status(201).send("Usuario no encontrado");
+//     const hashedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
+//     const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+//     if(originalPassword !== req.body.password) return res.status(201).send(`Datos incorrectos`);
+//     if (userLogin.deleted) return res.status(201).send('Usuario bloqueado');
+//     const accessToken = jwt.sign({
+//       email: userLogin.email,
+//       isBusiness: userLogin.isBusiness,
+//       isAdmin: userLogin.isAdmin
+//     }, process.env.JWT_SEC, { expiresIn: '30m' });
+
+//     const { password, ...others } = userLogin;
+
+//     res.status(200).json({others, accessToken});
+//   } catch (error) {
+//     res.status(404).send(`error:${error.message}`);
+//   }
+// });
+
+router.post('/login', async(req,res) => {
+  const {email, password, active} = req.body;
+  try {
+    const userLogin = await User.findByPk(email);
+      if (!userLogin) 
+      return res.status(201).send('Usuario no encontrado') 
+   else {
+      if (userLogin.email === email && userLogin.password === password && userLogin.active === true) {
+           return res.status(201).json(userLogin)
+      } else {  return res.status(201).send('Datos incorrectos')}
+  }
+  } catch (error) {
+      res.status(404).send(`error:${e.message}`)
+  }
+})
 
 
 
