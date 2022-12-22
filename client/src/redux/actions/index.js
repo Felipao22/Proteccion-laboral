@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ALL_USERS, GET_USER_BY_EMAIL, POST_USER, GET_ACTIVE_USER, POST_LOGIN, CLEAN_USERS, ACTIVATE_USER} from './actionsTypes';
+import {GET_ALL_USERS, GET_USER_BY_EMAIL, POST_USER, GET_ACTIVE_USER, POST_LOGIN, CLEAN_USERS, ACTIVATE_USER, GET_ALL_PROVINCES, GET_ALL_CITIES} from './actionsTypes';
 
 
 
@@ -76,5 +76,26 @@ export const getUserByEmail = (email) => {
       } catch (error) {
         console.log(error.message);
       }
+    };
+  };
+
+  export const getAllProvinces = () => {
+    return async function (dispatch) {
+      const res = await axios("http://localhost:3001/province");
+      return dispatch({
+        type: GET_ALL_PROVINCES,
+        payload: res.data,
+      });
+    };
+  };
+
+
+  export const getAllCities = () => {
+    return async function (dispatch) {
+      const res = await axios("http://localhost:3001/cities");
+      return dispatch({
+        type: GET_ALL_CITIES,
+        payload: res.data,
+      });
     };
   };

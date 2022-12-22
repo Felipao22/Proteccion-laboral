@@ -52,6 +52,7 @@ export default function ButtonAppBar() {
         bgcolor: stringToColor(name),
       },
       children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+      
     };
   }
 
@@ -100,11 +101,17 @@ export default function ButtonAppBar() {
                 />
               ) : (
                 <>
-                  <ListItem button component="a" href="/login">
+                  <ListItem button component="a" >
+                    <Link style={{ color: "black", textDecoration: "none" }} to="/login">
                     <ListItemText primary="Login" />
+
+                    </Link>
                   </ListItem>
-                  <ListItem button component="a" href="/register">
+                  <ListItem button component="a" >
+                    <Link style={{ color: "black", textDecoration: "none" }} to="/register">
+                    
                     <ListItemText primary="Registrase" />
+                    </Link>
                   </ListItem>
                 </>
               )}

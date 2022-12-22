@@ -273,7 +273,7 @@ export default function Login() {
               <a href="!#">¿Olvidaste tu contraseña?</a>
             </div>
 
-            <button type="submit" className="mb-4 w-100" size="lg">
+            <button type="submit" className="btn" size="lg">
               Ingresar
             </button>
           </MDBCol>

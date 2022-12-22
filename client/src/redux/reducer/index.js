@@ -6,11 +6,15 @@ import {
   CLEAN_USERS,
   ACTIVATE_USER,
   POST_LOGIN,
+  GET_ALL_PROVINCES,
+  GET_ALL_CITIES,
 } from "../actions/actionsTypes";
 
 const initialState = {
   user: [],
   activeUser: "",
+  provinces:[],
+  cities: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -52,6 +56,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         activeUser: action.payload,
       };
+    case GET_ALL_PROVINCES:
+      return{
+        ...state,
+        provinces: action.payload
+      }
+    case GET_ALL_CITIES:
+      return{
+        ...state,
+        cities: action.payload
+      }
     default:
       return { ...state };
   }

@@ -9,6 +9,7 @@ import Services from "../services/Services";
 import Business from "../business/Business";
 import { MDBBtn } from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const firebase = useFirebaseApp();
@@ -59,25 +60,13 @@ export default function Home() {
           maxime minus iusto obcaecati neque quo corporis et accusamus, ipsam
           itaque?
         </div>
-        <MDBBtn
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            alignSelf: "center",
-            marginLeft: "45%",
-            width: "150px",
-            textDecoration:'none'
-          }}
-          className="mas"
-          size="lg"
-          tag="a"
-          href="/nosotros"
-          color="black"
-          active
+        <Link className="link" to="/nosotros">
+        <button className="boton"
         >
           Leer más
-        </MDBBtn>
+        </button>
+
+        </Link>
       </div>
       <Services />
       <Business />

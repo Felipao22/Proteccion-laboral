@@ -110,6 +110,11 @@
     border-bottom-right-radius: 5px;
     display: none;
   }
+
+  .register:has(input:required) label:after{
+    content: " *";
+    color: red
+  }
   
   @media screen and (min-width: 860px)  {
     .register .col-2 img{

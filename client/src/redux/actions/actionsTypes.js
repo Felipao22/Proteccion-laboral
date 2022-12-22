@@ -5,3 +5,5 @@ export const POST_LOGIN = 'POST_LOGIN';
 export const GET_ACTIVE_USER = 'GET_ACTIVE_USER';
 export const CLEAN_USERS = 'CLEAN_USERS';
 export const ACTIVATE_USER = 'ACTIVATE_USER';
+export const GET_ALL_PROVINCES = 'GET_ALL_PROVINCES';
+export const GET_ALL_CITIES = 'GET_ALL_CITIES'

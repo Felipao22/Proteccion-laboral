@@ -5,3 +5,11 @@
   height: 1px;
   background: #eee;
 }
+
+.btn{
+  background-color: #326789;
+    color: #e9ecef;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 12px;
+}

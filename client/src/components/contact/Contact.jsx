@@ -9,14 +9,14 @@ export default function Contact() {
   return (
     <div>
         <NavBar />
-        <h3 className='container-text' style={{marginTop:'50px'}}>¿Que desea consultarnos?</h3>
+        <h3 className='container-text' style={{marginTop:'50px'}}>¿Qué desea consultarnos?</h3>
         <div className='container-contact'>
         <MDBInput label='Email' id='typeEmail' type='email' />
         <MDBInput label='Nombre' id='formTexName' type='text' aria-describedby='textName' />
         <MDBInput label='Empresa' id='formTexName' type='text' aria-describedby='textName' />
         <MDBTextArea label='Mensaje' id='textAreaExample' rows={4} />
         <br />
-        <button>Enviar</button>
+        <button className='boton'>Enviar</button>
         
         </div>
        <Footer />

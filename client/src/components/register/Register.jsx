@@ -2,14 +2,31 @@ import React, { useState, useEffect } from "react";
 import bgImg from "../../assets/img1.jpg";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import {createUser} from '../../redux/actions/index'
+import { useDispatch, useSelector } from "react-redux";
+import {createUser, getAllProvinces, getAllCities} from '../../redux/actions/index'
 import "./Register.css";
 import NavBar from "../navbar/NavBar";
 import { Form, Input } from 'antd';
 export default function Register() {
   const history = useHistory();
   const dispatch = useDispatch();
+  let PROVINCES = useSelector((state) => state.provinces);
+  console.log(PROVINCES)
+  PROVINCES = PROVINCES.sort((a, b) => {
+    if (a.nombre > b.nombre) return 1;
+    if (b.nombre > a.nombre) return -1;
+    return 0;
+  })
+  const gState = useSelector((state) => state);
+
+  let CITIES = useSelector((state) => state.cities);
+  CITIES = CITIES.sort((a, b) => {
+    if (a.nombre > b.nombre) return 1;
+    if (b.nombre > a.nombre) return -1;
+    return 0;
+  })
+
+
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -222,11 +239,16 @@ export default function Register() {
     }
   }
 
+  useEffect(() => {
+    dispatch(getAllProvinces());
+    dispatch(getAllCities());
+  }, [dispatch]);
+
 
   return (
     <section>
       <NavBar />
-      <div className="register">
+      <div class="register" >
         <div className="col-1">
           <h2>Registrarse</h2>
           <span>Registre su empresa</span>
@@ -236,7 +258,7 @@ export default function Register() {
             className="flex flex-col"
             onSubmit={(e) => handleSubmit(e)}
           >
-            <label htmlFor="mail">Ingrese su correo electrónico: (*)</label>
+            <label htmlFor="mail">Ingrese su correo electrónico:</label>
             <input
               type="email"
               value={input.email}
@@ -247,7 +269,7 @@ export default function Register() {
               onChange={(e) => handleChange(e)}
             />
             {error.erroremail && <small>{error.erroremail}</small>}
-            <label htmlFor="password">Ingrese su contraseña: (*)</label>
+            <label htmlFor="password">Ingrese su contraseña:</label>
             <input
               type="password"
               placeholder="Contraseña"
@@ -258,7 +280,7 @@ export default function Register() {
               required
             />
             {error.errorpassword && <small>{error.errorpassword}</small>}
-            <label htmlFor="confirmpwd">Confirme su contraseña: (*)</label>
+            <label htmlFor="confirmpwd">Confirme su contraseña:</label>
             <input
               type="password"
               placeholder="Confirmar contraseña"
@@ -270,7 +292,7 @@ export default function Register() {
             />
             {error.errorconfirmPassword && <small>{error.errorconfirmPassword}</small>}
             <label htmlFor="namebusiness">
-              Ingrese el nombre de la empresa: (*)
+              Ingrese el nombre de la empresa:
             </label>
             <input
               type="text"
@@ -283,7 +305,7 @@ export default function Register() {
             />
             {error.errornombreEmpresa && <small>{error.errornombreEmpresa}</small>}
             <label htmlFor="namebusiness">
-              Ingrese el nombre del establecimiento: (*)
+              Ingrese el nombre del establecimiento:
             </label>
             <input
               type="text"
@@ -295,7 +317,7 @@ export default function Register() {
               required
             />
             {error.errornombreEstablecimiento && <small>{error.errornombreEstablecimiento}</small>}
-            <label htmlFor="cuit">Ingrese su número de CUIT: (*)</label>
+            <label htmlFor="cuit">Ingrese su número de CUIT:</label>
             <input
               type="number"
               value={input.cuit}
@@ -306,27 +328,41 @@ export default function Register() {
               onChange={(e) => handleChange(e)}
             />
             {error.errorcuit && <small>{error.errorcuit}</small>}
-            <label htmlFor="provincia">Provincia: (*)</label>
-            <input type="text" name='provincia' id="provincia" value={input.provincia} onChange={(e) => handleInputChange(e)} />
-            {/* <select
-              name="provincia"
-              value={input.provincia}
-              onChange={(e) => handleInputChange(e)}
-            >
-              <option value="">{} </option>
-            </select> */}
+            <label htmlFor="provincia">Provincia:</label>
+            <select
+                  name="provincia"
+                  value={input.provincia}
+                  onChange={(e) => handleInputChange(e)}
+                >
+                  <option value="">{ } </option>
+                  {PROVINCES?.map((e) => (
+                    <option key={e.id} value={e.nombre}>
+                      {e.nombre}
+                    </option>
+                  ))}
+                </select>
             {error.errorprovincia && <small>{error.errorprovincia}</small>}
-            <label htmlFor="ciudad">Ciudad: (*)</label>
-            <input type="text" name='ciudad' id="ciudad" value={input.ciudad} onChange={(e) => handleInputChange(e)} />
-            {/* <select
+            <label htmlFor="ciudad">Ciudad:</label>
+            <select
               name="ciudad"
               value={input.ciudad}
               onChange={(e) => handleInputChange(e)}
             >
               <option value="">{} </option>
-            </select> */}
+              {
+                    input.provincia
+                      ? CITIES?.filter((e) => e.provinceId === gState.provinces?.filter((e) => e.nombre === input.provincia)[0].id
+                        )
+                        ?.map((e) => (
+                          <option key={e.id} name={e.nombre} value={e.nombre}>
+                            {e.nombre}
+                          </option>
+                        ))
+                      : ""
+                  }
+            </select>
             {error.errorciudad && <small>{error.errorciudad}</small>}
-            <label htmlFor="adress">Dirección: (*)</label>
+            <label htmlFor="adress">Dirección:</label>
             <input
               type="text"
               value={input.direccion}
@@ -337,7 +373,7 @@ export default function Register() {
               onChange={(e) => handleChange(e)}
             />
             {error.errordireccion && <small>{error.errordireccion}</small>}
-            <label htmlFor="telefono">Teléfono: (*)</label>
+            <label htmlFor="telefono">Teléfono:</label>
             <input
               type="text"
               value={input.telefono}
