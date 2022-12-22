@@ -19,12 +19,14 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const {getProvincesDb} = require('./src/controllers/provinceControllers.js')
+const {apiProvince} = require('./src/controllers/provinceControllers');
+const {apiCity} = require('./src/controllers/cityControllers')
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
-  server.listen(process.env.PORT, () => {
-    getProvincesDb()
+conn.sync({ force: true }).then(() => {
+  server.listen(process.env.PORT, async () => {
+    await apiProvince();
+    await apiCity();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
