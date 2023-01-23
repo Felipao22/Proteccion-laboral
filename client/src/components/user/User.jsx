@@ -10,8 +10,6 @@ export default function User() {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    console.log(userActive)
-
 
     function handleLogout(){
         dispatch(cleanUsers())
@@ -30,7 +28,7 @@ export default function User() {
     <h4>Ciudad: {userActive.ciudad}</h4>
     <h4>Cuit: {userActive.cuit}</h4>
     <h4>Direccion: {userActive.direccion}</h4>
-    <h4>EMail: {userActive.email}</h4>
+    <h4>Email: {userActive.email}</h4>
     <h4>Provincia: {userActive.provincia}</h4>
     <h4>Telefono: {userActive.telefono}</h4>
 

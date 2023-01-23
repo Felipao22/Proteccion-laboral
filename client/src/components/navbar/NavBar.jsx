@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import IMAGE from "../../assets/LOGO CUADRADO.png";
-import CloseIcon from "@mui/icons-material/Close";
 import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
 import List from "@mui/material/List";
@@ -15,13 +13,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
 import { useSelector } from "react-redux";
-// import { Avatar, AvatarBadge } from '@chakra-ui/react'
 import Avatar from "@mui/material/Avatar";
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const user = useSelector((state) => state.user);
-  console.log(user.nombreEmpresa);
   const history = useHistory();
 
   let nombre = user?.nombreEmpresa?.toString();
@@ -41,7 +37,6 @@ export default function ButtonAppBar() {
       const value = (hash >> (i * 8)) & 0xff;
       color += `00${value.toString(16)}`.slice(-2);
     }
-    /* eslint-enable no-bitwise */
 
     return color;
   }
@@ -51,7 +46,7 @@ export default function ButtonAppBar() {
       sx: {
         bgcolor: stringToColor(name),
       },
-      children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+      // children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
       
     };
   }
@@ -96,6 +91,7 @@ export default function ButtonAppBar() {
                     justifyContent: "center",
                     marginLeft: "40%",
                     marginBottom: "10px",
+                    cursor:'pointer'
                   }}
                   {...stringAvatar(nombre)}
                 />
@@ -188,6 +184,7 @@ export default function ButtonAppBar() {
             {user && user.active === true ? (
               <div className="log">
                 <Avatar
+                style={{ cursor:'pointer'}}
                   onClick={() => history.push("/user")}
                   {...stringAvatar(nombre)}
                 />
