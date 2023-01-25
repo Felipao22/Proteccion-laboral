@@ -7,7 +7,7 @@ import Footer from '../footer/Footer'
 import { Button } from 'react-bootstrap';
 export default function Contact() {
   return (
-    <div>
+    <div className='background-contact'>
         <NavBar />
         <h3 className='container-text' style={{marginTop:'50px'}}>¿Qué desea consultarnos?</h3>
         <div className='container-contact'>

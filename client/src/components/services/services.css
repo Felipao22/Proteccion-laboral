@@ -1,11 +1,11 @@
-.container-services {
+/* .container-services { */
     /* width: 100vw;
     height: 30vh;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 300px; */
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 1% 40px;
@@ -13,9 +13,9 @@
     margin-bottom: 250px;
     margin-top: 250px;
     align-content: center;
-}
+} */
 
-.service {
+/* .service {
    width:200px;
    display: block;
     justify-content: center;
@@ -24,9 +24,9 @@
     margin-left: auto;
   margin-right: auto;
      
-}
+} */
 
-#icon {
+/* #icon {
     color: white;
     margin-top: 30%;
     margin-left: 8%;
@@ -40,11 +40,160 @@
     align-self: center ;
     text-align: center;
     line-height: 90px;
-}
+} */
 
 
-.text {
+/* .text {
     margin-top: 30px;
     overflow: visible;
     margin-left: 10px;
+} */
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#about .container {
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+.col-md-4{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#about .about-col .img {
+    position: relative;
+}
+
+#about .about-col {
+    width: 90%;
+    background: linear-gradient(0deg,#164ca9,#43126e 100%,#00d4ff 0);
+    border-radius: 15px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+    margin: 0 auto 20px;
+    text-align: center;
+    padding: 35px 0 15px;
+}
+
+/* img, svg {
+    vertical-align: middle;
+} */
+
+#about .about-col h2 {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 20px 0 12px;
+}
+
+#about .about-col p {
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #fff;
+    padding: 0 20px 20px;
+    text-transform: uppercase;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 150px;
+}
+
+#about .about-col .icono {
+    transition: .3s;
+}
+
+/* #about .about-col i {
+    font-size: 36px;
+    line-height: 1;
+    color: #fff;
+    transition: .3s;
+} */
+
+#about .about-bg1, #about .about-bg2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about .about-bg1 {
+    background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-52379.jpg?w=1380&t=st=1674505562~exp=1674506162~hmac=76ba0af5be70694e127ff0b60c2f326f2167c7728a3f40fb0fe37ef1232a860e');
+}
+
+#about .about-col {
+    transition: all .3s;
+}
+
+#about .about-col:hover {
+    transform: scale(1.15);
+}
+
+/* .ion-chevron-down:before {
+    content: \f123;
+} */
+
+.section-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+element.style {
+    visibility: visible;
+    animation-name: fadeInUp;
+}
+
+.img-logo{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 200px;
 }

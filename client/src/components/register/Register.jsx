@@ -124,6 +124,7 @@ export default function Register() {
       !input.cuit ||
       !/^[1-9]\d*(\.\d+)?$/.test(input.cuit) ||
       input.cuit[0] === " "
+      //falta validar cantidad de numeros 11 y sin guión.
     ) {
       errorcuit = "Solo números";
     } else {
