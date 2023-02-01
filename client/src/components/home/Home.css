@@ -11,7 +11,7 @@
 .texto{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin: 100px;
 }
 
 .link{
@@ -34,5 +34,5 @@
     border-radius: 0.25rem;
     cursor: pointer;
     color: white;
-    
+    margin-top: 100px;
 }

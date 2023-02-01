@@ -1,8 +1,13 @@
 .container-contact {
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
     margin-bottom: 200px;
     margin-top: 100px;
+    background-color: rgb(233,238,244);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.404), 0 6px 20px 0 rgba(0, 0, 0, 0.382);
+    padding: 15px;
 }
 
 .boton{
@@ -21,15 +26,3 @@
     
 }
 
-/* .background-contact{
-    background-image: url('https://jardindelzen.com/wp-content/uploads/2020/08/background-color-solid-salmon-light-images-1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
-.background-contact{
-    /* background-color: #FF4500; */
-    
-    background: rgb(50,103,137);
-background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100%);
-}

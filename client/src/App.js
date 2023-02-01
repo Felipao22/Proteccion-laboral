@@ -6,7 +6,7 @@ import Login from './components/login/Login'
 import Cliente from './components/cliente/Cliente.jsx';
 import Nosotros from './components/nosotros/Nosotros.jsx';
 import Contact from './components/contact/Contact.jsx';
-import User from './components/user/User.jsx'
+import User from './components/user/User.jsx';
 
 function App() {
   return (

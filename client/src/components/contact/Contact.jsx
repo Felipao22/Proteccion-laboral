@@ -1,26 +1,55 @@
-import React from 'react';
-import {MDBInput, MDBTextArea } from 'mdb-react-ui-kit';
-import NavBar from '../navbar/NavBar'
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import './Contact.css';
-import Footer from '../footer/Footer'
-import { Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import NavBar from "../navbar/NavBar";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "./Contact.css";
+import Footer from "../footer/Footer";
+import {
+  MDBCardHeader,
+  MDBInput,
+  MDBTextArea,
+  MDBTypography,
+} from "mdb-react-ui-kit";
+import Background from "../background/Background";
 export default function Contact() {
   return (
-    <div className='background-contact'>
+    <>
+      <div className="background-contact">
         <NavBar />
-        <h3 className='container-text' style={{marginTop:'50px'}}>¿Qué desea consultarnos?</h3>
-        <div className='container-contact'>
-        <MDBInput label='Email' id='typeEmail' type='email' />
-        <MDBInput label='Nombre' id='formTexName' type='text' aria-describedby='textName' />
-        <MDBInput label='Empresa' id='formTexName' type='text' aria-describedby='textName' />
-        <MDBTextArea label='Mensaje' id='textAreaExample' rows={4} />
-        <br />
-        <button className='boton'>Enviar</button>
-        
+
+        <Background />
+        <h3
+          className="container-text"
+          style={{ marginTop: "50px", color: "white" }}
+        >
+          ¿Qué desea consultarnos?
+        </h3>
+
+        <div className="container-contact">
+          <form>
+            <MDBCardHeader
+              className="py-3"
+              style={{ backgroundColor: "rgb(233,238,244)" }}
+            >
+              <MDBTypography tag="h5" className="mb-0">
+                Datos para el contacto
+              </MDBTypography>
+            </MDBCardHeader>
+            <MDBInput id="form4Example1" wrapperClass="mb-4" label="Nombre" />
+            <MDBInput
+              type="email"
+              id="form4Example2"
+              wrapperClass="mb-4"
+              label="Email"
+            />
+            <MDBInput id="form4Example1" wrapperClass="mb-4" label="Empresa" />
+            <MDBTextArea label="Mensaje" id="textAreaExample" rows={4} />
+
+            <button className="boton">Enviar</button>
+          </form>
         </div>
-       <Footer />
-    </div>
-    
-  )
+      </div>
+
+      <Footer />
+    </>
+  );
 }

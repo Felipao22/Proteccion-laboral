@@ -3,7 +3,6 @@ import { SpinnerCircular } from "spinners-react";
 import Carousel from "../carousel/Carousel";
 import NavBar from "../navbar/NavBar";
 import "./Home.css";
-import { useFirebaseApp } from "reactfire";
 import Footer from "../footer/Footer";
 import Services from "../services/Services";
 import Business from "../business/Business";
@@ -12,8 +11,6 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const firebase = useFirebaseApp();
-  console.log(firebase);
   return (
     <div name="Home">
       <NavBar />
@@ -33,7 +30,6 @@ export default function Home() {
       </div>
       <div>
         <h4 className="texto">Nosotros</h4>
-        <br />
         <div className="nosotros">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
           incidunt rem? Accusantium libero, debitis eum iusto ducimus
@@ -61,15 +57,9 @@ export default function Home() {
           itaque?
         </div>
         <Link className="link" to="/nosotros">
-        <button className="boton"
-        >
-          Leer más
-        </button>
-
+          <button className="boton">Leer más</button>
         </Link>
       </div>
-      <br />
-      <br /> 
       <Services />
       <Business />
       <Footer />
