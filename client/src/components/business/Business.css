@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 1% 40px;
+  margin-bottom: 200px;
 }
 .marca {
   object-fit: contain;
@@ -24,4 +25,5 @@
   display: flex;
   justify-content: center;
   margin-top: 250px;
+  text-shadow: 2px 2px 4px #08080856;
 }

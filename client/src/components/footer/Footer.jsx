@@ -6,6 +6,8 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import {IoLogoWhatsapp} from 'react-icons/io';
+import {FaEnvelope} from 'react-icons/fa'
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 export default function Footer() {
@@ -13,19 +15,19 @@ export default function Footer() {
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
-          <span>Conoce nuestras redes:</span>
+          <span>Conocé nuestras redes:</span>
         </div>
 
         <div>
           <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="facebook-f" />
           </a>
-          <a href="" className="me-4 text-reset">
+          {/* <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="twitter" />
-          </a>
-          <a href="" className="me-4 text-reset">
+          </a> */}
+          {/* <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="google" />
-          </a>
+          </a> */}
           <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="instagram" />
           </a>
@@ -37,9 +39,9 @@ export default function Footer() {
           >
             <MDBIcon fab icon="linkedin" />
           </a>
-          <a href="" className="me-4 text-reset">
+          {/* <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="github" />
-          </a>
+          </a> */}
         </div>
       </section>
 
@@ -110,17 +112,23 @@ export default function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Contacto</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                Juana Koslay, San Luis, ARG
+                Juana Koslay, San Luis, ARG.
+                <br />
               </p>
+              <a style={{textDecoration:'none', color:'#6C757D'}} href="mailto:info@proteccionlaboral.com.ar" target="_blank"
+              rel="noreferrer">
+                <FaEnvelope size={17} className="me-3" />
+                info@proteccionlaboral.com.ar
+                <br />
+              </a>
+              <a style={{textDecoration:'none', color:'#6C757D'}} href='https://api.whatsapp.com/send?phone=542664678961' target="_blank"
+              rel="noreferrer">
+                <br />
+                <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 678961
+              </a>
               <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                proteccionlaboral@gmail.com
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" />+ 54 2664 789878
-              </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 54 2664 789878
+                <br />
+                <MDBIcon icon="phone" className="me-3" /> + 54 2664 789878
               </p>
             </MDBCol>
           </MDBRow>
@@ -131,7 +139,8 @@ export default function Footer() {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         © 2023 Copyright:
-        <a className="text-reset fw-bold" href="https://www.linkedin.com/in/felipeaviani/">
+        <a className="text-reset fw-bold" href="https://www.linkedin.com/in/felipeaviani/" target="_blank"
+              rel="noreferrer">
            Felipe Aviani
         </a>
       </div>

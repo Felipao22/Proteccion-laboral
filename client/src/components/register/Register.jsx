@@ -11,7 +11,6 @@ export default function Register() {
   const history = useHistory();
   const dispatch = useDispatch();
   let PROVINCES = useSelector((state) => state.provinces);
-  console.log(PROVINCES)
   PROVINCES = PROVINCES.sort((a, b) => {
     if (a.nombre > b.nombre) return 1;
     if (b.nombre > a.nombre) return -1;
@@ -25,6 +24,15 @@ export default function Register() {
     if (b.nombre > a.nombre) return -1;
     return 0;
   })
+
+  const VALIDATE_EMAIL = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  const VALIDATE_PASSWORD = !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  const VALIDATE_NOMBRE_EMPRESA = /^[A-Z]+[A-Za-z0-9\s]+$/g; 
+  const VALIDATE_CUIT = /^[0-9]{11}$/;
+  const VALIDATE_NOMBRE_ESTABLECIMIENTO = /^[A-Z]+[A-Za-z0-9\s]+$/g;
+  const VALIDATE_DIRECCION = /^[A-Z]+[A-Za-z0-9\s]+$/g;
+  const VALIDATE_TELEFONO = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g; 
+
 
 
   const [input, setInput] = useState({
@@ -87,7 +95,7 @@ export default function Register() {
     let errortelefono = "";
     if (
       !input.email ||
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.email) ||
+      !VALIDATE_EMAIL.test(input.email) ||
       input.email[0] === " "
     ) {
       erroremail = "Escriba un correo electrónico válido.";
@@ -96,7 +104,7 @@ export default function Register() {
     }
     if (
       !input.password ||
-      !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(input.password)
+      VALIDATE_PASSWORD.test(input.password)
     ) {
       errorpassword =
         "La contraseña debe tener entre 8 y 16 carácteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.";
@@ -113,7 +121,7 @@ export default function Register() {
     }
     if (
       !input.nombreEmpresa ||
-      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.nombreEmpresa) ||
+      !VALIDATE_NOMBRE_EMPRESA.test(input.nombreEmpresa) ||
       input.nombreEmpresa[0] === " "
     ) {
       errornombreEmpresa = "La primera letra debe estar en mayúscula.";
@@ -122,15 +130,17 @@ export default function Register() {
     }
     if (
       !input.cuit ||
-      !/^[1-9]\d*(\.\d+)?$/.test(input.cuit) ||
+      !VALIDATE_CUIT.test(input.cuit) ||
       input.cuit[0] === " "
       //falta validar cantidad de numeros 11 y sin guión.
     ) {
-      errorcuit = "Solo números";
+      errorcuit = "Deben ser 11 números.";
     } else {
       errorcuit = "Hecho!";
     }
-    if (!input.nombreEstablecimiento) {
+    if ( !input.nombreEstablecimiento ||
+      !VALIDATE_NOMBRE_ESTABLECIMIENTO.test(input.nombreEstablecimiento) ||
+      input.nombreEstablecimiento[0] === " ") {
       errornombreEstablecimiento = "La primera letra debe estar en mayúscula.";
     } else {
       errornombreEstablecimiento = "Hecho!";
@@ -147,7 +157,7 @@ export default function Register() {
     }
     if (
       !input.direccion ||
-      !/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.direccion) ||
+      !VALIDATE_DIRECCION.test(input.direccion) ||
       input.direccion[0] == " "
     ) {
       errordireccion = "La primera letra debe estar en mayúscula.";
@@ -156,7 +166,7 @@ export default function Register() {
     }
     if (
       !input.telefono ||
-      !/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(input.telefono) ||
+      !VALIDATE_TELEFONO.test(input.telefono) ||
       input.telefono[0] == "" ||
       input.telefono.length < 10
     ) {
@@ -251,7 +261,7 @@ export default function Register() {
       <NavBar />
       <div class="register" >
         <div className="col-1">
-          <h2>Registrarse</h2>
+          <h2>Registrarse</h2>        
           <span>Registre su empresa</span>
 
           <form
@@ -385,7 +395,7 @@ export default function Register() {
               onChange={(e) => handleChange(e)}
             />
             {error.errortelefono && <small>{error.errortelefono}</small>}
-            <button className="btn">Registrarse</button>
+            <button className="boton-register">Registrarse</button>
           </form>
         </div>
         <div className="col-2">
