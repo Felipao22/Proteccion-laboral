@@ -1,0 +1,13 @@
+.text-soluciones{
+    margin:60px;
+    font-family: monospace;
+    color:white
+}
+
+.header-soluciones{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}

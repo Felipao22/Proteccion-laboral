@@ -11,7 +11,7 @@ export default function Services() {
       <section id="about">
         <div class="container">
           <header class="section-header">
-            <h3>Nuestras soluciones</h3>
+            <h1>Nuestras soluciones</h1>
           </header>
           <div class="row about-cols">
             <div class="col-md-4 wow">

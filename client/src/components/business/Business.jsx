@@ -13,13 +13,13 @@ export default function Business() {
   return (
     <div>
       <div className="texto">
-        <h4>Clientes</h4>
+        <h1>Clientes</h1>
       </div>
       <div className="container-marcas">
         <img className="marca" src={IMG1} alt="..." />
         <img className="marca" src={IMG2} alt="..." />
-        <img className="marca " src={IMG3} alt="..." />
-        <img className="marca" src={IMG4} alt="..." />
+        {/* <img className="marca " src={IMG3} alt="..." /> */}
+        {/* <img className="marca" src={IMG4} alt="..." /> */}
         <img className="marca" src={IMG5} alt="..." />
         <img className="marca" src={IMG6} alt="..." />
         <img className="marca" src={IMG7} alt="..." />

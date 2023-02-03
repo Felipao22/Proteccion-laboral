@@ -17,12 +17,12 @@ export default function Contact() {
         <NavBar />
 
         <Background />
-        <h3
+        <h2
           className="container-text"
           style={{ marginTop: "50px", color: "white" }}
         >
           ¿Qué desea consultarnos?
-        </h3>
+        </h2>
 
         <div className="container-contact">
           <form>
@@ -43,7 +43,7 @@ export default function Contact() {
             />
             <MDBInput id="form4Example1" wrapperClass="mb-4" label="Empresa" />
             <MDBTextArea label="Mensaje" id="textAreaExample" rows={4} />
-
+            <br />
             <button className="boton">Enviar</button>
           </form>
         </div>

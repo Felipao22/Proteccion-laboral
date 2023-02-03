@@ -14,6 +14,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
 import { useSelector } from "react-redux";
 import Avatar from "@mui/material/Avatar";
+import IMAGE2 from "../../assets/LOGO ALARGADO.png";
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -156,6 +157,9 @@ export default function ButtonAppBar() {
           <Link to="/">
             <img style={{ height: "50px" }} src={IMAGE} alt="No image" />
           </Link>
+          {/* <Link to="/">
+            <img className="logo-largo" style={{ height: "60px" }} src={IMAGE2} alt="No image" />
+          </Link> */}
           <div className="container-botones">
             <div>
               <Link style={{ color: "black", textDecoration: "none" }} to="/">
