@@ -135,6 +135,8 @@ background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100
     align-items: center;
     margin: 150px;
     text-shadow: 2px 2px 4px #08080856;
+    font-family: Quicksand;
+    font-size: 50px;
 }
 
 element.style {

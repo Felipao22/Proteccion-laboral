@@ -1,6 +1,6 @@
 .text-soluciones{
     margin:60px;
-    font-family: monospace;
+    font-family: Quicksand;
     color:white
 }
 
@@ -10,4 +10,6 @@
     margin: 20px;
     color: white;
     text-shadow: 2px 2px 4px #000000;
+    font-family: Quicksand;
+    font-size: 50px;
 }

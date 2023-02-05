@@ -29,7 +29,7 @@ export default function Home() {
         distinctio? Dolorem, nobis fuga.
       </div>
       <div>
-        <h1 className="texto">Nosotros</h1>
+        <h1 className="texto-nosotros">Nosotros</h1>
         <div className="nosotros">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
           incidunt rem? Accusantium libero, debitis eum iusto ducimus

@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Business() {
   return (
     <div>
-      <div className="texto">
+      <div className="texto-business">
         <h1>Clientes</h1>
       </div>
       <div className="container-marcas">

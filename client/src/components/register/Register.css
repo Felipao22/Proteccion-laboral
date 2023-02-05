@@ -44,6 +44,7 @@
     border-radius: 5px;
     /* box-shadow: 1px 3px 10px #e9ecef; */
     background-color: white;
+    font-family: Quicksand;
   }
   
   .register span{
@@ -90,7 +91,7 @@
   #form > .boton-register {
     width: 319px;
     height: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Quicksand;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2.5px;

@@ -262,7 +262,7 @@ export default function Login() {
               </div>
               {errors.password && <small>{errors.password}</small>}
 
-              <div className="d-flex justify-content-between mx-4 mb-4 mt-4">
+              <div className="d-flex justify-content-between mx-4 mb-4 mt-4 label-font">
                 <MDBCheckbox
                   name="flexCheck"
                   value=""
