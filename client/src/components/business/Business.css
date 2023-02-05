@@ -21,9 +21,11 @@
   filter: none;
 }
 
-.texto {
+.texto-business {
   display: flex;
   justify-content: center;
   margin-top: 250px;
   text-shadow: 2px 2px 4px #08080856;
+  margin-bottom: 100px;
+  font-family: Quicksand;
 }

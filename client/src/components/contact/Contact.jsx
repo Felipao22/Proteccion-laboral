@@ -62,7 +62,7 @@ export default function Contact() {
               className="py-3"
               style={{ backgroundColor: "rgb(233,238,244)" }}
             >
-              <MDBTypography tag="h5" className="mb-0">
+              <MDBTypography tag="h5" className="mb-0" style={{fontFamily:'Quicksand', fontWeight: 'bold'}}>
                 Datos para el contacto
               </MDBTypography>
             </MDBCardHeader>
@@ -72,6 +72,7 @@ export default function Contact() {
               label="Nombre"
               name="Nombre"
               required
+              style={{fontFamily:'Quicksand'}}
             />
             <MDBInput
               type="email"
@@ -80,6 +81,7 @@ export default function Contact() {
               label="Email"
               name="Email"
               required
+              style={{fontFamily:'Quicksand'}}
             />
             <MDBInput
               id="form4Example1"
@@ -87,6 +89,7 @@ export default function Contact() {
               label="Empresa"
               name="Empresa"
               required
+              style={{fontFamily:'Quicksand'}}
             />
             <MDBTextArea
               label="Mensaje"
@@ -94,6 +97,7 @@ export default function Contact() {
               rows={4}
               name="Mensaje"
               required
+              style={{fontFamily:'Quicksand'}}
             />
             <br />
             <button className="boton">Enviar</button>
