@@ -29,8 +29,8 @@ const particlesConfig = {
 
   particles: {
     links: {
-      enable: true, // enabling this will make particles linked together
-      distance: 200, // maximum distance for linking the particles
+      enable: false, // enabling this will make particles linked together
+      distance: 1000, // maximum distance for linking the particles
     },
     move: {
       enable: false, // enabling this will make particles move in the canvas
