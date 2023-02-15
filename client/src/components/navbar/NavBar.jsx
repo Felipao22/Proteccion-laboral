@@ -20,7 +20,6 @@ export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const user = useSelector((state) => state.user);
   const history = useHistory();
-
   let nombre = user?.nombreEmpresa?.toString();
 
   function stringToColor(string) {
@@ -52,8 +51,10 @@ export default function ButtonAppBar() {
     };
   }
 
+  // const [isNavExpanded, setIsNavExpanded] = useState(false)
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box className="box" sx={{ flexGrow: 1 }}>
       <AppBar
         className="appbar"
         style={{ backgroundColor: "#E9EEF4", color: "black" }}
@@ -85,6 +86,8 @@ export default function ButtonAppBar() {
               }}
             >
               {user && user.active === true ? (
+                <>
+           
                 <Avatar
                   onClick={() => history.push("/user")}
                   style={{
@@ -94,8 +97,12 @@ export default function ButtonAppBar() {
                     marginBottom: "10px",
                     cursor:'pointer'
                   }}
-                  {...stringAvatar(nombre)}
+                  {...stringAvatar(nombre) }
                 />
+                     {/* <div className="nombreEmpresa">
+                  <small>{user?.nombreEmpresa}</small>
+                </div> */}
+                </>
               ) : (
                 <>
                   <ListItem button component="a" >
@@ -127,17 +134,17 @@ export default function ButtonAppBar() {
                 </Link>
               </ListItem>
 
-              <ListItem button component="a">
+              {/* <ListItem button component="a">
                 <Link
                   to="/clientes"
                   style={{ color: "black", textDecoration: "none" }}
                 >
                   <ListItemText primary="Clientes" />
                 </Link>
-              </ListItem>
+              </ListItem> */}
               <ListItem button component="a">
                 <Link
-                  to="/servicios"
+                  to="/services"
                   style={{ color: "black", textDecoration: "none" }}
                 >
                   <ListItemText primary="Servicios" />
@@ -153,13 +160,14 @@ export default function ButtonAppBar() {
               </ListItem>
             </List>
           </Drawer>
-
+          {/* probar el logo */}
+          {/* className={`text-gray-100 ${ia ? 'bg-gptlightgray' : 'bg-gptgray'}`} */}
           <Link to="/">
-            <img style={{ height: "50px" }} src={IMAGE} alt="No image" />
+            <img className="logo" style={{ height: "5rem", paddingBottom:'0px'}} src={IMAGE} alt="logo" />
           </Link>
-          {/* <Link to="/">
-            <img className="logo-largo" style={{ height: "60px" }} src={IMAGE2} alt="No image" />
-          </Link> */}
+          <Link to="/">
+            <img className="logo-largo" style={{ height: "60px" }} src={IMAGE2} alt="logo largo" />
+          </Link>
           <div className="container-botones">
             <div>
               <Link style={{ color: "black", textDecoration: "none" }} to="/">
@@ -186,15 +194,22 @@ export default function ButtonAppBar() {
               </Link>
             </div>
             {user && user.active === true ? (
-              <div className="log">
+              <>
+              
+              {/* <div className="nombreEmpresa">
+              <span>{user?.nombreEmpresa}</span>
+            </div> */}
+              <div className="avatar">
                 <Avatar
                 style={{ cursor:'pointer'}}
                   onClick={() => history.push("/user")}
                   {...stringAvatar(nombre)}
                 />
+                 
               </div>
+              </>
             ) : (
-              <div className="log">
+              <div className="container-login">
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/login"
@@ -213,5 +228,35 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
+    // <nav className="navigation">
+    //   <a href="/" className="brand-name">
+    //     MacroSoft
+    //   </a>
+    //   <button
+    //     className="hamburger"
+    //     onClick={() => {
+    //       setIsNavExpanded(!isNavExpanded)
+    //     }}
+    //   >
+    //     {/* hamburger svg code... */}
+    //   </button>
+    //   <div
+    //     className={
+    //       isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+    //     }
+    //   >
+    //     <ul>
+    //       <li>
+    //         <a href="/home">Home</a>
+    //       </li>
+    //       <li>
+    //         <a href="/about">About</a>
+    //       </li>
+    //       <li>
+    //         <a href="/contact">Contact</a>
+    //       </li>
+    //     </ul>
+    //   </div>
+    // </nav>
   );
 }

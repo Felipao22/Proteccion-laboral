@@ -65,7 +65,7 @@
     background: linear-gradient(0deg,#164ca9,#43126e 100%,#00d4ff 0);
     border-radius: 15px;
     box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
-    margin: 0 auto 20px;
+    margin: 0 auto 200px;
     text-align: center;
     padding: 35px 0 15px;
 }
@@ -113,8 +113,11 @@
 }
 
 #about .about-bg1 {
-    background: rgb(50,103,137);
-background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100%);
+    /* background: rgb(50,103,137);
+background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100%); */
+/* background-image: url('../../assets//tarjeta.jpg'); */
+background: rgb(49,120,200);
+background: linear-gradient(0deg, rgba(49,120,200,1) 0%, rgba(15,65,162,1) 100%);
 }
 
 #about .about-col {
@@ -134,9 +137,6 @@ background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100
     justify-content: center;
     align-items: center;
     margin: 150px;
-    text-shadow: 2px 2px 4px #08080856;
-    font-family: Quicksand;
-    font-size: 50px;
 }
 
 element.style {

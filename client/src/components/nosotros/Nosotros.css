@@ -1,23 +1,204 @@
 .container-nosotros{
-    margin:60px;
-    font-family: Quicksand;
-    color: rgb(233,238,244);
+    margin:5%;
+    font-family: YuGothL;
+    /* color: rgb(233,238,244); */
+    color: black;
+    /* text-shadow: 2px 4px 2px black; */
+    /* background-color: rgba(255, 255, 255, 0.103); */
+    font-weight: bolder;
+    /* color: #fff; */
+   /* font-size: 26px; */
+   /* z-index: 2; */
+   /* transform: translate(-50%, -50%); */
+   
 }
 
 .container-pregunta{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
+    margin: 20px;
 }
 
-.container-text{
+
+
+/* prueba2 */
+
+.flex-dave-layout-main_inner {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem auto;
+    max-width: 64.75rem
+}
+
+@media only screen and (max-width: 768px) {
+    .flex-dave-layout-main_inner {
+        flex-direction:column
+    }
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_right {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 1rem;
+    width: 100%
 }
 
-/* .background-nosotros{
-    background: rgb(50,103,137);
-background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100%);
+.flex-dave-layout-main_inner .flex-dave-wrapper_right .image_wrapper-right {
+    align-items: center;
+    display: flex;
+    height: 362px;
+    justify-content: center;
+    max-width: 450px;
+    width: 100%
+}
+
+@media only screen and (max-width: 768px) {
+    .flex-dave-layout-main_inner .flex-dave-wrapper_right .image_wrapper-right {
+        margin:0 auto;
+        min-height: 14rem;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+    }
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left {
+    padding: 1rem;
+    width: 100%;
+    margin-right: 50px;
+}
+@media only screen and (max-width:768px){
+    .flex-dave-layout-main_inner .flex-dave-wrapper_left {
+        padding: 1rem;
+        width: 100%;
+        margin:auto;
+    }
+}
+
+/* .flex-dave-layout-main_inner .flex-dave-wrapper_left .text-inner-wrapper-main .header-title-right {
+    color: #3c3c3c;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px
 } */
 
+@media only screen and (max-width: 768px) {
+    .flex-dave-layout-main_inner .flex-dave-wrapper_left .text-inner-wrapper-main .header-title-right {
+        font-size:36px
+    }
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left .description-paragraph {
+    color: #505050;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin: 1rem 0;
+    font-family: YuGothL;
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left .container-main-wrapper-holder,.flex-dave-layout-main_inner .flex-dave-wrapper_left .description-paragraph .description-paragraph_text_inner,.flex-dave-layout-main_inner .flex-dave-wrapper_left .description-paragraph .paragraph-wrapper {
+    margin: 1rem 0
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left .container-main-wrapper-holder .title-container-parent {
+    color: #282828;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left .container-main-wrapper-holder .description-text-title-wrapper {
+    color: #505050;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin: 1rem 0
+}
+
+@media only screen and (max-width: 768px) {
+    .__flex-reverse-column {
+        flex-direction:column-reverse
+    }
+}
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 {
+    padding: 1rem;
+    width: 100%;
+    margin-left:50px ;
+}
+@media only screen and (max-width:768px){
+    .flex-dave-layout-main_inner .flex-dave-wrapper_left2 {
+        padding: 1rem;
+        width: 100%;
+        margin:0;
+    }
+}
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 {
+    padding: 1rem;
+    width: 100%
+}
+
+/* .flex-dave-layout-main_inner .flex-dave-wrapper_left2 .text-inner-wrapper-main .header-title-right {
+    color: #3c3c3c;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px
+} */
+
+@media only screen and (max-width: 768px) {
+    .flex-dave-layout-main_inner .flex-dave-wrapper_left2 .text-inner-wrapper-main .header-title-right {
+        font-size:36px
+    }
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 .description-paragraph {
+    color: #505050;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin: 1rem 0;
+    font-family: YuGothL;
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 .container-main-wrapper-holder,.flex-dave-layout-main_inner .flex-dave-wrapper_left2 .description-paragraph .description-paragraph_text_inner,.flex-dave-layout-main_inner .flex-dave-wrapper_left .description-paragraph .paragraph-wrapper {
+    margin: 1rem 0
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 .container-main-wrapper-holder .title-container-parent {
+    color: #282828;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px
+}
+
+.flex-dave-layout-main_inner .flex-dave-wrapper_left2 .container-main-wrapper-holder .description-text-title-wrapper {
+    color: #505050;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin: 1rem 0
+}
+
+h4{
+    color: #02003d;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 35px;
+    letter-spacing: 6px;
+    font-family: YuGothL;
+    font-weight: 700;   
+}

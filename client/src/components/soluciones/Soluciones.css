@@ -1,15 +1,53 @@
 .text-soluciones{
     margin:60px;
-    font-family: Quicksand;
-    color:white
+    font-family: YuGothL;
+    color:black;
+    font-weight: bolder;
+    position: relative;
+    letter-spacing: 0.5px;
+    /* font-size: 14px; */
+    /* font-weight: 400; */
+    /* font-weight:normal; */
+    /* text-transform: uppercase; */
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .header-soluciones{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     margin: 20px;
-    color: white;
+    color: black;
     text-shadow: 2px 2px 4px #000000;
-    font-family: Quicksand;
-    font-size: 50px;
+    font-family: YuGothL;
+    font-size: 50px; */
+    margin-top: 30px;
+}
+
+/* .background-soluciones{
+    position: absolute;
+} */
+
+.text-overlay{
+    position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 40%; /* Adjust this value to move the positioned div up and down */
+        text-align: center;
+        width: 60%; /* Set the width of the positioned div */
+        color: white;
+}
+
+#soluciones{
+    background-image: url('../../assets/soluciones-background.jpg');
+    background-size: cover;
+    /* padding: 60px 0 40px; */
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    background-attachment:fixed;
+    width: 100%;
+    height: 100%;
+
 }

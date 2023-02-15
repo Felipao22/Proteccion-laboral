@@ -48,7 +48,7 @@
   }
   
   .register span{
-    color: #78A6C8;
+    color: rgba(15,65,162,1);
     display: inline;
     width: 100%;
     padding: 0;
@@ -96,7 +96,7 @@
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-weight: 500;
-    background-color: #326789;
+    background-color: rgba(15,65,162,1);
     color:white;
     border: none;
     border-radius: 15px;
@@ -107,8 +107,8 @@
     }
   
   #form > .boton-register:hover {
-    background-color: #78A6C8;
-    box-shadow: 0px 15px 20px #78A6C8;
+    background-color:rgb(49,120,200);
+    box-shadow: 0px 15px 20px rgb(49,120,200);
     color: #fff;
     transform: translateY(-7px);
   }
@@ -146,3 +146,11 @@
       display: initial;
     }
   }
+
+input[type='number']::-webkit-inner-spin-button{
+  display: none;
+}
+input[type='number']{
+  appearance:auto;
+  -moz-appearance: textfield;
+}

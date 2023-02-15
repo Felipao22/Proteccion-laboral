@@ -6,8 +6,8 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdb-react-ui-kit";
-import {IoLogoWhatsapp} from 'react-icons/io';
-import {FaEnvelope} from 'react-icons/fa'
+import { IoLogoWhatsapp } from "react-icons/io";
+import { FaEnvelope } from "react-icons/fa";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 export default function Footer() {
@@ -19,16 +19,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <a href="" className="me-4 text-reset">
+          <a href="#!" className="me-4 text-reset">
             <MDBIcon fab icon="facebook-f" />
           </a>
-          {/* <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="twitter" />
-          </a> */}
-          {/* <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="google" />
-          </a> */}
-          <a href="" className="me-4 text-reset">
+          <a href="#!" className="me-4 text-reset">
             <MDBIcon fab icon="instagram" />
           </a>
           <a
@@ -39,9 +33,6 @@ export default function Footer() {
           >
             <MDBIcon fab icon="linkedin" />
           </a>
-          {/* <a href="" className="me-4 text-reset">
-            <MDBIcon fab icon="github" />
-          </a> */}
         </div>
       </section>
 
@@ -50,7 +41,6 @@ export default function Footer() {
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
-                {/* <MDBIcon icon="gem" className="me-3" /> */}
                 Protección Laboral
               </h6>
               <p>
@@ -59,50 +49,41 @@ export default function Footer() {
                 elit.
               </p>
             </MDBCol>
-
-            {/* <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Angular
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  React
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
-                </a>
-              </p>
-            </MDBCol> */}
-
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Navegar</h6>
               <p>
-                <a href="/" className="text-reset" style={{textDecoration:'none'}}>
+                <a
+                  href="/"
+                  className="text-reset"
+                  style={{ textDecoration: "none" }}
+                >
                   Home
                 </a>
               </p>
               <p>
-                <a href="/nosotros" className="text-reset" style={{textDecoration:'none'}}>
+                <a
+                  href="/nosotros"
+                  className="text-reset"
+                  style={{ textDecoration: "none" }}
+                >
                   Nosotros
                 </a>
               </p>
               <p>
-                <a href="/services" className="text-reset" style={{textDecoration:'none'}}>
+                <a
+                  href="/services"
+                  className="text-reset"
+                  style={{ textDecoration: "none" }}
+                >
                   Servicios
                 </a>
               </p>
               <p>
-                <a href="/contact" className="text-reset" style={{textDecoration:'none'}}>
+                <a
+                  href="/contact"
+                  className="text-reset"
+                  style={{ textDecoration: "none" }}
+                >
                   Contacto
                 </a>
               </p>
@@ -115,14 +96,22 @@ export default function Footer() {
                 Juana Koslay, San Luis, ARG.
                 <br />
               </p>
-              <a style={{textDecoration:'none', color:'#6C757D'}} href="mailto:info@proteccionlaboral.com.ar" target="_blank"
-              rel="noreferrer">
+              <a
+                style={{ textDecoration: "none", color: "#6C757D" }}
+                href="mailto:info@proteccionlaboral.com.ar"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaEnvelope size={17} className="me-3" />
                 info@proteccionlaboral.com.ar
                 <br />
               </a>
-              <a style={{textDecoration:'none', color:'#6C757D'}} href='https://api.whatsapp.com/send?phone=542664678961' target="_blank"
-              rel="noreferrer">
+              <a
+                style={{ textDecoration: "none", color: "#6C757D" }}
+                href="https://api.whatsapp.com/send?phone=542664678961"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <br />
                 <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 678961
               </a>
@@ -139,9 +128,13 @@ export default function Footer() {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         © 2023 Copyright:
-        <a className="text-reset fw-bold" href="https://www.linkedin.com/in/felipeaviani/" target="_blank"
-              rel="noreferrer">
-           Felipe Aviani
+        <a
+          className="text-reset fw-bold"
+          href="https://www.linkedin.com/in/felipeaviani/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Felipe Aviani
         </a>
       </div>
     </MDBFooter>

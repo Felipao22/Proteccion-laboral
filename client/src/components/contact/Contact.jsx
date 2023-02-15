@@ -9,7 +9,6 @@ import {
   MDBTextArea,
   MDBTypography,
 } from "mdb-react-ui-kit";
-import Background from "../background/Background";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_PUBLIC_KEY } =
@@ -44,17 +43,10 @@ export default function Contact() {
   }
 
   return (
-    <>
-      <div className="background-contact">
-        <NavBar />
-
-        <Background />
-        <h2
-          className="container-text"
-          style={{ marginTop: "50px", color: "white" }}
-        >
-          ¿Qué desea consultarnos?
-        </h2>
+    <section id="contact">
+      <NavBar />
+      <div className="background">
+        <h1 className="container-text">¿Qué desea consultarnos?</h1>
 
         <div className="container-contact">
           <form onSubmit={sendEmail}>
@@ -62,7 +54,7 @@ export default function Contact() {
               className="py-3"
               style={{ backgroundColor: "rgb(233,238,244)" }}
             >
-              <MDBTypography tag="h5" className="mb-0" style={{fontFamily:'Quicksand', fontWeight: 'bold'}}>
+              <MDBTypography tag="h5" className="mb-0 datos-contact">
                 Datos para el contacto
               </MDBTypography>
             </MDBCardHeader>
@@ -72,7 +64,7 @@ export default function Contact() {
               label="Nombre"
               name="Nombre"
               required
-              style={{fontFamily:'Quicksand'}}
+              style={{ fontFamily: "Quicksand" }}
             />
             <MDBInput
               type="email"
@@ -81,7 +73,7 @@ export default function Contact() {
               label="Email"
               name="Email"
               required
-              style={{fontFamily:'Quicksand'}}
+              style={{ fontFamily: "Quicksand" }}
             />
             <MDBInput
               id="form4Example1"
@@ -89,7 +81,7 @@ export default function Contact() {
               label="Empresa"
               name="Empresa"
               required
-              style={{fontFamily:'Quicksand'}}
+              style={{ fontFamily: "Quicksand" }}
             />
             <MDBTextArea
               label="Mensaje"
@@ -97,15 +89,14 @@ export default function Contact() {
               rows={4}
               name="Mensaje"
               required
-              style={{fontFamily:'Quicksand'}}
+              style={{ fontFamily: "Quicksand" }}
             />
             <br />
-            <button className="boton">Enviar</button>
+            <button className="boton-contact">Enviar</button>
           </form>
         </div>
+        <Footer />
       </div>
-
-      <Footer />
-    </>
+    </section>
   );
 }

@@ -38,7 +38,7 @@
     padding: 15px;
 } */
 
-.boton{
+.boton-contact{
     text-transform: uppercase;
     vertical-align: bottom;
     border: 0;
@@ -47,18 +47,36 @@
     padding: 0.625rem 1.5rem 0.5rem;
     font-size: .75rem;
     line-height: 1.5;
-    background-color: #326789;
+    background-color: rgba(15,65,162,1);
     border-radius: 0.25rem;
     cursor: pointer;
     color: white;
     font-family: Quicksand;
+    margin-bottom: 2%;
     
 }
 
+.boton-contact:hover{
+    background-color:rgb(49,120,200);
+    box-shadow: 0px 15px 20px rgb(49,120,200);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
 .container-text{
-    text-shadow: 2px 2px 4px #08080856;
+   margin-top: 50px;
+}
+
+.datos-contact{
+    color: #02003d;
+    text-transform: uppercase;
+    /* text-align: center; */
+    /* font-weight: 200; */
+    /* position: relative; */
+    /* padding-bottom: 35px; */
+    /* letter-spacing: 0.5px; */
+    /* font-family: YuGothL; */
     font-family: Quicksand;
-    font-size: 50px;
 }
 
 .input-container label {
@@ -77,6 +95,19 @@
     transform: translate(0, 12px) scale(0.8);
     color: #0a53e4;
   }
+
+  #contact{
+    background-image: url('../../assets/soluciones-background.jpg');
+    background-size: cover;
+    /* padding: 60px 0 40px; */
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    background-attachment:fixed;
+    width: 100%;
+    height: 100%;
+
+}
+
 
 
 

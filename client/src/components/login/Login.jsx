@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBCheckbox,
-} from "mdb-react-ui-kit";
+import { MDBContainer, MDBCol, MDBRow, MDBCheckbox } from "mdb-react-ui-kit";
 import {
   getActiveUser,
   cleanUsers,
@@ -16,11 +11,10 @@ import {
 import NavBar from "../navbar/NavBar";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import Swal from "sweetalert2";
-import swal from "sweetalert";
 import "./Login.css";
 import { Form } from "react-bootstrap";
 import UsePasswordToggle from "../../hooks/UsePasswordToggle";
-
+import log from '../../assets/authentication.png'
 
 export default function Login() {
   const user = useSelector((state) => state.user);
@@ -95,14 +89,14 @@ export default function Login() {
         text: "Para más información comuniquese con",
       });
     } else if (user?.active === false) {
-      swal(
+      Swal.fire(
         "Tu cuenta se encuentra desactivada, ¿deseas activarla para iniciar sesión?",
         {
           buttons: ["No", "Si"],
         }
       ).then((value) => {
         if (value) {
-          swal("Buen trabajo!", "Entró al sistema correctamente!", "success");
+          Swal.fire("Buen trabajo!", "Entró al sistema correctamente!", "success");
           dispatch(activateUser(user.email));
           setInput({
             email: "",
@@ -138,42 +132,8 @@ export default function Login() {
           history.push("/");
         }
       });
-      // const swalWithBootstrapButtons = Swal.mixin({
-      //   customClass: {
-      //     confirmButton: 'btn btn-success',
-      //     cancelButton: 'btn btn-danger'
-      //   },
-      //   buttonsStyling: false
-      // })
-
-      // swalWithBootstrapButtons.fire({
-      //   title: 'Are you sure?',
-      //   text: "You won't be able to revert this!",
-      //   icon: 'warning',
-      //   showCancelButton: true,
-      //   confirmButtonText: 'Yes, delete it!',
-      //   cancelButtonText: 'No, cancel!',
-      //   reverseButtons: true
-      // }).then((result) => {
-      //   if (result.isConfirmed) {
-      //     swalWithBootstrapButtons.fire(
-      //       'Deleted!',
-      //       'Your file has been deleted.',
-      //       'success'
-      //     )
-      //   } else if (
-      //     /* Read more about handling dismissals below */
-      //     result.dismiss === Swal.DismissReason.cancel
-      //   ) {
-      //     swalWithBootstrapButtons.fire(
-      //       'Cancelled',
-      //       'Your imaginary file is safe :)',
-      //       'error'
-      //     )
-      //   }
-      // })
     } else if (user.active === true) {
-      Swal.fire("Buen trabajo!", "Entró al sistema correctamente!", "success");
+      Swal.fire("Buen trabajo!", "Has ingresado al sistema correctamente!", "success");
       setInput({
         email: "",
         password: "",
@@ -181,7 +141,7 @@ export default function Login() {
       history.push("/user");
     }
     // }
-  }, [user]);
+  }, [user, dispatch, history]);
 
   function handleChange(e) {
     setInput({
@@ -227,9 +187,10 @@ export default function Login() {
           <MDBRow>
             <MDBCol col="10" md="6">
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                class="img-fluid"
-                alt="Phone image"
+                src={log}
+                className="img-fluid"
+                alt="Phone"
+                style={{marginTop:'-40px'}}
               />
             </MDBCol>
 
