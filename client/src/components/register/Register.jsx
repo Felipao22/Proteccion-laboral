@@ -7,6 +7,7 @@ import {createUser, getAllProvinces, getAllCities} from '../../redux/actions/ind
 import "./Register.css";
 import NavBar from "../navbar/NavBar";
 
+
 export default function Register() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -61,21 +62,6 @@ export default function Register() {
     errortelefono: "",
   });
 
-  useEffect(() => {
-    validate();
-  }, [
-    input.email,
-    input.password,
-    input.confirmPassword,
-    input.nombreEmpresa,
-    input.cuit,
-    input.nombreEstablecimiento,
-    input.provincia,
-    input.ciudad,
-    input.direccion,
-    input.telefono,
-  ],);
-
   const validate = () => {
     let erroremail = "";
     let errorpassword = "";
@@ -101,7 +87,7 @@ export default function Register() {
       !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(input.password)
     ) {
       errorpassword =
-      <ul>
+      <ul className="lista">
         <li>
         La contraseña debe tener entre 8 y 16 carácteres.
         </li>
@@ -195,6 +181,24 @@ export default function Register() {
     });
   };
 
+  useEffect(() => {
+    validate();
+  }, [
+    input.email,
+    input.password,
+    input.confirmPassword,
+    input.nombreEmpresa,
+    input.cuit,
+    input.nombreEstablecimiento,
+    input.provincia,
+    input.ciudad,
+    input.direccion,
+    input.telefono,
+  ]);
+ 
+
+  
+
   const handleInputChange = (event) => {
     event.preventDefault();
     setInput((prevInput) => {
@@ -264,7 +268,6 @@ export default function Register() {
       <div className="register" >
         <div className="col-1">
           <h2>Registrarse</h2>        
-          {/* <span>Registre su empresa</span> */}
           <form
             id="form"
             className="flex flex-col"
@@ -290,6 +293,7 @@ export default function Register() {
               name="password"
               id="password"
               required
+              autoComplete="off"
             />
             {error.errorpassword && <small>
               {error.errorpassword}</small>}
@@ -302,6 +306,7 @@ export default function Register() {
               name="confirmPassword"
               id="confirmPassword"
               required
+              autoComplete="off"
             />
             {error.errorconfirmPassword && <small>{error.errorconfirmPassword}</small>}
             <label htmlFor="namebusiness">
@@ -405,5 +410,23 @@ export default function Register() {
         </div>
       </div>
     </section>
+    // <div className="background-register">
+    // <NavBar/>
+    // <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image'  >
+    //   <div className='mask gradient-custom-3'></div>
+    //   <MDBCard className='m-5' style={{maxWidth: '600px'}}>
+    //     <MDBCardBody className='px-5'>
+    //       <h2 className="text-uppercase text-center mb-5">Create an account</h2>
+    //       <MDBInput wrapperClass='mb-4' label='Your Name' size='lg' id='form1' type='text'/>
+    //       <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/>
+    //       <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/>
+    //       <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/>
+    //       <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Register</MDBBtn>
+    //     </MDBCardBody>
+    //   </MDBCard>
+    // </MDBContainer>
+    
+    // </div>
+   
   );
 }

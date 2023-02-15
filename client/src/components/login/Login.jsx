@@ -217,6 +217,7 @@ export default function Login() {
                   id="password"
                   value={input.password}
                   onChange={(e) => handleChange(e)}
+                  autoComplete='off'
                 />
                 <i className="fa fa-lock"></i>
                 <i className="eye">{ToggleIcon}</i>

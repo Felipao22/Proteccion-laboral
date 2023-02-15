@@ -1,13 +1,11 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./Carousel.css";
-// import IMAGE from "../../assets/LOGO CUADRADO.png";
 
 export default function Carrusel() {
   return (
     <Carousel>
       <Carousel.Item interval={2000}>
-        {/* <img className="image-overlay" src={IMAGE} alt="Logo" /> */}
         <img
           className="d-block w-100 "
           src="https://uploads-ssl.webflow.com/5e95bff252d2e8729955e6e7/60c3358cc3ab0c37fd2297be_10-Health-%26-Safety-procedures-used-by-organisations-blog-compressed.png"

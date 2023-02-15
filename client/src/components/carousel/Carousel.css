@@ -31,15 +31,17 @@
   transition: left 0.5s;
 }
 
-.carousel-control-prev, .carousel-control-next, .carousel-item-prev, .carousel-item-next {
+/* .carousel-control-prev, .carousel-control-next, .carousel-item-prev, .carousel-item-next {
   z-index: 2;
-}
+} */
 
 .carousel-control-prev-icon::after {
-  visibility: hidden !important;
+  display: none !important;
+  /* visibility: hidden !important; */
 }
 .carousel-control-next-icon::after {
-  visibility: hidden !important;
+  display: none !important;
+  /* visibility: hidden !important; */
 }
 
 .carousel-fade .carousel-item, .carousel-item img  {

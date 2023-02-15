@@ -1,0 +1,36 @@
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10vw;
+}
+
+@media only screen and (min-width: 1101px) {
+   .spinner{
+    margin-top:20vw
+   }
+}
+@media only screen and (max-width: 1100px) and (max-width: 767px){
+   .spinner{
+    margin-top:20vw
+   }
+   
+}
+@media only screen and (min-width: 767px){
+  .spinner{
+    margin-top:20vw
+  }
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+.spinner{
+    margin-top:20vw
+}
+
+}
+@media only screen and (max-width: 312px){
+.spinner{
+    margin-top:20vw
+}
+}
+}

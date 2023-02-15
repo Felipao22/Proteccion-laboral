@@ -34,18 +34,31 @@
         margin: 0 auto;
         left: 0;
         right: 0;
-        top: 40%; /* Adjust this value to move the positioned div up and down */
+        top: 40%; 
         text-align: center;
-        width: 60%; /* Set the width of the positioned div */
+        width: 60%; 
         color: white;
+        font-size: 23px;
+        font-weight: 500;
+        letter-spacing: 4px;
+}
+@media (max-width: 768px){
+
+    .text-overlay {
+        font-size: 12px;
+        font-weight: 500;
+        display: table;
+        width: 60%;
+        margin: 0 auto;
+        letter-spacing: 4px;
+        text-align: center;
+    }
 }
 
 #soluciones{
     background-image: url('../../assets/soluciones-background.jpg');
     background-size: cover;
-    /* padding: 60px 0 40px; */
     background-repeat: no-repeat;
-    /* position: absolute; */
     background-attachment:fixed;
     width: 100%;
     height: 100%;
