@@ -1,39 +1,47 @@
-.container {
-    width: 100%;
+.container-services {
+    max-width: 1300px;
+    /* width: 100%; */
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 200px;
 }
 
-#about .container {
+#about-services .container-services {
     position: relative;
     z-index: 10;
 }
 
-@media (min-width: 1200px){
-    .container {
+@media only screen and(min-width: 1200px){
+    .container-services {
         max-width: 1140px;
     }
 }
 
-@media (min-width: 992px){
-    .container {
+ @media only screen and(min-width: 1200px){
+    .container-services {
+        max-width: 1140px;  
+    }
+}
+
+/* @media only screen and (min-width: 992px){
+    .container-services {
         max-width: 960px;
     }
-}
+} */
 
-@media (min-width: 768px){
-    .container {
+/* @media only screen and(min-width: 768px){
+    .container-services {
         max-width: 720px;
     }
-}
+} */
 
-@media (min-width: 576px) {
-    .container {
+/* @media only screen and (min-width: 576px) {
+    .container-services {
         max-width: 540px;
     }
-}
+} */
 
 .row {
     display: flex;
@@ -56,23 +64,23 @@
     padding-left: 15px;
 }
 
-#about .about-col .img {
+#about-services .about-col .img {
     position: relative;
 }
 
-#about .about-col {
+#about-services .about-col {
     width: 90%;
     background: linear-gradient(0deg,#164ca9,#43126e 100%,#00d4ff 0);
     border-radius: 15px;
     box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
-    margin: 0 auto 200px;
+    margin: 0 auto 20px;
     text-align: center;
     padding: 35px 0 15px;
 }
 
 
 
-#about .about-col h2 {
+#about-services .about-col h2 {
     color: #fff;
     text-align: center;
     font-weight: 500;
@@ -83,7 +91,7 @@
     text-decoration: none;
 }
 
-#about .about-col p {
+#about-services .about-col p {
     font-size: 13px;
     line-height: 28px;
     font-weight: 500;
@@ -96,38 +104,35 @@
     height: 150px;
 }
 
-#about .about-col .icono {
+#about-services .about-col .icono {
     transition: .3s;
 }
 
-#about .about-col i {
+#about-services .about-col i {
     font-size: 36px;
     line-height: 1;
     color: #fff;
     transition: .3s;
 }
 
-#about .about-bg1, #about .about-bg2 {
+#about-services .about-bg1, #about-services .about-bg2 {
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#about .about-bg1 {
-    /* background: rgb(50,103,137);
-background: linear-gradient(0deg, rgba(50,103,137,1) 0%, rgba(120,166,200,1) 100%); */
-/* background-image: url('../../assets//tarjeta.jpg'); */
-background: rgb(49,120,200);
-background: linear-gradient(0deg, rgba(49,120,200,1) 0%, rgba(15,65,162,1) 100%);
+#about-services .about-bg1 {
+    background: rgb(49,120,200);
+    background: linear-gradient(0deg, rgba(49,120,200,1) 0%, rgba(15,65,162,1) 100%);
 }
 
-#about .about-col {
+#about-services .about-col {
     transition: all .3s;
 }
 
 .ion-chevron-down:before {
     content: \f123;
 }
-#about .about-col:hover {
+#about-services .about-col:hover {
     transform: scale(1.15);
 }
 
@@ -137,6 +142,9 @@ background: linear-gradient(0deg, rgba(49,120,200,1) 0%, rgba(15,65,162,1) 100%)
     justify-content: center;
     align-items: center;
     margin: 150px;
+    text-shadow: 2px 2px 4px #08080856;
+    font-family: Quicksand;
+    font-size: 50px;
 }
 
 element.style {
@@ -151,5 +159,4 @@ element.style {
     background-position: center center;
     height: 200px;
 }
-
 

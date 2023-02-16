@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navbar/NavBar";
+// import NavBar from "../navbar/NavBar";
 import Footer from "../footer/Footer";
 import "./Soluciones.css";
 import { Carousel } from "react-bootstrap";
@@ -13,7 +13,7 @@ export default function Soluciones() {
     <section id="soluciones">
       <div>
         <div className="background">
-          <NavBar />
+          {/* <NavBar /> */}
           <Carousel variant="dark" indicators={false}>
             <Carousel.Item interval={2000}>
               <h2 className="text-overlay">GESTIONAMOS TUS SERVICIOS</h2>

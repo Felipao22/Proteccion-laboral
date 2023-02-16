@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navbar/NavBar.jsx";
+// import NavBar from "../navbar/NavBar.jsx";
 import Footer from "../footer/Footer.jsx";
 import "./Nosotros.css";
 import uno from "../../assets/1.jpg";
@@ -7,9 +7,7 @@ import uno from "../../assets/1.jpg";
 export default function Nosotros() {
   return (
     <>
-      <div>
-        <NavBar />
-      </div>
+      <div>{/* <NavBar /> */}</div>
       <h1 className="container-pregunta">¿QUIÉNES SOMOS?</h1>
       <div data-testid="aboutPage" className="about-layout-main">
         <section>

@@ -8,7 +8,7 @@ import {
   activateUser,
   login,
 } from "../../redux/actions";
-import NavBar from "../navbar/NavBar";
+// import NavBar from "../navbar/NavBar";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import Swal from "sweetalert2";
 import "./Login.css";
@@ -180,7 +180,7 @@ export default function Login() {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
 
       <Form onSubmit={(e) => handleSubmitLoginUser(e)}>
         <MDBContainer fluid className="p-3 my-5">

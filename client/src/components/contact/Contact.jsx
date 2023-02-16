@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navbar/NavBar";
+// import NavBar from "../navbar/NavBar";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "./Contact.css";
 import Footer from "../footer/Footer";
@@ -43,10 +43,10 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact">
-      <NavBar />
-      <div className="background">
+    <section id="contact-section">
+      <div className="background-contact">
         <h1 className="container-text">¿Qué desea consultarnos?</h1>
+      {/* <NavBar /> */}
 
         <div className="container-contact">
           <form onSubmit={sendEmail}>

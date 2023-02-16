@@ -3,10 +3,13 @@ import bgImg from "../../assets/img1.jpg";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {createUser, getAllProvinces, getAllCities} from '../../redux/actions/index'
+import {
+  createUser,
+  getAllProvinces,
+  getAllCities,
+} from "../../redux/actions/index";
 import "./Register.css";
-import NavBar from "../navbar/NavBar";
-
+// import NavBar from "../navbar/NavBar";
 
 export default function Register() {
   const history = useHistory();
@@ -16,7 +19,7 @@ export default function Register() {
     if (a.nombre > b.nombre) return 1;
     if (b.nombre > a.nombre) return -1;
     return 0;
-  })
+  });
   const gState = useSelector((state) => state);
 
   let CITIES = useSelector((state) => state.cities);
@@ -24,16 +27,14 @@ export default function Register() {
     if (a.nombre > b.nombre) return 1;
     if (b.nombre > a.nombre) return -1;
     return 0;
-  })
+  });
 
   const VALIDATE_EMAIL = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-  const VALIDATE_NOMBRE_EMPRESA = /^[A-Z]+[A-Za-z0-9\s]+$/g; 
+  const VALIDATE_NOMBRE_EMPRESA = /^[A-Z]+[A-Za-z0-9\s]+$/g;
   const VALIDATE_CUIT = /^[0-9]{11}$/;
   const VALIDATE_NOMBRE_ESTABLECIMIENTO = /^[A-Z]+[A-Za-z0-9\s]+$/g;
   const VALIDATE_DIRECCION = /^[A-Z]+[A-Za-z0-9\s]+$/g;
-  const VALIDATE_TELEFONO = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s/0-9]*$/g; 
-
-
+  const VALIDATE_TELEFONO = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s/0-9]*$/g;
 
   const [input, setInput] = useState({
     email: "",
@@ -74,65 +75,59 @@ export default function Register() {
     let errordireccion = "";
     let errortelefono = "";
 
-
-    if(!input.email){
+    if (!input.email) {
       erroremail = "";
-    } else if(!VALIDATE_EMAIL.test(input.email)){
-      erroremail = 'Escriba un correo electrónico válido.'
-    } else{  
-        erroremail = 'Correo electrónico válido.'
+    } else if (!VALIDATE_EMAIL.test(input.email)) {
+      erroremail = "Escriba un correo electrónico válido.";
+    } else {
+      erroremail = "Correo electrónico válido.";
     }
     if (
       !input.password ||
       !/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(input.password)
     ) {
-      errorpassword =
-      <ul className="lista">
-        <li>
-        La contraseña debe tener entre 8 y 16 carácteres.
-        </li>
-        <li>
-        Al menos un dígito.
-        </li>
-        <li>
-        Al menos una minúscula.
-        </li>
-        <li>
-        Y al menos una mayúscula.
-        </li>
-      </ul>
+      errorpassword = (
+        <ul className="lista">
+          <li>La contraseña debe tener entre 8 y 16 carácteres.</li>
+          <li>Al menos un dígito.</li>
+          <li>Al menos una minúscula.</li>
+          <li>Y al menos una mayúscula.</li>
+        </ul>
+      );
     } else {
       errorpassword = "Contraseña válida.";
     }
-    if(input.confirmPassword === "")
-   { errorconfirmPassword = "";}
-    else if(input.password !== input.confirmPassword){
+    if (input.confirmPassword === "") {
+      errorconfirmPassword = "";
+    } else if (input.password !== input.confirmPassword) {
       errorconfirmPassword = "Las contraseñas no coinciden.";
     } else {
       errorconfirmPassword = "Hecho!";
     }
-    if (!input.nombreEmpresa){
-        errornombreEmpresa = "";
-      } else if(!VALIDATE_NOMBRE_EMPRESA.test(input.nombreEmpresa)){ 
+    if (!input.nombreEmpresa) {
+      errornombreEmpresa = "";
+    } else if (!VALIDATE_NOMBRE_EMPRESA.test(input.nombreEmpresa)) {
       errornombreEmpresa = "La primera letra debe estar en mayúscula.";
     } else {
       errornombreEmpresa = "Hecho!";
     }
 
     //falta validar cantidad de numeros 11 y sin guión.
-    if (!input.cuit){
-      errorcuit= '';
-    }else if(!VALIDATE_CUIT.test(input.cuit)){
-      errorcuit = "Deben ser 11 números."
-    }else {
+    if (!input.cuit) {
+      errorcuit = "";
+    } else if (!VALIDATE_CUIT.test(input.cuit)) {
+      errorcuit = "Deben ser 11 números.";
+    } else {
       errorcuit = "Hecho!";
     }
-    
-    if(!input.nombreEstablecimiento){
-      errornombreEstablecimiento= '';
-    }else if(!VALIDATE_NOMBRE_ESTABLECIMIENTO.test(input.nombreEstablecimiento)){
+
+    if (!input.nombreEstablecimiento) {
+      errornombreEstablecimiento = "";
+    } else if (
+      !VALIDATE_NOMBRE_ESTABLECIMIENTO.test(input.nombreEstablecimiento)
+    ) {
       errornombreEstablecimiento = "La primera letra debe estar en mayúscula.";
-    }else {
+    } else {
       errornombreEstablecimiento = "Hecho!";
     }
     if (!input.provincia) {
@@ -146,20 +141,21 @@ export default function Register() {
       errorciudad = "Hecho!";
     }
 
-    if(!input.direccion){
-      errordireccion = '';
-    }else if(!VALIDATE_DIRECCION.test(input.direccion)){
+    if (!input.direccion) {
+      errordireccion = "";
+    } else if (!VALIDATE_DIRECCION.test(input.direccion)) {
       errordireccion = "La primera letra debe estar en mayúscula.";
-    } else{
+    } else {
       errordireccion = "Hecho!";
     }
 
-
     if (!input.telefono) {
       errortelefono = "";
-    } else if( !VALIDATE_TELEFONO.test(input.telefono) ||
-    input.telefono[0] === "" ||
-    input.telefono.length < 10){
+    } else if (
+      !VALIDATE_TELEFONO.test(input.telefono) ||
+      input.telefono[0] === "" ||
+      input.telefono.length < 10
+    ) {
       errortelefono = "";
     } else {
       errortelefono = "Hecho!";
@@ -195,9 +191,6 @@ export default function Register() {
     input.direccion,
     input.telefono,
   ]);
- 
-
-  
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -244,7 +237,7 @@ export default function Register() {
       input.nombreEstablecimiento !== "" &&
       input.telefono !== ""
     ) {
-      dispatch(createUser(input))
+      dispatch(createUser(input));
       Swal.fire("Buen trabajo", "Usuario creada con exito", "success");
       history.push("/");
     } else {
@@ -261,13 +254,12 @@ export default function Register() {
     dispatch(getAllCities());
   }, [dispatch]);
 
-
   return (
     <section>
-      <NavBar />
-      <div className="register" >
+      {/* <NavBar /> */}
+      <div className="register">
         <div className="col-1">
-          <h2>Registrarse</h2>        
+          <h2>Registrarse</h2>
           <form
             id="form"
             className="flex flex-col"
@@ -295,8 +287,7 @@ export default function Register() {
               required
               autoComplete="off"
             />
-            {error.errorpassword && <small>
-              {error.errorpassword}</small>}
+            {error.errorpassword && <small>{error.errorpassword}</small>}
             <label htmlFor="confirmpwd">Confirme su contraseña:</label>
             <input
               type="password"
@@ -308,7 +299,9 @@ export default function Register() {
               required
               autoComplete="off"
             />
-            {error.errorconfirmPassword && <small>{error.errorconfirmPassword}</small>}
+            {error.errorconfirmPassword && (
+              <small>{error.errorconfirmPassword}</small>
+            )}
             <label htmlFor="namebusiness">
               Ingrese el nombre de la empresa:
             </label>
@@ -321,7 +314,9 @@ export default function Register() {
               id="nombreEmpresa"
               required
             />
-            {error.errornombreEmpresa && <small>{error.errornombreEmpresa}</small>}
+            {error.errornombreEmpresa && (
+              <small>{error.errornombreEmpresa}</small>
+            )}
             <label htmlFor="namebusiness">
               Ingrese el nombre del establecimiento:
             </label>
@@ -334,7 +329,9 @@ export default function Register() {
               id="nombreEstablecimiento"
               required
             />
-            {error.errornombreEstablecimiento && <small>{error.errornombreEstablecimiento}</small>}
+            {error.errornombreEstablecimiento && (
+              <small>{error.errornombreEstablecimiento}</small>
+            )}
             <label htmlFor="cuit">Ingrese su número de CUIT:</label>
             <input
               type="number"
@@ -348,17 +345,17 @@ export default function Register() {
             {error.errorcuit && <small>{error.errorcuit}</small>}
             <label htmlFor="provincia">Provincia:</label>
             <select
-                  name="provincia"
-                  value={input.provincia}
-                  onChange={(e) => handleInputChange(e)}
-                >
-                  <option value="">{ } </option>
-                  {PROVINCES?.map((e) => (
-                    <option key={e.id} value={e.nombre}>
-                      {e.nombre}
-                    </option>
-                  ))}
-                </select>
+              name="provincia"
+              value={input.provincia}
+              onChange={(e) => handleInputChange(e)}
+            >
+              <option value="">{} </option>
+              {PROVINCES?.map((e) => (
+                <option key={e.id} value={e.nombre}>
+                  {e.nombre}
+                </option>
+              ))}
+            </select>
             {error.errorprovincia && <small>{error.errorprovincia}</small>}
             <label htmlFor="ciudad">Ciudad:</label>
             <select
@@ -367,17 +364,19 @@ export default function Register() {
               onChange={(e) => handleInputChange(e)}
             >
               <option value="">{} </option>
-              {
-                    input.provincia
-                      ? CITIES?.filter((e) => e.provinceId === gState.provinces?.filter((e) => e.nombre === input.provincia)[0].id
-                        )
-                        ?.map((e) => (
-                          <option key={e.id} name={e.nombre} value={e.nombre}>
-                            {e.nombre}
-                          </option>
-                        ))
-                      : ""
-                  }
+              {input.provincia
+                ? CITIES?.filter(
+                    (e) =>
+                      e.provinceId ===
+                      gState.provinces?.filter(
+                        (e) => e.nombre === input.provincia
+                      )[0].id
+                  )?.map((e) => (
+                    <option key={e.id} name={e.nombre} value={e.nombre}>
+                      {e.nombre}
+                    </option>
+                  ))
+                : ""}
             </select>
             {error.errorciudad && <small>{error.errorciudad}</small>}
             <label htmlFor="adress">Dirección:</label>
@@ -410,23 +409,5 @@ export default function Register() {
         </div>
       </div>
     </section>
-    // <div className="background-register">
-    // <NavBar/>
-    // <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image'  >
-    //   <div className='mask gradient-custom-3'></div>
-    //   <MDBCard className='m-5' style={{maxWidth: '600px'}}>
-    //     <MDBCardBody className='px-5'>
-    //       <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-    //       <MDBInput wrapperClass='mb-4' label='Your Name' size='lg' id='form1' type='text'/>
-    //       <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/>
-    //       <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/>
-    //       <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/>
-    //       <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Register</MDBBtn>
-    //     </MDBCardBody>
-    //   </MDBCard>
-    // </MDBContainer>
-    
-    // </div>
-   
   );
 }

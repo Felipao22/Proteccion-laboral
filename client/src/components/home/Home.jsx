@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../carousel/Carousel";
-import NavBar from "../navbar/NavBar";
+// import NavBar from "../navbar/NavBar";
 import "./Home.css";
 import Footer from "../footer/Footer";
 import Services from "../services/Services";
@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Carousel />
       <div className="header">
         <p>
