@@ -77,13 +77,15 @@
 
 
 #contact-section {
-padding-top: 2rem;
+  padding-top: 2rem;
   /* background-image: url("../../assets/soluciones-background.jpg"); */
   background: url('../../assets/soluciones-background.jpg') fixed no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  appearance: none;
+  -webkit-appearance: none;
   /* background-repeat: no-repeat; */
   /* background-attachment: fixed; */
   /* -o-background-repeat: no-repeat; */
