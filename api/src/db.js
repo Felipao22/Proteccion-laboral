@@ -67,6 +67,8 @@ const { User } = sequelize.models;
 // Country.belongsToMany(Activities,{through:'country_activities'});
 // Activities.belongsToMany(Country,{through:'country_activities'});
 
+// Pdf.hasOne
+
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');

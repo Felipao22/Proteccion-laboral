@@ -1,66 +1,78 @@
-.text-soluciones{
-    margin:60px;
-    font-family: YuGothL;
-    color:black;
-    font-weight: bolder;
-    position: relative;
-    letter-spacing: 0.5px;
-    /* font-size: 14px; */
-    /* font-weight: 400; */
-    /* font-weight:normal; */
-    /* text-transform: uppercase; */
-    /* display: flex;
+.text-soluciones {
+  margin: 60px;
+  font-family: YuGothL;
+  color: black;
+  font-weight: bolder;
+  position: relative;
+  letter-spacing: 0.5px;
+  /* font-size: 14px; */
+  /* font-weight: 400; */
+  /* font-weight:normal; */
+  /* text-transform: uppercase; */
+  /* display: flex;
     flex-direction: column; */
 }
 
-.header-soluciones{
-    /* display: flex;
+.header-soluciones {
+  /* display: flex;
     justify-content: center;
     margin: 20px;
     color: black;
     text-shadow: 2px 2px 4px #000000;
     font-family: YuGothL;
     font-size: 50px; */
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 /* .background-soluciones{
     position: absolute;
 } */
 
-.text-overlay{
-    position: absolute;
-        z-index: 999;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: 40%; 
-        text-align: center;
-        width: 60%; 
-        color: white;
-        font-size: 23px;
-        font-weight: 500;
-        letter-spacing: 4px;
+.text-overlay {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+  text-align: center;
+  width: 60%;
+  color: white;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 4px;
 }
-@media (max-width: 768px){
-
-    .text-overlay {
-        font-size: 12px;
-        font-weight: 500;
-        display: table;
-        width: 60%;
-        margin: 0 auto;
-        letter-spacing: 4px;
-        text-align: center;
-    }
+@media (max-width: 768px) {
+  .text-overlay {
+    font-size: 12px;
+    font-weight: 500;
+    display: table;
+    width: 60%;
+    margin: 0 auto;
+    letter-spacing: 4px;
+    text-align: center;
+  }
 }
 
-#soluciones{
-    background-image: url('../../assets/soluciones-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    width: 100%;
-    height: 100%;
+#soluciones {
+  background-image: url("../../assets/soluciones-background.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -o-background-repeat: no-repeat;
+  -webkit-background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
 
+.carousel-control-prev-icon::after {
+  display: none !important;
+  /* visibility: hidden !important; */
+}
+.carousel-control-next-icon::after {
+  display: none !important;
+  /* visibility: hidden !important; */
 }

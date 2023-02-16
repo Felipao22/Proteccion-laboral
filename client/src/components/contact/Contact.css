@@ -78,9 +78,13 @@
 #contact-section {
   background-image: url("../../assets/soluciones-background.jpg");
   background-size: cover;
-  padding: 60px 0 40px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  -o-background-repeat: no-repeat;
+  -webkit-background-attachment: fixed;
   width: 100%;
   height: 100%;
 }
