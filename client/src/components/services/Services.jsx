@@ -1,10 +1,29 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./services.css";
 import Logo from "../../assets/LOGO CUADRADO blanco.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Services() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }else {
+       entry.target.classList.remove('show')
+      }
+    });
+  });
+
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".section-header");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  });
+  
+
+
+
   return (
     <>
       <section id="about-services">
@@ -12,6 +31,7 @@ export default function Services() {
           <header className="section-header">
             <h1>Nuestros servicios</h1>
           </header>
+          <div className="fsl-title-deco"></div>
           <div className="row about-cols">
             <div className="col-md-4 wow">
               <a href="/services" style={{ textDecoration: "none" }}>

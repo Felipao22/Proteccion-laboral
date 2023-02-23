@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Carousel from "../carousel/Carousel";
 // import NavBar from "../navbar/NavBar";
 import "./Home.css";
@@ -8,10 +8,27 @@ import Business from "../business/Business";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 export default function Home() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }else {
+       entry.target.classList.remove('show')
+      }
+    });
+  });
+
+  useEffect(() => {
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  });
+
+
   return (
     <div>
       <Carousel/>
-      <div className="header" id="back-to-top-anchor">
+      <div className="hidden">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
           accusamus? Eveniet, eius. Autem, ratione nulla. Ut a enim pariatur,

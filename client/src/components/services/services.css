@@ -143,8 +143,20 @@
     align-items: center;
     margin: 150px;
     text-shadow: 2px 2px 4px #08080856;
-    font-family: Quicksand;
+    /* font-family: Quicksand; */
     font-size: 50px;
+    opacity: 0;
+    -webkit-filter:blur(5px);
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition:all 1s;
+}
+
+.show{
+    opacity: 1;
+    -webkit-filter:blur(0);
+    filter: blur(0);
+    transform: translateX(0);
 }
 
 element.style {
@@ -160,3 +172,12 @@ element.style {
     height: 200px;
 }
 
+.fsl-title-deco {
+    width: 180px;
+    height: 1.9px;
+    margin-right: auto;
+    margin-bottom: 180px;
+    margin-left: auto;
+    background-color: rgba(15, 65, 162, 1);
+    margin-top:-11rem;
+  }
