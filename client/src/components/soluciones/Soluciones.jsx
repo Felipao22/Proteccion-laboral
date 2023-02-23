@@ -6,9 +6,21 @@ import { Carousel } from "react-bootstrap";
 import soluciones from "../../assets/soluciones.jpg";
 import soluciones2 from "../../assets/soluciones2.jpg";
 import soluciones3 from "../../assets/soluciones3.jpg";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import {Popover} from 'antd'
 
 export default function Soluciones() {
+
+  const content = (
+    <div>
+      <p>Podes solicitar
+                  sin cargo un Diagnóstico del estado siniestral y del
+                cumplimiento </p>
+      <p>  sobre las obligaciones legales en materia de
+                higiene y seguridad de tú empresa.</p>
+    </div>
+  );
+  
   return (
     <section id="soluciones">
       <div>
@@ -16,7 +28,7 @@ export default function Soluciones() {
           {/* <NavBar /> */}
           <Carousel variant="dark" indicators={false}>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">GESTIONAMOS TUS SERVICIOS</h2>
+              <h2 className="text-overlay">GESTIón</h2>
               <img
                 className="d-block w-100 "
                 src={soluciones}
@@ -24,7 +36,7 @@ export default function Soluciones() {
               />
             </Carousel.Item>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">GESTIONAMOS TUS SERVICIOS</h2>
+              <h2 className="text-overlay">Prevención</h2>
               <img
                 className="d-block w-100"
                 src={soluciones2}
@@ -32,7 +44,7 @@ export default function Soluciones() {
               />
             </Carousel.Item>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">GESTIONAMOS TUS SERVICIOS</h2>
+              <h2 className="text-overlay">Asesoramiento</h2>
               <img
                 className="d-block w-100"
                 src={soluciones3}
@@ -41,23 +53,67 @@ export default function Soluciones() {
             </Carousel.Item>
           </Carousel>
           <h1 className="header-soluciones">Servicios</h1>
-          <div className="text-soluciones">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              vel pariatur esse consectetur, temporibus placeat, accusamus
-              doloremque qui incidunt possimus asperiores ullam eaque beatae?
-              Unde incidunt sapiente doloribus debitis illum enim a earum, culpa
-              iure asperiores velit non delectus officia. Soluta porro
-              praesentium fuga minus id asperiores quam officia iste labore
-              earum minima, repellat distinctio excepturi omnis aperiam velit,
-              fugiat incidunt dicta. Aut, fuga explicabo alias possimus
-              excepturi delectus ipsum nisi? Qui ad atque quidem dolore dolores
-              officiis. Porro distinctio totam officia suscipit pariatur
-              temporibus magni asperiores fugiat, cumque voluptatibus ipsa
-              explicabo maxime tempora voluptate excepturi dignissimos
-              architecto beatae ad.
-            </p>
-            <p>
+          <div className="description-paragraph">
+            <ul className="column-ul">
+              <li>
+                Informes para habilitación Municipal.
+                <Popover placement="bottom" content={content}>
+                  <button style={{all:'unset', cursor:'pointer', color:'red'}}>¡Novedad!</button>
+                
+                </Popover>
+              </li>
+              <li>
+                Capacitaciones en materia de Prevención de Accidentes de Trabajo
+                y Enfermedades Profesionales.{" "}
+              </li>
+              <li>
+                Mediciones protocolarizadas de Ruido (Resolución S.R.T. N°
+                85/2012).
+              </li>
+              <li>
+                Mediciones protocolarizadas de Iluminación (Resolución S.R.T. N°
+                84/2012).
+              </li>
+              <li>
+                Evaluaciones Ergonómicas protocolarizadas (Resolución S.R.T. N°
+                886/2015).
+              </li>
+              <li>Estudios técnicos de Carga de Fuego.</li>
+              <li>
+                Estudio técnico de valoración de Puesta a Tierra y Continuidad
+                (Resolución S.R.T. N°900/2015).
+              </li>
+              <li>
+                Programas de Seguridad para obras (Resoluciones S.R.T. N°
+                51/1997, 35/1998, 319/1999).
+              </li>
+              <li>Supervisión de obras (Resolución S.R.T. 231/1996).</li>
+              <li>
+                Asesoramiento sobre gestión de siniestros y coberturas de A.R.T.
+              </li>
+              <li>
+                Implementación y desarrollo de programas para la reducción de la
+                siniestralidad.
+              </li>
+              <li>
+                Servicios mensuales de asesoramiento y gestión en Higiene y
+                Seguridad (Decreto S.R.T. 1338/1996 y Resolución S.R.T.
+                900/2015).
+              </li>
+              <li>Confección de Planos de Evacuación.</li>
+              <li>Desarrollo de Planes de acción ante Emergencias.</li>
+              <li>
+                Relevamientos direccionados sobre el control de infraestructura,
+                y elementos de prevención.
+              </li>
+              <li>
+                {" "}
+                Confección, adecuación y control de legajos técnicos sobre el
+                registro de documentación en materia de Higiene y Seguridad.
+              </li>
+            </ul>
+
+            {/* <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
               possimus incidunt quibusdam architecto, ex magnam? Iure nihil
               laborum eius laudantium est qui, assumenda maxime ipsam, quo illo,
@@ -98,7 +154,7 @@ export default function Soluciones() {
               laudantium, neque numquam mollitia dicta animi quod tempore
               expedita iure odio labore excepturi unde voluptatem esse
               perspiciatis cum! A ipsa exercitationem eius maiores.
-            </p>
+            </p> */}
           </div>
         </div>
         <br />

@@ -6,14 +6,12 @@ import Footer from "../footer/Footer";
 import Services from "../services/Services";
 import Business from "../business/Business";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div>
-      {/* <NavBar /> */}
-      <Carousel />
-      <div className="header">
+      <Carousel/>
+      <div className="header" id="back-to-top-anchor">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
           accusamus? Eveniet, eius. Autem, ratione nulla. Ut a enim pariatur,
@@ -30,7 +28,7 @@ export default function Home() {
           excepturi, ad distinctio? Dolorem, nobis fuga.
         </p>
       </div>
-      <div>
+      {/* <div>
         <h1 className="texto-nosotros">Nosotros</h1>
         <div className="nosotros">
           <p>
@@ -79,7 +77,7 @@ export default function Home() {
         <Link className="link" to="/nosotros">
           <button className="boton">Leer más</button>
         </Link>
-      </div>
+      </div> */}
       <Services />
       <Business />
       <Footer />

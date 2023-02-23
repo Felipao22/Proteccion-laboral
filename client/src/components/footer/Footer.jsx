@@ -9,6 +9,7 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaEnvelope } from "react-icons/fa";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import './Footer.css'
 
 export default function Footer() {
   return (
@@ -44,9 +45,7 @@ export default function Footer() {
                 Protección Laboral
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Gestión y Asesoramiento en Higiene y Seguridad en el Trabajo.
               </p>
             </MDBCol>
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
@@ -93,7 +92,7 @@ export default function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Contacto</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                Juana Koslay, San Luis, ARG.
+                San Luis, ARG.
                 <br />
               </p>
               <a
@@ -115,10 +114,16 @@ export default function Footer() {
                 <br />
                 <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 678961
               </a>
-              <p>
+              <br />
+              <a
+                style={{ textDecoration: "none", color: "#6C757D" }}
+                href="https://api.whatsapp.com/send?phone=542664722453"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <br />
-                <MDBIcon icon="phone" className="me-3" /> + 54 2664 789878
-              </p>
+                <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 722453
+              </a>
             </MDBCol>
           </MDBRow>
         </MDBContainer>

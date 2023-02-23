@@ -1,10 +1,21 @@
-import { SpinnerCircular } from "spinners-react";
-import './Loading.css'
+import { PulseLoader } from "react-spinners";
 
-export default function Loading(){
-    return(
-        <div>
-            <SpinnerCircular color="black" size="100px" className="spinner"/>
-        </div>
-    )
+import "./Loading.css";
+
+export default function Loading() {
+  return (
+    <div className="containerLoading">
+      <PulseLoader
+        color="rgba(15,65,162,1)"
+        cssOverride={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "20rem",
+        }}
+        margin={20}
+        className="spinnerPulse"
+      />
+    </div>
+  );
 }

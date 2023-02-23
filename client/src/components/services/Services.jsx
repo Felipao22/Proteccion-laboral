@@ -19,7 +19,7 @@ export default function Services() {
                   <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
                   </div>
-                  <h2 className="title">ANALIZAR</h2>
+                  <h2 className="title">Gestión</h2>
                   <p>
                     ANALIZAMOS DIARIAMENTE LAS VARIABLES DEL ECOMMERCE PARA
                     TODAS LAS INDUSTRIAS
@@ -38,7 +38,7 @@ export default function Services() {
                   <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
                   </div>
-                  <h2 className="title">GESTIONAR</h2>
+                  <h2 className="title">Prevención</h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Eos, repellat.
@@ -57,7 +57,7 @@ export default function Services() {
                   <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
                   </div>
-                  <h2 className="title">EVALUAR</h2>
+                  <h2 className="title">Asesoramiento</h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Quae, aperiam.

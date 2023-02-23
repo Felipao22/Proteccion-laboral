@@ -6,52 +6,16 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import IMAGE from "../../assets/LOGO CUADRADO.png";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
-import { useSelector } from "react-redux";
-import Avatar from "@mui/material/Avatar";
 import IMAGE2 from "../../assets/LOGO ALARGADO.png";
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const user = useSelector((state) => state.user);
-  const history = useHistory();
-  let nombre = user?.nombreEmpresa?.toString();
-
-  function stringToColor(string) {
-    let hash = 0;
-    let i;
-
-    /* eslint-disable no-bitwise */
-    for (i = 0; i < string.length; i += 1) {
-      hash = string.charCodeAt(i) + ((hash << 5) - hash);
-    }
-
-    let color = "#";
-
-    for (i = 0; i < 3; i += 1) {
-      const value = (hash >> (i * 8)) & 0xff;
-      color += `00${value.toString(16)}`.slice(-2);
-    }
-
-    return color;
-  }
-
-  function stringAvatar(name) {
-    return {
-      sx: {
-        bgcolor: stringToColor(name),
-      },
-      // children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
-      
-    };
-  }
-
-  // const [isNavExpanded, setIsNavExpanded] = useState(false)
 
   return (
     <Box className="box" sx={{ flexGrow: 1 }}>
@@ -60,7 +24,7 @@ export default function ButtonAppBar() {
         style={{ backgroundColor: "#E9EEF4", color: "black" }}
         position="static"
       >
-        <Toolbar>
+        <Toolbar className="toolbar">
           <IconButton
             className="menu"
             size="large"
@@ -85,41 +49,6 @@ export default function ButtonAppBar() {
                 width: "40vw",
               }}
             >
-              {user && user.active === true ? (
-                <>
-           
-                <Avatar
-                  onClick={() => history.push("/user")}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginLeft: "40%",
-                    marginBottom: "10px",
-                    cursor:'pointer'
-                  }}
-                  {...stringAvatar(nombre) }
-                />
-                     {/* <div className="nombreEmpresa">
-                  <small>{user?.nombreEmpresa}</small>
-                </div> */}
-                </>
-              ) : (
-                <>
-                  <ListItem button component="a" >
-                    <Link style={{ color: "black", textDecoration: "none" }} to="/login">
-                    <ListItemText primary="Login" />
-
-                    </Link>
-                  </ListItem>
-                  <ListItem button component="a" >
-                    <Link style={{ color: "black", textDecoration: "none" }} to="/register">
-                    
-                    <ListItemText primary="Registrase" />
-                    </Link>
-                  </ListItem>
-                </>
-              )}
-
               <ListItem button component="a">
                 <Link style={{ color: "black", textDecoration: "none" }} to="/">
                   <ListItemText primary="Home" />
@@ -133,15 +62,6 @@ export default function ButtonAppBar() {
                   <ListItemText primary="Nosotros" />
                 </Link>
               </ListItem>
-
-              {/* <ListItem button component="a">
-                <Link
-                  to="/clientes"
-                  style={{ color: "black", textDecoration: "none" }}
-                >
-                  <ListItemText primary="Clientes" />
-                </Link>
-              </ListItem> */}
               <ListItem button component="a">
                 <Link
                   to="/services"
@@ -160,13 +80,21 @@ export default function ButtonAppBar() {
               </ListItem>
             </List>
           </Drawer>
-          {/* probar el logo */}
-          {/* className={`text-gray-100 ${ia ? 'bg-gptlightgray' : 'bg-gptgray'}`} */}
           <Link to="/">
-            <img className="logo" style={{ height: "5rem", paddingBottom:'0px'}} src={IMAGE} alt="logo" />
+            <img
+              className="logo"
+              style={{ maxHeight: "6rem", paddingRight: "2rem" }}
+              src={IMAGE}
+              alt="logo"
+            />
           </Link>
           <Link to="/">
-            <img className="logo-largo" style={{ height: "60px" }} src={IMAGE2} alt="logo largo" />
+            <img
+              className="logo-largo"
+              style={{ height: "60px" }}
+              src={IMAGE2}
+              alt="logo largo"
+            />
           </Link>
           <div className="container-botones">
             <div>
@@ -193,70 +121,9 @@ export default function ButtonAppBar() {
                 <Button color="inherit">Contacto</Button>
               </Link>
             </div>
-            {user && user.active === true ? (
-              <>
-              
-              {/* <div className="nombreEmpresa">
-              <span>{user?.nombreEmpresa}</span>
-            </div> */}
-              <div className="avatar">
-                <Avatar
-                style={{ cursor:'pointer'}}
-                  onClick={() => history.push("/user")}
-                  {...stringAvatar(nombre)}
-                />
-                 
-              </div>
-              </>
-            ) : (
-              <div className="container-login">
-                <Link
-                  style={{ color: "black", textDecoration: "none" }}
-                  to="/login"
-                >
-                  <Button color="inherit">Login</Button>
-                </Link>
-                <Link
-                  style={{ color: "black", textDecoration: "none" }}
-                  to="/register"
-                >
-                  <Button color="inherit">Registrarse</Button>
-                </Link>
-              </div>
-            )}
           </div>
         </Toolbar>
       </AppBar>
     </Box>
-    // <nav className="navigation">
-    //   <a href="/" className="brand-name">
-    //     MacroSoft
-    //   </a>
-    //   <button
-    //     className="hamburger"
-    //     onClick={() => {
-    //       setIsNavExpanded(!isNavExpanded)
-    //     }}
-    //   >
-    //     {/* hamburger svg code... */}
-    //   </button>
-    //   <div
-    //     className={
-    //       isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-    //     }
-    //   >
-    //     <ul>
-    //       <li>
-    //         <a href="/home">Home</a>
-    //       </li>
-    //       <li>
-    //         <a href="/about">About</a>
-    //       </li>
-    //       <li>
-    //         <a href="/contact">Contact</a>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </nav>
   );
 }
