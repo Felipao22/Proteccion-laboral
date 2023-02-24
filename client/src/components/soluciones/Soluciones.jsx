@@ -112,49 +112,6 @@ export default function Soluciones() {
                 registro de documentación en materia de Higiene y Seguridad.
               </li>
             </ul>
-
-            {/* <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-              possimus incidunt quibusdam architecto, ex magnam? Iure nihil
-              laborum eius laudantium est qui, assumenda maxime ipsam, quo illo,
-              itaque consectetur commodi deleniti impedit sapiente repellat.
-              Consectetur, nobis saepe nostrum quam voluptate maiores incidunt
-              atque provident error odio quo laborum, fugit aliquid? Quam optio
-              iste aliquam delectus aut suscipit expedita inventore ad nisi
-              modi, fugit similique, sint ratione? Veritatis eligendi, veniam
-              eius cupiditate excepturi sequi! Vel placeat ut delectus
-              laudantium, neque numquam mollitia dicta animi quod tempore
-              expedita iure odio labore excepturi unde voluptatem esse
-              perspiciatis cum! A ipsa exercitationem eius maiores.
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-              possimus incidunt quibusdam architecto, ex magnam? Iure nihil
-              laborum eius laudantium est qui, assumenda maxime ipsam, quo illo,
-              itaque consectetur commodi deleniti impedit sapiente repellat.
-              Consectetur, nobis saepe nostrum quam voluptate maiores incidunt
-              atque provident error odio quo laborum, fugit aliquid? Quam optio
-              iste aliquam delectus aut suscipit expedita inventore ad nisi
-              modi, fugit similique, sint ratione? Veritatis eligendi, veniam
-              eius cupiditate excepturi sequi! Vel placeat ut delectus
-              laudantium, neque numquam mollitia dicta animi quod tempore
-              expedita iure odio labore excepturi unde voluptatem esse
-              perspiciatis cum! A ipsa exercitationem eius maiores.
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
-              possimus incidunt quibusdam architecto, ex magnam? Iure nihil
-              laborum eius laudantium est qui, assumenda maxime ipsam, quo illo,
-              itaque consectetur commodi deleniti impedit sapiente repellat.
-              Consectetur, nobis saepe nostrum quam voluptate maiores incidunt
-              atque provident error odio quo laborum, fugit aliquid? Quam optio
-              iste aliquam delectus aut suscipit expedita inventore ad nisi
-              modi, fugit similique, sint ratione? Veritatis eligendi, veniam
-              eius cupiditate excepturi sequi! Vel placeat ut delectus
-              laudantium, neque numquam mollitia dicta animi quod tempore
-              expedita iure odio labore excepturi unde voluptatem esse
-              perspiciatis cum! A ipsa exercitationem eius maiores.
-            </p> */}
           </div>
         </div>
         <br />
