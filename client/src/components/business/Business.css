@@ -4,11 +4,6 @@
   justify-content: space-around;
   margin: 1% 40px;
   margin-bottom: 200px;
-  opacity: 0;
-  -webkit-filter:blur(5px);
-  filter: blur(5px);
-  transform: translateY(100%);
-  transition:all 0.5s;
 }
 .marca {
   object-fit: contain;
