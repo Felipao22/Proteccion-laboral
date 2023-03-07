@@ -12,7 +12,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
-import IMAGE2 from "../../assets/LOGO ALARGADO.png";
+// import IMAGE2 from "../../assets/LOGO ALARGADO.png";
+import IMAGE3 from "../../assets/LOGO ALARGADO 2.png";
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -91,8 +92,8 @@ export default function ButtonAppBar() {
           <Link to="/">
             <img
               className="logo-largo"
-              style={{ height: "60px" }}
-              src={IMAGE2}
+              style={{ height: "80px" }}
+              src={IMAGE3}
               alt="logo largo"
             />
           </Link>

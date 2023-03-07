@@ -96,8 +96,7 @@ export default function Services() {
                   </div>
                   <h2 className="title">Gestión</h2>
                   <p>
-                    ANALIZAMOS DIARIAMENTE LAS VARIABLES DEL ECOMMERCE PARA
-                    TODAS LAS INDUSTRIAS
+                  Planificamos, organizamos y ejecutamos las acciones necesarias para lograr la excelencia en seguridad laboral.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -112,7 +111,7 @@ export default function Services() {
               open={isModalGestionOpen}
               onOk={handleGestionOk}
               onCancel={handleGestionCancel}
-              okText="VER SERVICIOS"
+              okText="VER TODOS"
               cancelText="VOLVER"
             >
               <p>
@@ -145,8 +144,7 @@ export default function Services() {
                   </div>
                   <h2 className="title">Prevención</h2>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eos, repellat.
+                  Detectamos riesgos para la prevención de accidentes de trabajo y enfermedades profesionales.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -161,7 +159,7 @@ export default function Services() {
               open={isModalPrevencionOpen}
               onOk={handlePrevencionOk}
               onCancel={handlePrevencionCancel}
-              okText="VER SERVICIOS"
+              okText="VER TODOS"
               cancelText="VOLVER"
             >
               <p>
@@ -194,8 +192,7 @@ export default function Services() {
                   </div>
                   <h2 className="title">Asesoramiento</h2>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quae, aperiam.
+                  Brindamos información clara y actualizada sobre los requerimientos de cumplimiento legal.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -210,7 +207,7 @@ export default function Services() {
               open={isModalAsesoramientoOpen}
               onOk={handleAsesoramientoOk}
               onCancel={handleAsesoramientoCancel}
-              okText="VER SERVICIOS"
+              okText="VER TODOS"
               cancelText="VOLVER"
             >
               <p>

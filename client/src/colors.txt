@@ -1,4 +1,4 @@
-azul oscuro = '#326789';
-azul claro= '#78A6C8';
+azul oscuro = #0f41a2;
+azul claro= #3178C8;
 blanco = '#E9EEF4';
 salmon = '#E65C4F'

@@ -31,61 +31,25 @@
   transition: left 0.5s;
 }
 
-/* .carousel-control-prev, .carousel-control-next, .carousel-item-prev, .carousel-item-next {
-  z-index: 2;
-} */
 
 .carousel-control-prev-icon::after {
   display: none !important;
-  /* visibility: hidden !important; */
 }
 .carousel-control-next-icon::after {
   display: none !important;
-  /* visibility: hidden !important; */
 }
 
 .carousel-fade .carousel-item, .carousel-item img  {
   object-fit:cover;
   max-height: 80vh;
 }
-/* .image-overlay{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  margin-right: 500px;
-  padding-left: 30rem;
-  color:white;
-  backdrop-filter: blur(8px) brightness(80%);
-} */
-/* @media only screen and (min-width: 1101px){
-  .image-overlay{
-    visibility: visible;
-    position: absolute;
-    margin-right: 500px;
-    padding-left: 30rem;
-    color:white;
-    backdrop-filter: blur(8px) brightness(80%);
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .image-overlay{
-    visibility: visible;
-    position: absolute;
-    margin-right: 50px;
-    padding-left: 0rem;
-    color:white;
-    backdrop-filter: blur(8px) brightness(80%);
-    width: 20px;
-  }
-} */
 
 .img-overlay{
   position: absolute;
   z-index: 999;
   margin: 0 auto;
-  left: 0;
-  right: 0;
+  left: 0 !important;
+  right: 0 !important;
   top: 0 !important;
   justify-items: center;
   width: 30%;
@@ -94,16 +58,22 @@
   position: absolute;
   z-index: 999;
   margin: 0 auto;
-  left: 0;
-  right: 0;
+  left: 0 !important;
+  right: 0 !important;
   top: 75% !important;
-  text-align: center;
-  width: 60%;
+  text-align: center !important;
+  width: 60% !important;
   color: white;
   font-size: 23px;
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1250px) {
+  .img-overlay{
+    width: 45% !important;
+  }
 }
 
 @media only screen and (max-width: 675px) {
@@ -112,7 +82,7 @@
     font-size:smaller
   }
   .img-overlay{
-    width: 40%;
+    width: 50% !important;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -121,7 +91,7 @@
     font-size:smaller
   }
   .img-overlay{
-    width: 50%;
+    width: 50% !important;
   }
 }
 @media only screen and (max-width: 388px) {
@@ -130,16 +100,16 @@
     font-size:0.625rem !important;
   }
   .img-overlay{
-    width: 40%;
+    width: 40% !important;
   }
 }
 @media only screen and (max-width: 318px) {
   .text-overlay{
     top:55% !important;
-    font-size:0.625rem;
+    font-size:0.625rem !important; 
   }
   .img-overlay{
-    width: 40%;
+    width: 40% !important;
   }
 }
 

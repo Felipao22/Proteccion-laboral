@@ -37,7 +37,7 @@
   padding: 0.625rem 1.5rem 0.5rem;
   font-size: 0.75rem;
   line-height: 1.5;
-  background-color: rgba(15, 65, 162, 1);
+  background-color: #0f41a2;
   border-radius: 0.25rem;
   cursor: pointer;
   color: white;
@@ -46,8 +46,8 @@
 }
 
 .boton-contact:hover {
-  background-color: rgb(49, 120, 200);
-  box-shadow: 0px 15px 20px rgb(49, 120, 200);
+  background-color: #3178C8;
+  box-shadow: 0px 15px 20px #3178C8;
   color: #fff;
   transform: translateY(-7px);
 }
@@ -78,8 +78,7 @@
 
 #contact-section {
   padding-top: 2rem;
-  /* background-image: url("../../assets/soluciones-background.jpg"); */
-  background: url('../../assets/soluciones-background.jpg') fixed no-repeat;
+  background: url('../../assets/soluciones-background2.jpg') fixed no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

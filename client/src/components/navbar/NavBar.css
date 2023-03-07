@@ -58,6 +58,7 @@
       }
      
   }
+
     /* Teléfonos */
 @media only screen and (max-width: 575px){
   .logo{
@@ -69,9 +70,12 @@
   .box{
     width: 100vw;
   }
+  .logo-largo{
+    max-width: 80vw;
+  }
 
 }
-@media only screen and (max-width: 312px){
+@media only screen and (max-width: 350px){
   .logo{
     display: none !important;
   }
@@ -84,5 +88,6 @@
   .logo-largo{
     right: 2rem;
     position: relative;
+    max-width: 250px;
   }
 }
