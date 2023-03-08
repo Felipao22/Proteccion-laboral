@@ -1,3 +1,7 @@
+.main-soluciones{
+margin-top: 8rem;
+}
+
 .text-soluciones {
   margin: 60px;
   font-family: YuGothL;
@@ -8,7 +12,7 @@
 }
 
 .header-soluciones {
-  margin-top: 30px;
+  margin-top: 6.25rem;
 }
 
 .text-overlay {

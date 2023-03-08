@@ -7,20 +7,23 @@ import soluciones from "../../assets/soluciones.jpg";
 import soluciones2 from "../../assets/soluciones2.jpg";
 import soluciones3 from "../../assets/soluciones3.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Popover} from 'antd'
+import { Popover } from "antd";
 
 export default function Soluciones() {
-
   const content = (
     <div>
-      <p>Podes solicitar
-                  sin cargo un Diagnóstico del estado siniestral y del
-                cumplimiento </p>
-      <p>  sobre las obligaciones legales en materia de
-                higiene y seguridad de tú empresa.</p>
+      <p>
+        Podes solicitar sin cargo un Diagnóstico del estado siniestral y del
+        cumplimiento{" "}
+      </p>
+      <p>
+        {" "}
+        sobre las obligaciones legales en materia de higiene y seguridad de tú
+        empresa.
+      </p>
     </div>
   );
-  
+
   return (
     <section id="soluciones">
       <div>
@@ -52,14 +55,18 @@ export default function Soluciones() {
               />
             </Carousel.Item>
           </Carousel>
+          <main>        
           <h1 className="header-soluciones">Servicios</h1>
           <div className="description-paragraph">
             <ul className="column-ul">
               <li>
                 Informes para habilitación Municipal.
                 <Popover placement="bottom" content={content}>
-                  <button style={{all:'unset', cursor:'pointer', color:'red'}}>¡Novedad!</button>
-                
+                  <button
+                    style={{ all: "unset", cursor: "pointer", color: "red" }}
+                  >
+                    ¡Novedad!
+                  </button>
                 </Popover>
               </li>
               <li>
@@ -113,6 +120,7 @@ export default function Soluciones() {
               </li>
             </ul>
           </div>
+          </main>
         </div>
         <br />
         <Footer />

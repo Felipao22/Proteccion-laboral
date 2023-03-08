@@ -132,7 +132,7 @@
 .flex-dave-layout-main_inner .flex-dave-wrapper_left2 {
     padding: 1rem;
     width: 100%;
-    margin-left:50px ;
+    margin-left:3.125rem ;
 }
 @media only screen and (max-width:768px){
     .flex-dave-layout-main_inner .flex-dave-wrapper_left2 {

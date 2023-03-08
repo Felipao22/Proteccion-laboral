@@ -107,7 +107,7 @@ export default function Services() {
               </button>
             </div>
             <Modal
-              title="GESTION"
+              title="GESTIÓN"
               open={isModalGestionOpen}
               onOk={handleGestionOk}
               onCancel={handleGestionCancel}
@@ -155,7 +155,7 @@ export default function Services() {
               </button>
             </div>
             <Modal
-              title="PREVENCION"
+              title="PREVENCIÓN"
               open={isModalPrevencionOpen}
               onOk={handlePrevencionOk}
               onCancel={handlePrevencionCancel}

@@ -12,6 +12,7 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "./Footer.css";
 
 export default function Footer() {
+  const year =  new Date().getFullYear();
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -142,7 +143,7 @@ export default function Footer() {
         className="text-center p-4"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        © 2023 Copyright:
+        {`© ${year} Copyright: `}
         <a
           className="text-reset fw-bold"
           href="https://www.linkedin.com/in/felipeaviani/"

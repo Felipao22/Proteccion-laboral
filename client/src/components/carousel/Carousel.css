@@ -57,9 +57,9 @@
 .text-overlay {
   text-align: center !important;
   color: white;
-  font-size: 23px;
+  font-size: 1.438rem;
   font-weight: 500;
-  letter-spacing: 4px !important;
+  letter-spacing:0.25rem !important;
   text-transform: uppercase;
   height: 3.4375rem !important;
 }
