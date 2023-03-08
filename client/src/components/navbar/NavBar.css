@@ -71,7 +71,9 @@
     width: 100vw;
   }
   .logo-largo{
+    position: relative;
     max-width: 80vw;
+    right: 1rem;
   }
 
 }
@@ -86,7 +88,7 @@
     width: 100vw;
   }
   .logo-largo{
-    right: 2rem;
+    right: 1rem;
     position: relative;
     max-width: 250px;
   }

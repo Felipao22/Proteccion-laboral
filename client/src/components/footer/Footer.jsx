@@ -9,7 +9,7 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaEnvelope } from "react-icons/fa";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import './Footer.css'
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -20,11 +20,20 @@ export default function Footer() {
         </div>
 
         <div>
-          <a href="#!" className="me-4 text-reset">
+          <a
+            href="https://www.facebook.com/people/Proteccion-Laboral/100090978247598/"
+            target="_blank"
+            rel="noreferrer"
+            className="me-4 text-reset"
+          >
             <MDBIcon fab icon="facebook-f" />
           </a>
-          <a href="https://www.instagram.com/proteccion_laboral/"  target="_blank"
-            rel="noreferrer" className="me-4 text-reset">
+          <a
+            href="https://www.instagram.com/proteccion_laboral/"
+            target="_blank"
+            rel="noreferrer"
+            className="me-4 text-reset"
+          >
             <MDBIcon fab icon="instagram" />
           </a>
           <a

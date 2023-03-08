@@ -22,7 +22,9 @@ export default function Carrusel() {
       </Carousel.Item> */}
       <Carousel.Item interval={2000} >
         <img className="img-overlay" src={logoBlanco} alt="log" />
+        <div className="box-text">
       <h2 className="text-overlay">Gestión y Asesoramiento en Higiene y Seguridad en el Trabajo.</h2>
+        </div>
         <img
           className="d-block w-100"
           src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
@@ -31,7 +33,9 @@ export default function Carrusel() {
       </Carousel.Item>
       <Carousel.Item interval={2000} >
         <img className="img-overlay" src={logoBlanco} alt="log" />
+        <div className="box-text">
       <h2 className="text-overlay">Gestión y Asesoramiento en Higiene y Seguridad en el Trabajo.</h2>
+        </div>
         <img
           className="d-block w-100"
           src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
@@ -40,7 +44,9 @@ export default function Carrusel() {
       </Carousel.Item>
       <Carousel.Item interval={2000} >
         <img className="img-overlay" src={logoBlanco} alt="log" />
+        <div className="box-text">
       <h2 className="text-overlay">Gestión y Asesoramiento en Higiene y Seguridad en el Trabajo.</h2>
+        </div>
         <img
           className="d-block w-100"
           src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
