@@ -1,7 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./Carousel.css";
-import logoBlanco from '../../assets/LOGO CUADRADO blanco.png'
+import logoBlanco from '../../assets/LOGO CUADRADO blanco.png';
+import proteccion from '../../assets/proteccion.jpg';
+import people from '../../assets/people.jpg';
+import exit from '../../assets/exit.jpeg'
 
 export default function Carrusel() {
   return (
@@ -27,8 +30,8 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
-          alt="Third slide"
+          src={proteccion}
+          alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item interval={2000} >
@@ -38,8 +41,8 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
-          alt="Third slide"
+          src={people}
+          alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item interval={2000} >
@@ -49,7 +52,7 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src="https://www.bureauveritas.co.uk/sites/g/files/zypfnx216/files/2019-05/workplace%20health%20and%20safety.jpg"
+          src={exit}
           alt="Third slide"
         />
       </Carousel.Item>

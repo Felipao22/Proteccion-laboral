@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Carousel from "../carousel/Carousel";
 // import NavBar from "../navbar/NavBar";
 import "./Home.css";
@@ -10,10 +10,10 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 export default function Home() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }else {
-       entry.target.classList.remove('show')
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
       }
     });
   });
@@ -21,29 +21,27 @@ export default function Home() {
   useEffect(() => {
     const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((el) => observer.observe(el));
-
   });
-
 
   return (
     <div>
-      <Carousel/>
+      <Carousel />
       <div className="hidden">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-          accusamus? Eveniet, eius. Autem, ratione nulla. Ut a enim pariatur,
-          numquam eum quos suscipit. Debitis ad dolorum, quasi repudiandae, eum
-          dicta earum incidunt quis alias error minus possimus impedit enim
-          illum minima optio saepe labore excepturi qui fugit obcaecati natus.
+          La Seguridad e Higiene Laboral tiene como objetivo principal articular
+          e implementar las medidas necesarias para prevenir la ocurrencia de
+          accidentes y enfermedades laborales, debido a los riesgos o peligros
+          que están expuestos los trabajadores durante o con motivo de su
+          trabajo.
         </p>
-        <p>
+        {/* <p>
           voluptates laboriosam? Temporibus error mollitia doloremque facilis
           architecto impedit eius laudantium corporis itaque minus nostrum velit
           earum debitis libero neque quisquam quaerat sapiente id non, omnis
           repudiandae ex tenetur placeat obcaecati? Alias sunt eius labore
           soluta ut quas possimus maiores sit provident deleniti molestiae cum,
           excepturi, ad distinctio? Dolorem, nobis fuga.
-        </p>
+        </p> */}
       </div>
       {/* <div>
         <h1 className="texto-nosotros">Nosotros</h1>

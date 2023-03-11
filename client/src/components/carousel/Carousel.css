@@ -43,6 +43,7 @@
   object-fit:cover;
   max-height: 80vh;
 }
+
 .box-text{
   position: absolute !important;
   z-index: 999 !important;
