@@ -108,3 +108,24 @@
     color: #fff;
     transform: translateY(-7px);
   }
+
+@media only screen and (max-width: 451px) {
+    .hidden{
+        margin:2.25rem ;
+        font-size:1.25rem;
+        font-family: YuGothL, sans-serif;
+        font-weight:700;
+        letter-spacing: 0.125rem;
+        opacity: 0;
+        -webkit-filter:blur(5px);
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition:all 2s;
+    }
+    .show{
+        opacity: 1;
+        -webkit-filter:blur(0);
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
