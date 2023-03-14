@@ -2,7 +2,8 @@ import React from "react";
 // import NavBar from "../navbar/NavBar.jsx";
 import Footer from "../footer/Footer.jsx";
 import "./Nosotros.css";
-import uno from "../../assets/1.jpg";
+import people from "../../assets/people.jpg";
+import logo from '../../assets/LOGO CUADRADO.png'
 
 export default function Nosotros() {
   return (
@@ -35,7 +36,7 @@ export default function Nosotros() {
             </div>
             <div className="flex-dave-wrapper_right">
               <div className="image_wrapper-right founding-story">
-                <img alt="algo" src={uno} style={{ height: "100%" }} />
+                <img alt="algo" src={logo} style={{ height: "100%" }} />
               </div>
             </div>
           </div>
@@ -47,12 +48,12 @@ export default function Nosotros() {
           <div className="flex-dave-layout-main_inner __flex-reverse-column">
             <div className="flex-dave-wrapper_right">
               <div className="image_wrapper-right founding-story">
-                <img alt="algo" src={uno} style={{ height: "100%" }} />
+                <img alt="algo" src={people} style={{ height: "100%" }} />
               </div>
             </div>
             <div className="flex-dave-wrapper_left2">
-              <div className="text-inner-wrapper-main">
-                <h4 className="header-title-right">¿qué nos distingue?</h4>
+              <div className="text-inner-wrapper-main" style={{marginTop:'-35px'}}>
+                <h4 className="header-title-right" >¿qué nos distingue?</h4>
                 <div className="description-paragraph">
                   <div>
                     <p className="paragraph-wrapper">

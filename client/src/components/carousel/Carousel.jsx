@@ -3,8 +3,8 @@ import { Carousel } from "react-bootstrap";
 import "./Carousel.css";
 import logoBlanco from '../../assets/LOGO CUADRADO blanco.png';
 import proteccion from '../../assets/proteccion.jpg';
-import people from '../../assets/people.jpg';
-import exit from '../../assets/exit.jpeg'
+import uno from '../../assets/1.jpg';
+import exit6 from '../../assets/exit6.jpg'
 
 export default function Carrusel() {
   return (
@@ -30,7 +30,7 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src={proteccion}
+          src={exit6}
           alt="First slide"
         />
       </Carousel.Item>
@@ -41,7 +41,7 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src={people}
+          src={proteccion}
           alt="Second slide"
         />
       </Carousel.Item>
@@ -52,7 +52,7 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src={exit}
+          src={uno}
           alt="Third slide"
         />
       </Carousel.Item>

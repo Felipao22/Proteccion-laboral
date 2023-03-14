@@ -52,9 +52,9 @@ margin-top: 8rem;
   display: inline-block;
   margin: 10px;
   letter-spacing: 4px;
-  font-size: 18px;
+  /* font-size: 18px; */
   /* text-transform: uppercase; */
-  font-weight: 600;
+  font-weight: bold;
   font-family: YuGothL, sans-serif;
 }
 @media (max-width: 768px) {
@@ -71,6 +71,9 @@ margin-top: 8rem;
     column-count: 1;
     align-items: center;
     list-style: none;
+  }
+  .carousel-imagenes{
+    height: 25vh;
   }
 }
 
