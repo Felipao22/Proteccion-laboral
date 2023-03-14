@@ -51,7 +51,11 @@ export default function ButtonAppBar() {
               }}
             >
               <ListItem button component="a">
-                <Link style={{ color: "black", textDecoration: "none" }} to="/">
+                <Link
+                  style={{ color: "black", textDecoration: "none" }}
+                  to="/"
+                  onClick={() => setIsDrawerOpen(false)}
+                >
                   <ListItemText primary="Home" />
                 </Link>
               </ListItem>
@@ -59,6 +63,7 @@ export default function ButtonAppBar() {
                 <Link
                   to="/nosotros"
                   style={{ color: "black", textDecoration: "none" }}
+                  onClick={() => setIsDrawerOpen(false)}
                 >
                   <ListItemText primary="Nosotros" />
                 </Link>
@@ -67,6 +72,7 @@ export default function ButtonAppBar() {
                 <Link
                   to="/services"
                   style={{ color: "black", textDecoration: "none" }}
+                  onClick={() => setIsDrawerOpen(false)}
                 >
                   <ListItemText primary="Servicios" />
                 </Link>
@@ -75,6 +81,7 @@ export default function ButtonAppBar() {
                 <Link
                   to="/contact"
                   style={{ color: "black", textDecoration: "none" }}
+                  onClick={() => setIsDrawerOpen(false)}
                 >
                   <ListItemText primary="Contacto" />
                 </Link>

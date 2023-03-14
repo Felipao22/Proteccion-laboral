@@ -91,12 +91,13 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  <div className="img">
+                  {/* <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
-                  </div>
+                  </div> */}
                   <h2 className="title">Gestión</h2>
                   <p>
-                  Planificamos, organizamos y ejecutamos las acciones necesarias para lograr la excelencia en seguridad laboral.
+                    Planificamos, organizamos y ejecutamos las acciones
+                    necesarias para lograr la excelencia en seguridad laboral.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -114,24 +115,23 @@ export default function Services() {
               okText="VER TODOS"
               cancelText="VOLVER"
             >
+              <p>Informes para habilitación Municipal. </p>
               <p>
-                Capacitaciones en materia de Prevención de Accidentes de Trabajo
-                y Enfermedades Profesionales.{" "}
+                Programas de Seguridad para obras (Resoluciones S.R.T. N°
+                51/1997, 35/1998, 319/1999).
               </p>
               <p>
-                Mediciones protocolarizadas de Ruido (Resolución S.R.T. N°
-                85/2012).
+                Relevamientos direccionados sobre el control de infraestructura
+                y elementos de prevención.
               </p>
               <p>
-                Mediciones protocolarizadas de Iluminación (Resolución S.R.T. N°
-                84/2012).
+                Confección, adecuación y control de legajos técnicos sobre el
+                registro de documentación en materia de Higiene y Seguridad.
               </p>
               <p>
-                {" "}
-                Evaluaciones Ergonómicas protocolarizadas (Resolución S.R.T. N°
-                886/2015).
+                Implementación y desarrollo de programas para la reducción de la
+                siniestralidad.
               </p>
-              <p>Estudios técnicos de Carga de Fuego.</p>
             </Modal>
             <div className="col-md-4 wow">
               <button
@@ -139,12 +139,13 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  <div className="img">
+                  {/* <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
-                  </div>
+                  </div> */}
                   <h2 className="title">Prevención</h2>
                   <p>
-                  Detectamos riesgos para la prevención de accidentes de trabajo y enfermedades profesionales.
+                    Detectamos riesgos para la prevención de accidentes de
+                    trabajo y enfermedades profesionales.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -163,22 +164,29 @@ export default function Services() {
               cancelText="VOLVER"
             >
               <p>
+                Capacitaciones en materia de Prevención de Accidentes de Trabajo
+                y Enfermedades Profesionales.{" "}
+              </p>
+              <p>Estudios técnicos de Carga de Fuego.</p>
+              <p>Supervisión de obras (Resolución S.R.T. 231/1996).</p>
+              <p>
+                Mediciones protocolarizadas de Ruido (Resolución S.R.T. N°
+                85/2012).
+              </p>
+              <p>
+                Mediciones protocolarizadas de Iluminación (Resolución S.R.T. N°
+                84/2012).
+              </p>
+              <p>Desarrollo de Planes de acción ante Emergencias.</p>
+              <p>Confección de Planos de Evacuación.</p>
+              <p>
+                Evaluaciones Ergonómicas protocolarizadas (Resolución S.R.T. N°
+                886/2015).
+              </p>
+              <p>
                 {" "}
                 Estudio técnico de valoración de Puesta a Tierra y Continuidad
                 (Resolución S.R.T. N°900/2015).
-              </p>
-              <p>
-                {" "}
-                Programas de Seguridad para obras (Resoluciones S.R.T. N°
-                51/1997, 35/1998, 319/1999).
-              </p>
-              <p>Supervisión de obras (Resolución S.R.T. 231/1996).</p>
-              <p>
-                Asesoramiento sobre gestión de siniestros y coberturas de A.R.T.
-              </p>
-              <p>
-                Implementación y desarrollo de programas para la reducción de la
-                siniestralidad.
               </p>
             </Modal>
             <div className="col-md-4 wow">
@@ -187,12 +195,13 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  <div className="img">
+                  {/* <div className="img">
                     <img src={Logo} alt="logo" className="img-logo" />
-                  </div>
+                  </div> */}
                   <h2 className="title">Asesoramiento</h2>
                   <p>
-                  Brindamos información clara y actualizada sobre los requerimientos de cumplimiento legal.
+                    Brindamos información clara y actualizada sobre los
+                    requerimientos de cumplimiento legal.
                   </p>
                   <div className="icono">
                     <i className="ion-chevron-down">
@@ -215,16 +224,9 @@ export default function Services() {
                 Seguridad (Decreto S.R.T. 1338/1996 y Resolución S.R.T.
                 900/2015).
               </p>
-              <p>Confección de Planos de Evacuación.</p>
-              <p>Desarrollo de Planes de acción ante Emergencias.</p>
+
               <p>
-                {" "}
-                Relevamientos direccionados sobre el control de infraestructura,
-                y elementos de prevención.
-              </p>
-              <p>
-                Confección, adecuación y control de legajos técnicos sobre el
-                registro de documentación en materia de Higiene y Seguridad.
+                Asesoramiento sobre gestión de siniestros y coberturas de A.R.T.
               </p>
             </Modal>
           </div>

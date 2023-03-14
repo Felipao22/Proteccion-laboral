@@ -31,7 +31,7 @@ export default function Soluciones() {
           {/* <NavBar /> */}
           <Carousel variant="dark" indicators={false}>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">GESTIón</h2>
+              <h2 className="text-overlaySoluciones">GESTIón</h2>
               <img
                 className="d-block w-100 "
                 src={soluciones}
@@ -39,7 +39,7 @@ export default function Soluciones() {
               />
             </Carousel.Item>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">Prevención</h2>
+              <h2 className="text-overlaySoluciones">Prevención</h2>
               <img
                 className="d-block w-100"
                 src={soluciones2}
@@ -47,7 +47,7 @@ export default function Soluciones() {
               />
             </Carousel.Item>
             <Carousel.Item interval={2000}>
-              <h2 className="text-overlay">Asesoramiento</h2>
+              <h2 className="text-overlaySoluciones">Asesoramiento</h2>
               <img
                 className="d-block w-100"
                 src={soluciones3}

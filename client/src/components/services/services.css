@@ -1,11 +1,11 @@
 .container-services {
   max-width: 1300px;
   /* width: 100%; */
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0.938rem;
+  padding-left: 0.938rem;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 200px;
+  margin-bottom: 12.5rem;
 }
 
 #about-services .container-services {
@@ -46,8 +46,8 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -0.938rem;
+  margin-left: -0.938rem;
 }
 
 @media (min-width: 768px) {
@@ -60,8 +60,8 @@
 .columnas {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 0.938rem;
+  padding-left: 0.938rem;
 }
 
 #about-services .about-col .img {
@@ -73,7 +73,7 @@
   background: linear-gradient(0deg, #164ca9, #43126e 100%, #00d4ff 0);
   border-radius: 0.938rem;
   box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
-  margin: 0 auto 20px;
+  margin: 0 auto 1.25rem;
   text-align: center;
   padding: 2.188rem 0 0.938rem;
 }
@@ -81,8 +81,9 @@
 #about-services .about-col h2 {
   color: #fff;
   text-align: center;
-  font-weight: 500;
-  font-size: 22px;
+  font-weight:bolder;
+  font-family: YuGothL, sans-serif;
+  font-size: 1.375rem;
   text-transform: uppercase;
   padding: 0;
   margin: 1.25rem 0 0.75rem;
@@ -90,16 +91,17 @@
 }
 
 #about-services .about-col p {
-  font-size: 13px;
-  line-height: 28px;
-  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 1.75rem;
+  font-weight: 600;
   color: #fff;
   padding: 0 1.25rem 1.25rem;
+  font-family: YuGothL;
   text-transform: uppercase;
   display: block;
   width: 80%;
   margin: 0 auto;
-  height: 150px;
+  height: 9.375rem;
 }
 
 #about-services .about-col .icono {
@@ -143,10 +145,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 150px;
+  margin: 6.25rem;
   text-shadow: 2px 2px 4px #08080856;
   /* font-family: Quicksand; */
-  font-size: 50px;
+  font-size: 3.125rem;
   opacity: 0;
   -webkit-filter: blur(5px);
   filter: blur(5px);
@@ -171,15 +173,15 @@ element.style {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 200px;
+  height: 12.5rem;
 }
 
 .fsl-title-deco {
-  width: 180px;
-  height: 1.9px;
+  width: 11.25rem;
+  height: 0.119rem;
   margin-right: auto;
-  margin-bottom: 180px;
+  margin-bottom: 8.75rem;
   margin-left: auto;
   background-color: rgba(15, 65, 162, 1);
-  margin-top: -11rem;
+  margin-top: -8.5rem;
 }

@@ -94,7 +94,7 @@ export default function Home() {
         </Link>
       </div> */}
       <Services />
-      <Business />
+      {/* <Business /> */}
       <Footer />
     </div>
   );

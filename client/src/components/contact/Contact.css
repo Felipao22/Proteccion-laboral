@@ -44,7 +44,7 @@
   border-radius: 0.25rem;
   cursor: pointer;
   color: white;
-  font-family: Quicksand;
+  font-family: YuGothL, sans-serif;
   margin-top: 4rem;
 }
 
@@ -58,7 +58,7 @@
 .datos-contact {
   color: #02003d;
   text-transform: uppercase;
-  font-family: Quicksand;
+  font-family: YuGothL, sans-serif;
 }
 
 .input-container label {
