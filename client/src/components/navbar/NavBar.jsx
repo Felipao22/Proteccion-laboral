@@ -12,7 +12,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
-import IMAGE2 from "../../assets/LOGO ALARGADO.png";
+import IMAGE2 from "../../assets/logo largo.png";
 // import IMAGE3 from "../../assets/LOGO ALARGADO 2.png";
 
 export default function ButtonAppBar() {
@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
                 fontSize: "30px",
                 fontWeight: "600",
                 height: "250px",
-                width: "40vw",
+                width: "50vw",
               }}
             >
               <ListItem button component="a">

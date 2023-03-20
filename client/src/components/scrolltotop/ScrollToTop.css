@@ -3,16 +3,16 @@
 }
 .icon-position {
   position: fixed;
-  bottom: 40px;
-  right: 25px;
+  bottom: 2.5rem;
+  right: 1.563rem;
   z-index: 20;
 }
 .icon-style {
   background-color: rgba(15, 65, 162, 1);
   border: 0.125rem solid #fff;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 3.125rem;
+  width: 3.125rem;
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;

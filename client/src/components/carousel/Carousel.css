@@ -31,7 +31,6 @@
   transition: left 0.5s;
 }
 
-
 .carousel-control-prev-icon::after {
   display: none !important;
 }
@@ -39,12 +38,13 @@
   display: none !important;
 }
 
-.carousel-fade .carousel-item, .carousel-item img  {
-  object-fit:cover;
+.carousel-fade .carousel-item,
+.carousel-item img {
+  object-fit: cover;
   max-height: 80vh;
 }
 
-.box-text{
+.box-text {
   position: absolute !important;
   z-index: 999 !important;
   margin: 0 auto !important;
@@ -59,14 +59,15 @@
   text-align: center !important;
   color: white;
   font-size: 1.438rem;
-  font-weight: 900;
-  letter-spacing:0.25rem !important;
-  font-family: YuGothL;
+  font-weight: 800;
+  letter-spacing: 0.25rem !important;
+  /* font-family: YuGothL; */
   text-transform: uppercase;
   height: 3.4375rem !important;
+  text-shadow: 2px 2px 2px black;
 }
 
-.img-overlay{
+.img-overlay {
   position: absolute !important;
   z-index: 999 !important;
   margin: 0 auto !important;
@@ -77,54 +78,61 @@
   width: 37%;
 }
 
-
-@media only screen and (max-width: 1250px){
-  .img-overlay{
+@media only screen and (max-width: 1250px) {
+  .img-overlay {
+    width: 40% !important;
+  }
+  .text-overlay {
+    font-size: large;
+  }
+}
+@media only screen and (max-width: 845px) {
+  .text-overlay {
+    font-size: medium;
+  }
+  .img-overlay {
     width: 50% !important;
   }
 }
 
 @media only screen and (max-width: 675px) {
-  .box-text{
-    top:70% !important; 
+  .box-text {
+    top: 75% !important;
   }
-  .text-overlay{
-    font-size:large
+  .text-overlay {
+    font-size: large;
   }
-  .img-overlay{
+  .img-overlay {
     width: 50% !important;
   }
 }
-@media only screen and (max-width: 450px){
-  .text-overlay{
-    font-size:smaller;
+@media only screen and (max-width: 463px) {
+  .text-overlay {
+    font-size: smaller;
   }
-  .box-text{
-    top:65% !important;
+  .box-text {
+    top: 70% !important;
   }
-  .img-overlay{
+  .img-overlay {
     width: 50% !important;
   }
 }
-@media only screen and (max-width: 388px){
-  .text-overlay{
+@media only screen and (max-width: 391px) {
+  .text-overlay {
     /* top:65%; */
-    font-size:0.9rem !important;
+    font-size: 0.7rem !important;
   }
-  .img-overlay{
+  .img-overlay {
     width: 50% !important;
-    /* height: 80px; */
   }
 }
-@media only screen and (max-width: 318px){
-  .text-overlay{
+@media only screen and (max-width: 340px) {
+  .text-overlay {
     position: relative;
-    top:60% !important;
-    font-size:0.5rem !important; 
+    top: 60% !important;
+    font-size: 0.5rem !important;
   }
-  .img-overlay{
+  .img-overlay {
     width: 50% !important;
   }
 }
-
-

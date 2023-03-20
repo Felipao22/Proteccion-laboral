@@ -3,8 +3,8 @@
 }
 @media only screen and (min-width: 1101px) {
   .container-contact {
-    width: 500px;
-    height: 500px;
+    width: 31.25rem;
+    height: 31.25rem;
     margin: 0 auto;
     margin-bottom: 12.5rem;
     margin-top: 4rem;
@@ -13,7 +13,7 @@
     border: none;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.404),
       0 6px 20px 0 rgba(0, 0, 0, 0.382);
-    padding: 15px;
+    padding: 0.938rem;
   }
 }
 @media only screen and (max-width: 1100px) {

@@ -1,14 +1,14 @@
-.main-soluciones{
-margin-top: 8rem;
+.main-soluciones {
+  margin-top: 8rem;
 }
 
 .text-soluciones {
-  margin: 60px;
+  margin: 3.75rem;
   font-family: YuGothL;
   color: black;
   font-weight: bolder;
   position: relative;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.031rem;
 }
 
 .header-soluciones {
@@ -25,22 +25,22 @@ margin-top: 8rem;
   text-align: center !important;
   width: 60%;
   color: white;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 500;
-  letter-spacing: 20px;
+  letter-spacing: 1.25rem;
   text-transform: uppercase;
 }
 .description-paragraph {
   font-size: 1.28rem;
   font-weight: 900;
-  line-height: 27px;
+  line-height: 1.688rem;
   font-family: YuGothL;
 }
 .column-ul {
   column-count: 2;
-  column-gap: 100px;
+  column-gap: 6.25rem;
   column-rule-style: solid;
-  column-rule-width: 1px;
+  column-rule-width: 0.063rem;
   column-rule-color: rgba(15, 65, 162, 1);
   list-style: none;
   align-content: center;
@@ -50,21 +50,19 @@ margin-top: 8rem;
 .column-ul > li {
   position: relative;
   display: inline-block;
-  margin: 10px;
-  letter-spacing: 4px;
-  /* font-size: 18px; */
-  /* text-transform: uppercase; */
+  margin: 0.625rem;
+  letter-spacing: 0.25rem;
   font-weight: bold;
   font-family: YuGothL, sans-serif;
 }
 @media (max-width: 768px) {
-  .text-overlaySoluciones{
-    font-size: 18px;
+  .text-overlaySoluciones {
+    font-size: 1.125rem;
     font-weight: 500;
     display: table;
     width: 60%;
     margin: 0 auto;
-    letter-spacing: 10px;
+    letter-spacing: 0.625rem;
     text-align: center;
   }
   .column-ul {
@@ -72,7 +70,7 @@ margin-top: 8rem;
     align-items: center;
     list-style: none;
   }
-  .carousel-imagenes{
+  .carousel-imagenes {
     height: 25vh;
   }
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./services.css";
-import Logo from "../../assets/LOGO CUADRADO blanco.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "antd";
@@ -91,9 +90,6 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  {/* <div className="img">
-                    <img src={Logo} alt="logo" className="img-logo" />
-                  </div> */}
                   <h2 className="title">Gestión</h2>
                   <p>
                     Planificamos, organizamos y ejecutamos las acciones
@@ -139,9 +135,6 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  {/* <div className="img">
-                    <img src={Logo} alt="logo" className="img-logo" />
-                  </div> */}
                   <h2 className="title">Prevención</h2>
                   <p>
                     Detectamos riesgos para la prevención de accidentes de
@@ -195,9 +188,6 @@ export default function Services() {
                 style={{ all: "unset", cursor: "pointer" }}
               >
                 <div className="about-col about-bg1">
-                  {/* <div className="img">
-                    <img src={Logo} alt="logo" className="img-logo" />
-                  </div> */}
                   <h2 className="title">Asesoramiento</h2>
                   <p>
                     Brindamos información clara y actualizada sobre los

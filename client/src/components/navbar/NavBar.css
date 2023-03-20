@@ -90,6 +90,22 @@
   .logo-largo{
     right: 1rem;
     position: relative;
-    max-width: 250px;
+    max-width: 15.625rem;
+  }
+}
+@media only screen and (max-width: 311px){
+  .logo{
+    display: none !important;
+  }
+  .appbar{
+    height: auto;
+  }
+  .box{
+    width: 100vw;
+  }
+  .logo-largo{
+    right: 1rem;
+    position: relative;
+    max-width: 12.5rem;
   }
 }

@@ -9,7 +9,6 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaEnvelope } from "react-icons/fa";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import "./Footer.css";
 
 export default function Footer() {
   const year =  new Date().getFullYear();
@@ -38,7 +37,7 @@ export default function Footer() {
             <MDBIcon fab icon="instagram" />
           </a>
           <a
-            href="#!"
+            href="https://www.linkedin.com/in/proteccion-laboral-b2a21a26b/"
             target="_blank"
             rel="noreferrer"
             className="me-4 text-reset"
@@ -102,7 +101,7 @@ export default function Footer() {
             <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Contacto</h6>
               <p>
-                <MDBIcon icon="home" className="me-2" />
+                <MDBIcon icon="home" className="me-3" />
                 San Luis, ARG.
                 <br />
               </p>
@@ -123,7 +122,7 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <br />
-                <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 678961
+                <IoLogoWhatsapp size={20} className="me-3" />2664 678961
               </a>
               <br />
               <a
@@ -133,7 +132,7 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <br />
-                <IoLogoWhatsapp size={20} className="me-3" />+ 54 2664 722453
+                <IoLogoWhatsapp size={20} className="me-3" />2664 722453
               </a>
             </MDBCol>
           </MDBRow>
