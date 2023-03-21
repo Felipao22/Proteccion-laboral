@@ -11,9 +11,10 @@ export default function Soluciones() {
   const content = (
     <div>
       <p>
-        Podes solicitar sin cargo un diagnóstico del estado siniestral y del
+        Con la contratación del Informe para Habilitación Comercial podes
+        solicitar sin cargo un diagnóstico del estado siniestral y del
         cumplimiento sobre las obligaciones legales en materia de higiene y
-        seguridad de tú empresa.
+        seguridad de tu empresa.
       </p>
     </div>
   );
@@ -28,7 +29,7 @@ export default function Soluciones() {
             indicators={false}
             interval={3000}
           >
-            <Carousel.Item >
+            <Carousel.Item>
               <h2 className="text-overlaySoluciones">GESTIón</h2>
               <img
                 className="d-block w-100 carousel-imagenes"
@@ -61,7 +62,7 @@ export default function Soluciones() {
                   Informes para habilitación Municipal.
                   <Popover placement="bottom" content={content}>
                     <button
-                      style={{ all:'unset', cursor: "pointer", color: "red" }}
+                      style={{ all: "unset", cursor: "pointer", color: "red" }}
                     >
                       ¡Novedad!
                     </button>
