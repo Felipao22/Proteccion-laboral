@@ -32,7 +32,7 @@ export default function ButtonAppBar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 0.5 }}
             onClick={() => setIsDrawerOpen(true)}
           >
             <MenuIcon className="menu" />
@@ -99,7 +99,7 @@ export default function ButtonAppBar() {
           <Link to="/">
             <img
               className="logo-largo"
-              style={{ height: "80px" }}
+              style={{ height: "40px" }}
               src={IMAGE2}
               alt="logo largo"
             />

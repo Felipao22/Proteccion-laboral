@@ -8,7 +8,7 @@ import im3 from '../../assets/im3.jpg'
 
 export default function Carrusel() {
   return (
-    <Carousel interval={3000}>
+    <Carousel interval={3000} >
       <Carousel.Item>
         <img className="img-overlay" src={logoBlanco} alt="log" />
         <div className="box-text">

@@ -11,7 +11,7 @@ export default function Soluciones() {
   const content = (
     <div>
       <p>
-        Podes solicitar sin cargo un Diagnóstico del estado siniestral y del
+        Podes solicitar sin cargo un diagnóstico del estado siniestral y del
         cumplimiento sobre las obligaciones legales en materia de higiene y
         seguridad de tú empresa.
       </p>
@@ -26,8 +26,9 @@ export default function Soluciones() {
             className="carousel-soluciones"
             variant="dark"
             indicators={false}
+            interval={3000}
           >
-            <Carousel.Item interval={2000}>
+            <Carousel.Item >
               <h2 className="text-overlaySoluciones">GESTIón</h2>
               <img
                 className="d-block w-100 carousel-imagenes"
@@ -35,7 +36,7 @@ export default function Soluciones() {
                 alt="First slide"
               />
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item>
               <h2 className="text-overlaySoluciones">Prevención</h2>
               <img
                 className="d-block w-100 carousel-imagenes"
@@ -43,7 +44,7 @@ export default function Soluciones() {
                 alt="Second slide"
               />
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item>
               <h2 className="text-overlaySoluciones">Asesoramiento</h2>
               <img
                 className="d-block w-100 carousel-imagenes"
@@ -54,13 +55,13 @@ export default function Soluciones() {
           </Carousel>
           <main>
             <h1 className="header-soluciones">Servicios</h1>
-            <div className="description-paragraph">
+            <div className="services-paragraph">
               <ul className="column-ul">
                 <li>
                   Informes para habilitación Municipal.
                   <Popover placement="bottom" content={content}>
                     <button
-                      style={{ all: "unset", cursor: "pointer", color: "red" }}
+                      style={{ all:'unset', cursor: "pointer", color: "red" }}
                     >
                       ¡Novedad!
                     </button>

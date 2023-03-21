@@ -72,10 +72,44 @@
   }
   .logo-largo{
     position: relative;
-    max-width: 80vw;
-    right: 1rem;
+    max-width: 70vw;
+    left: 3rem;
   }
 
+}
+@media only screen and (max-width: 465px){
+  .logo{
+    display: none !important;
+  }
+  .appbar{
+    height: auto;
+  }
+  .box{
+    width: 100vw;
+  }
+  .logo-largo{
+    position: relative;
+    left: 1rem;
+    max-width: 15.625rem;
+    height: 6.25rem;
+  }
+}
+@media only screen and (max-width: 370px){
+  .logo{
+    display: none !important;
+  }
+  .appbar{
+    height: auto;
+  }
+  .box{
+    width: 100vw;
+  }
+  .logo-largo{
+    position: relative;
+    left: 0.125rem;
+    max-width: 15.625rem;
+    height: 6.25rem;
+  }
 }
 @media only screen and (max-width: 350px){
   .logo{
@@ -88,12 +122,13 @@
     width: 100vw;
   }
   .logo-largo{
-    right: 1rem;
     position: relative;
+    left: 0.033rem;
     max-width: 15.625rem;
+    height: 6.25rem;
   }
 }
-@media only screen and (max-width: 311px){
+@media only screen and (max-width: 325px){
   .logo{
     display: none !important;
   }

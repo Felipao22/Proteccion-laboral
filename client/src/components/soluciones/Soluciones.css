@@ -30,7 +30,7 @@
   letter-spacing: 1.25rem;
   text-transform: uppercase;
 }
-.description-paragraph {
+.services-paragraph {
   font-size: 1.28rem;
   font-weight: 900;
   line-height: 1.688rem;
@@ -42,7 +42,6 @@
   column-rule-style: solid;
   column-rule-width: 0.063rem;
   column-rule-color: rgba(15, 65, 162, 1);
-  list-style: none;
   align-content: center;
   margin-right: 2rem;
 }
@@ -67,8 +66,8 @@
   }
   .column-ul {
     column-count: 1;
-    align-items: center;
-    list-style: none;
+    text-align:start;
+    margin: 0.3rem;
   }
   .carousel-imagenes {
     height: 25vh;
