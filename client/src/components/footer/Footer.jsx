@@ -62,7 +62,7 @@ export default function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Navegar</h6>
               <p>
                 <a
-                  href="/"
+                  href="/#/"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -71,7 +71,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/nosotros"
+                  href="/#/nosotros"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -80,7 +80,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/services"
+                  href="/#/services"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -89,7 +89,7 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/contact"
+                  href="/#/contact"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
