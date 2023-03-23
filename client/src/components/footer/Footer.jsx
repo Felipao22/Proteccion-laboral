@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import {
   MDBFooter,
   MDBContainer,
@@ -11,7 +12,45 @@ import { FaEnvelope } from "react-icons/fa";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 export default function Footer() {
-  const year =  new Date().getFullYear();
+  const year = new Date().getFullYear();
+  const history = useHistory();
+  const handleClickContact = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+    history.push("/contact");
+  };
+  const handleClickHome = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+    history.push("");
+  };
+  const handleClickService = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+    history.push("/services");
+  };
+  const handleClickNosotros = (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+    history.push("/nosotros");
+  };
+
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -62,7 +101,8 @@ export default function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Navegar</h6>
               <p>
                 <a
-                  href="/#/"
+                  href="!#"
+                  onClick={(e) => handleClickHome(e)}
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -71,7 +111,8 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/#/nosotros"
+                  href="!#"
+                  onClick={(e) => handleClickNosotros(e)}
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -80,7 +121,8 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/#/services"
+                  href="!#"
+                  onClick={(e) => handleClickService(e)}
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -89,7 +131,8 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="/#/contact"
+                  onClick={(e) => handleClickContact(e)}
+                  href="!#"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
@@ -122,7 +165,8 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <br />
-                <IoLogoWhatsapp size={20} className="me-3" />2664 678961
+                <IoLogoWhatsapp size={20} className="me-3" />
+                2664 678961
               </a>
               <br />
               <a
@@ -132,7 +176,8 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <br />
-                <IoLogoWhatsapp size={20} className="me-3" />2664 722453
+                <IoLogoWhatsapp size={20} className="me-3" />
+                2664 722453
               </a>
             </MDBCol>
           </MDBRow>
