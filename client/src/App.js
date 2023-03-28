@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "./components/loading/Loading.jsx";
 import NavBar from "./components/navbar/NavBar.jsx";
@@ -12,7 +12,7 @@ const Soluciones = lazy(() => import("./components/soluciones/Soluciones.jsx"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavBar />
       <Suspense fallback={<Loading />}>
         <ScrollToTop />
@@ -24,7 +24,7 @@ function App() {
           <Route path="*" component={NotFound} />
         </Switch>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
