@@ -13,7 +13,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Drawer from "@mui/material/Drawer";
 import IMAGE2 from "../../assets/logo largo.png";
-// import IMAGE3 from "../../assets/LOGO ALARGADO 2.png";
 
 export default function ButtonAppBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

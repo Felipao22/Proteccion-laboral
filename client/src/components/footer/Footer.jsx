@@ -30,7 +30,7 @@ export default function Footer() {
       left: 0,
       behavior: "auto",
     });
-    history.push("");
+    history.push("/");
   };
   const handleClickService = (e) => {
     e.preventDefault();

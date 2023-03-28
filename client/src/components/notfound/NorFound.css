@@ -1,0 +1,23 @@
+.container-notfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.75rem;
+}
+
+.img-error{
+    object-fit: contain;
+    max-width: 31.25rem;
+    height: auto;
+}
+
+@media only screen and (max-width:500px) {
+    .img-error{
+        max-width: 25rem;
+    }
+}
+@media only screen and (max-width:400px) {
+    .img-error{
+        width: 90vw;
+    }
+}
