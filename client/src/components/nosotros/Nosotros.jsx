@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from "../footer/Footer.jsx";
 import "./Nosotros.css";
-import uno from "../../assets/1.jpg";
-import logo from "../../assets/LOGO CUADRADO.png";
+import nosotros from "../../assets/nosotros.webp";
+import logo from "../../assets/logo.webp";
 
 export default function Nosotros() {
   return (
@@ -45,7 +45,7 @@ export default function Nosotros() {
           <div className="flex-dave-layout-main_inner __flex-reverse-column">
             <div className="flex-dave-wrapper_right">
               <div className="image_wrapper-right founding-story">
-                <img alt="algo" className="imagen-people" src={uno} />
+                <img alt="algo" className="imagen-people" src={nosotros} />
               </div>
             </div>
             <div className="flex-dave-wrapper_left2">

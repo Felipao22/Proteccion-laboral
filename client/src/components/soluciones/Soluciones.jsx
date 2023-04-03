@@ -1,9 +1,9 @@
 import Footer from "../footer/Footer";
 import "./Soluciones.css";
 import { Carousel } from "react-bootstrap";
-import soluciones from "../../assets/soluciones.jpg";
-import soluciones2 from "../../assets/soluciones2.jpg";
-import soluciones3 from "../../assets/soluciones3.jpg";
+import soluciones from "../../assets/soluciones.webp";
+import soluciones2 from "../../assets/soluciones2.webp";
+import soluciones3 from "../../assets/soluciones3.webp";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Popover } from "antd";
 

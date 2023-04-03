@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./Carousel.css";
-import logoBlanco from '../../assets/LOGO CUADRADO blanco.png';
-import exit6 from '../../assets/exit6.jpg';
-import im1 from '../../assets/im1.jpg';
-import im3 from '../../assets/im3.jpg'
+import logoBlanco from '../../assets/LOGO CUADRADO blanco.webp';
+import exit from '../../assets/exit.webp';
+import im1 from '../../assets/im1.webp';
+import im3 from '../../assets/im3.webp'
 
 export default function Carrusel() {
   return (
@@ -16,7 +16,7 @@ export default function Carrusel() {
         </div>
         <img
           className="d-block w-100"
-          src={exit6}
+          src={exit}
           alt="First slide"
         />
       </Carousel.Item>

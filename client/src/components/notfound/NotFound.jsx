@@ -1,5 +1,5 @@
 import './NorFound.css';
-import error from '../../assets/error.jpg'
+import error from '../../assets/error.webp'
 
 export default function NotFound() {
   return (
