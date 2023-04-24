@@ -1,0 +1,69 @@
+{
+    "tipos":
+    [{
+        "id": "1",
+        "name": "Iluminación",
+        "categoryId":[1]
+    },
+    {
+        "id": "2",
+        "name": "Carga de Fuego",
+        "categoryId":[1]
+    },
+    {
+        "id": "3",
+        "name": "Ruido",
+        "categoryId":[1]
+    },
+    {
+        "id": "5",
+        "name": "Ergonomía",
+        "categoryId":[1]
+    },
+    {
+        "id": "6",
+        "name": "Puesta a tierra",
+        "categoryId":[1]
+    },
+    {
+        "id": "7",
+        "name": "Matafuegos",
+        "categoryId":[2]
+    },
+    {
+        "id": "8",
+        "name": "Luces de emergencia",
+        "categoryId":[2]
+    },
+    {
+        "id": "9",
+        "name": "Carteleria",
+        "categoryId":[2]
+    },
+    {
+        "id": "10",
+        "name": "Tableros eléctricos",
+        "categoryId":[2]
+    },
+    {
+        "id": "11",
+        "name": "Botiquines",
+        "categoryId":[2]
+    },
+    {
+        "id": "12",
+        "name": "Capacitación",
+        "categoryId":[3]
+    },
+    {
+        "id": "13",
+        "name": "Cronogroma del servicio",
+        "categoryId":[3]
+    },
+    {
+        "id": "14",
+        "name": "Plan Anual de Capacitaciones",
+        "categoryId":[3]
+    }
+]
+}
