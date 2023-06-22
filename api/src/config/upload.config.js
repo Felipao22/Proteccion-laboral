@@ -1,29 +1,29 @@
-const multer = require('multer');
-
+const multer = require("multer");
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads')
-    },
-    filename: function (req, file, cb) {
-        cb(null, `${Date.now()}-${file.originalname}`)
-    }
-})
+  destination: function (req, file, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
 
 var upload = multer({
-    storage: storage,
-    limits: { fieldSize: '100' },
-    fileFilter: (req, file, cb) => {
-        const xlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        const fileTypes = /pdf|xls/
-        const mimeType = fileTypes.test(file.mimetype)  
-        // const extname = fileTypes.test(path.extname(file.originalname))
+  storage: storage,
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    const { mimetype } = file;
+    const xlsx =
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+    const fileTypes = /pdf|xls/;
+    const mimeType = fileTypes.test(mimetype);
 
-        if(mimeType || file.mimetype === xlsx) {
-            return cb(null, true)
-        }
-        cb('Give proper files formate to upload')
+    if (mimeType || mimetype === xlsx) {
+      return cb(null, true);
     }
-})
+    cb("Give proper files formate to upload");
+  },
+});
 
 module.exports = upload;

@@ -12,33 +12,17 @@ async function uploadFile(req, res) {
     path: data,
     size: size,
   } = req.file;
-  // const {kindId} = req.body;
+  const {kindId} = req.body;
 
   Pdf.create({
     name,
     type,
     data,
     size,
+    kindId: kindId
   })
     .then((newFile) => res.json(newFile))
     .catch((error) => res.status(400).json({ error }));
-
-  //   try {
-  //     const createPdf = await Pdf.create({           
-  //       name,
-  //       type,
-  //       data,
-  //       size,
-  //     })
-  //     let PdfToKind = await Kind.findAll({
-  //             where:{id: kindId}
-  //     })
-  //     createPdf.addKind(PdfToKind)
-  //     res.status(200).send('Pdf loaded');
-
-  // } catch (error) {
-  //     console.log(error);
-  // }
 }
 
 //Fucion del GET Files por Id
@@ -106,7 +90,6 @@ async function downloadFile(req, res) {
   
   try {
     const file = await Pdf.findByPk(fileId);
-    console.log(`soy file,${file}`)
     
     if (!file) {
       return res.status(404).json({ message: 'Archivo no encontrado' });
@@ -116,7 +99,6 @@ async function downloadFile(req, res) {
     const fileStream = fs.createReadStream(filePath); // crear un flujo de lectura del archivo
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename="${file.name}"`);
-    console.log(`soy filepath ${filePath}`)
     fileStream.pipe(res);
   } catch (error) {
     console.error(error);
