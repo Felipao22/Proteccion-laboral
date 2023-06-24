@@ -16,52 +16,52 @@
         "categoryId":[1]
     },
     {
-        "id": "5",
+        "id": "4",
         "name": "Ergonomía",
         "categoryId":[1]
     },
     {
-        "id": "6",
+        "id": "5",
         "name": "Puesta a tierra",
         "categoryId":[1]
     },
     {
-        "id": "7",
+        "id": "6",
         "name": "Matafuegos",
         "categoryId":[2]
     },
     {
-        "id": "8",
+        "id": "7",
         "name": "Luces de emergencia",
         "categoryId":[2]
     },
     {
-        "id": "9",
+        "id": "8",
         "name": "Carteleria",
         "categoryId":[2]
     },
     {
-        "id": "10",
+        "id": "9",
         "name": "Tableros eléctricos",
         "categoryId":[2]
     },
     {
-        "id": "11",
+        "id": "10",
         "name": "Botiquines",
         "categoryId":[2]
     },
     {
-        "id": "12",
+        "id": "11",
         "name": "Capacitación",
         "categoryId":[3]
     },
     {
-        "id": "13",
+        "id": "12",
         "name": "Cronogroma del servicio",
         "categoryId":[3]
     },
     {
-        "id": "14",
+        "id": "13",
         "name": "Plan Anual de Capacitaciones",
         "categoryId":[3]
     }

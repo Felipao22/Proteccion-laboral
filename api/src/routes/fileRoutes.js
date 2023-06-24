@@ -1,5 +1,5 @@
 const { Router } = require ("express");
-const { Pdf } = require('./../db');
+const { File } = require('./../db');
 
 const router = Router();
 

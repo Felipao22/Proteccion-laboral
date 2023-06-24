@@ -16,31 +16,31 @@ module.exports = (sequelize) => {
   },
     nombreEmpresa: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },     
     nombreEstablecimiento: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }, 
     cuit: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     provincia: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     ciudad: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     direccion: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     telefono: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     deleted: {
       type: DataTypes.BOOLEAN,
