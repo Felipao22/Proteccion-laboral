@@ -1,5 +1,5 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   MDBFooter,
   MDBContainer,
@@ -13,46 +13,19 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const history = useHistory();
-  const handleClickContact = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-    history.push("/contact");
-  };
-  const handleClickHome = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-    history.push("/");
-  };
-  const handleClickService = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-    history.push("/services");
-  };
-  const handleClickNosotros = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-    history.push("/nosotros");
+
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
   };
 
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+      <ScrollToTop />
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Conocé nuestras redes:</span>
@@ -100,44 +73,40 @@ export default function Footer() {
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Navegar</h6>
               <p>
-                <a
-                  href="!#"
-                  onClick={(e) => handleClickHome(e)}
+                <Link
+                  to="/"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
                   Home
-                </a>
+                </Link>
               </p>
               <p>
-                <a
-                  href="!#"
-                  onClick={(e) => handleClickNosotros(e)}
+                <Link
+                  to="/nosotros"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
                   Nosotros
-                </a>
+                </Link>
               </p>
               <p>
-                <a
-                  href="!#"
-                  onClick={(e) => handleClickService(e)}
+                <Link
+                  to="/services"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
                   Servicios
-                </a>
+                </Link>
               </p>
               <p>
-                <a
-                  onClick={(e) => handleClickContact(e)}
-                  href="!#"
+                <Link
+                  to="/contact"
                   className="text-reset"
                   style={{ textDecoration: "none" }}
                 >
                   Contacto
-                </a>
+                </Link>
               </p>
             </MDBCol>
 
