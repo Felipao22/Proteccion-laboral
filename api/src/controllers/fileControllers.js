@@ -28,7 +28,7 @@ async function uploadFile(req, res) {
       userEmail: email,
     });
 
-    res.json(newFile);
+    res.json({ message: 'Archivo subido correctamente', file: newFile });
   } catch (error) {
     console.error("Error al subir el archivo:", error);
     res.status(500).json({ message: "Ocurrió un error al subir el archivo" });

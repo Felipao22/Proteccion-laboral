@@ -8,7 +8,6 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING, 
       allowNull: false,
       primaryKey: true,  
-      allowNull: true
     },
     password: {
       type: DataTypes.STRING,
@@ -16,40 +15,33 @@ module.exports = (sequelize) => {
   },
     nombreEmpresa: {
       type: DataTypes.STRING,
-      allowNull: true
     },     
     nombreEstablecimiento: {
         type: DataTypes.STRING,
-        allowNull: true
     }, 
     cuit: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     provincia: {
       type: DataTypes.STRING,
-      allowNull: true
     },
     ciudad: {
       type: DataTypes.STRING,
-      allowNull: true
     },
     direccion: {
       type: DataTypes.STRING,
-      allowNull: true
     },
     telefono: {
       type: DataTypes.STRING,
-      allowNull: true
+
     },
     deleted: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
       defaultValue: false
     },
     active: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+
       defaultValue: true
     },
     isAdmin: {

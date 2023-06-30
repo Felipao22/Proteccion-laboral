@@ -26,7 +26,8 @@
     "pg": "^8.5.1",
     "sequelize": "^6.3.5",
     "swagger-ui-dist": "^4.15.5",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-ui-express": "^4.6.0",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

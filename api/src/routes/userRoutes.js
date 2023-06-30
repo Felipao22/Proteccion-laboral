@@ -1,71 +1,132 @@
-const { Router } = require('express');
-const { getUsers, getUserByEmail} = require('../controllers/userControllers')
-const {User} = require('../db')
+const { Router } = require("express");
+const { getUsers, getUserByEmail } = require("../controllers/userControllers");
+const { User } = require("../db");
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-
 
 const router = Router();
 
 //GET / GET ALL USERS
 // http://localhost:3001/user
 router.get("/", async (req, res) => {
-    try {
-      const dbUsers = await getUsers();
-      res.status(201).send(dbUsers);
-    } catch (e) {
-      res.send("error:" + e.message);
-    }
-  });
+  try {
+    const dbUsers = await getUsers();
+    res.status(201).send(dbUsers);
+  } catch (e) {
+    res.send("error:" + e.message);
+  }
+});
 
-  router.get("/:email", async (req, res) => {
-    try {
-      const { email } = req.params;
-      const dbUserByEmail = await getUserByEmail(email);
-      res.status(201).send(dbUserByEmail);
-    } catch (e) {
-      res.send("error:" + e.message);
-    }
-  });
+router.get("/:email", async (req, res) => {
+  try {
+    const { email } = req.params;
+    const dbUserByEmail = await getUserByEmail(email);
+    res.status(201).send(dbUserByEmail);
+  } catch (e) {
+    res.send("error:" + e.message);
+  }
+});
 
-  //PUT / baneo de User (SOLO LO PUEDE HACER ADMIN)
+//PUT / baneo de User (SOLO LO PUEDE HACER ADMIN)
 // http://localhost:3001/user/baneo/:email
-// router.put("/baneo/:email", verifyToken, async (req, res) => {
-//     const email=req.params.email; 
-//     //console.log(`email ${email} de la ruta put`)
-//     //Agrego verificacion de token, userLogin viene de la fc verifyToken
-//     //si el usuario es admin entra, xq el admin puede banear, nadie mas puede.
-//     //console.log(`req.userLogin.isAdmin de la ruta put baneo ${req.userLogin.isAdmin}`);
-//     if(req.userLogin.isAdmin){ 
+// router.put("/:email", async (req, res) => {
+//     const {email}= req.params;
 //       try {
-//         await User.update({deleted: true},{
-//           where: {
-//               email:email,
-//           }
-//       })
-//       res.status(200).send('Se bloqueo el usuario correctamente');
+//         const modification = req.body; //json con atributos a modificar y nuevos valores
+//         const body = await User.update(modification, {
+//             where: { email: email }
+//         });
+//         // const foundUser = await User.findByPk(email);
+//         // await foundUser.setUsers(modification.UserById);
+//         // res.json({message: 'Usuario modificado correctamente', body})
+//         res.status(201).send(`${body} Usuario modificado`)
 //       } catch (e) {
 //         res.send("error:" + e.message);
-//       } } else{
-//       res.status(403).json(`No tiene permiso para bloquear esta cuenta usuario`);
-//     }   
+//       }
 //   });
+router.put("/:email", async (req, res) => {
+  const { email } = req.params;
+  try {
+    const modification = req.body; // JSON con atributos a modificar y nuevos valores
+    const result = await User.update(modification, {
+      where: { email: email },
+    });
+    if (result[0] === 1) {
+      res.status(200).send("Usuario modificado");
+    } else {
+      res.status(404).send("Usuario no encontrado");
+    }
+  } catch (e) {
+    res.status(500).send("Error: " + e.message);
+  }
+});
+
+//PUT / baneo de User (SOLO LO PUEDE HACER ADMIN)
+// http://localhost:3001/user/baneo/:email
+router.put("/baneo/:email", async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res.status(404).send("Usuario no encontrado");
+    }
+
+    const newActiveState = user.active === true ? false : true;
+
+    await User.update({ active: newActiveState }, { where: { email } });
+
+    const message = newActiveState
+      ? "Se activó el usuario correctamente"
+      : "El usuario ha sido bloqueado exitosamente";
+    return res.status(200).send(message);
+  } catch (e) {
+    return res.status(500).send("Error: " + e.message);
+  }
+});
+
+// http://localhost:3001/user/baneo/:email
+router.put("/activar/:email", async (req, res) => {
+  const { email } = req.params;
+  
+  try {
+    const user = await User.findOne({ where: { email } });
+    const activeState = user.active === false;
+
+    if (!user) {
+      return res.status(404).send("Usuario no encontrado");
+    }
+
+    else if(activeState){
+      await User.update({ active: true }, { where: { email } });
+    }
+
+
+
+    const message = "Se activó el usuario correctamente"
+    
+    return res.status(200).send(message);
+  } catch (e) {
+    return res.status(500).send("Error: " + e.message);
+  }
+});
 
 router.post("/", async (req, res) => {
-    try {
-      const newUser = await User.findOrCreate({
-        where: {
-          email: req.body.email,
-          nombreEmpresa: req.body.nombreEmpresa,
-          nombreEstablecimiento: req.body.nombreEstablecimiento,
-          cuit: req.body.cuit,
-          telefono: req.body.telefono,
-          provincia: req.body.provincia,
-          ciudad: req.body.ciudad,
-          direccion: req.body.direccion,
-          password: req.body.password
-        }
-      });
+  try {
+    const newUser = await User.findOrCreate({
+      where: {
+        email: req.body.email,
+        nombreEmpresa: req.body.nombreEmpresa,
+        nombreEstablecimiento: req.body.nombreEstablecimiento,
+        cuit: req.body.cuit,
+        telefono: req.body.telefono,
+        provincia: req.body.provincia,
+        ciudad: req.body.ciudad,
+        direccion: req.body.direccion,
+        password: req.body.password,
+      },
+    });
 
     //   // nodemailer
     //   const transporter = nodemailer.createTransport(sendgridTransport({
@@ -87,10 +148,12 @@ router.post("/", async (req, res) => {
     //           `,
     //      });
 
-      res.status(201).send(newUser[1] ? "Usuario creado" : "El usuario ya existe");
-    } catch (e) {
-      res.send("error:" + e);
-    }
+    res
+      .status(201)
+      .send(newUser[1] ? "Usuario creado" : "El usuario ya existe");
+  } catch (e) {
+    res.send("error:" + e);
+  }
   // }
 });
 
@@ -118,22 +181,25 @@ router.post("/", async (req, res) => {
 //   }
 // });
 
-router.post('/login', async(req,res) => {
-  const {email, password, active} = req.body;
+router.post("/login", async (req, res) => {
+  const { email, password, active } = req.body;
   try {
     const userLogin = await User.findByPk(email);
-      if (!userLogin) 
-      return res.status(201).send('Usuario no encontrado') 
-   else {
-      if (userLogin.email === email && userLogin.password === password && userLogin.active === true) {
-           return res.status(201).json(userLogin)
-      } else {  return res.status(201).send('Datos incorrectos')}
-  }
+    if (!userLogin) return res.status(201).send("Usuario no encontrado");
+    else {
+      if (
+        userLogin.email === email &&
+        userLogin.password === password &&
+        userLogin.active === true
+      ) {
+        return res.status(201).json(userLogin);
+      } else {
+        return res.status(201).send("Datos incorrectos");
+      }
+    }
   } catch (error) {
-      res.status(404).send(`error:${e.message}`)
+    res.status(404).send(`error:${e.message}`);
   }
-})
-
-
+});
 
 module.exports = router;

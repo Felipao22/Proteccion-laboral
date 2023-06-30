@@ -19,7 +19,7 @@ const router = Router();
 // });
 
 //GET Category
-// http://localhost:3001/category
+// http://localhost:3001/kind
 router.get('/', (req,res) => {   
     const {name} = req.query 
     try {
