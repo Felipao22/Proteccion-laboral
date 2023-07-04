@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "YuGothL";
+  src: local("YuGothL"),
+    url("./fonts/YuGothic-Light-01.woff") format("woff");
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: "YuGothL" -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  font-family: "YuGothL", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     "Arial", "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,12 +18,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-@font-face {
-  font-family: "YuGothL";
-  src: local("YuGothL"), url("./fonts/YuGothL.ttc") format("truetype");
-  font-display: swap;
 }
 
 h1 {
