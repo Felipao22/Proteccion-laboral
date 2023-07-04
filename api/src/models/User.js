@@ -1,9 +1,14 @@
 const { DataTypes} = require('sequelize');
+const uniqid = require ('uniqid');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('user', {
+    userId:{
+      type: DataTypes.STRING,
+      defaultValue: () => uniqid(),
+    },
     email: {
       type: DataTypes.STRING, 
       allowNull: false,
@@ -48,8 +53,5 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-  }, {
-
-    timestamps: false
-  });
+  }, );
 };

@@ -1,18 +1,18 @@
 {
     "usuarios":[
         {
-            "id": 1,
+            "userId": 1,
             "email":"asesor@proteccionlaboral.com.ar",
             "password": "cristian",
             "deleted":false,
-            "isAdimin":true
+            "isAdmin":true
         },
         {
-            "id": 2,
+            "userId": 2,
             "email":"info@proteccionlaboral.com.ar",
             "password": "cristian",
             "deleted":false,
-            "isAdimin":true
+            "isAdmin":true
         }
     ]
 }

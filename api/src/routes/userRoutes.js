@@ -1,8 +1,9 @@
 const { Router } = require("express");
 const { getUsers, getUserByEmail } = require("../controllers/userControllers");
 const { User } = require("../db");
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
+const jwt = require('jsonwebtoken');
+const { isAuth } = require("../controllers/authControllers");
+const CryptoJS = require('crypto-js');
 
 const router = Router();
 
@@ -27,23 +28,8 @@ router.get("/:email", async (req, res) => {
   }
 });
 
-//PUT / baneo de User (SOLO LO PUEDE HACER ADMIN)
-// http://localhost:3001/user/baneo/:email
-// router.put("/:email", async (req, res) => {
-//     const {email}= req.params;
-//       try {
-//         const modification = req.body; //json con atributos a modificar y nuevos valores
-//         const body = await User.update(modification, {
-//             where: { email: email }
-//         });
-//         // const foundUser = await User.findByPk(email);
-//         // await foundUser.setUsers(modification.UserById);
-//         // res.json({message: 'Usuario modificado correctamente', body})
-//         res.status(201).send(`${body} Usuario modificado`)
-//       } catch (e) {
-//         res.send("error:" + e.message);
-//       }
-//   });
+
+
 router.put("/:email", async (req, res) => {
   const { email } = req.params;
   try {
@@ -52,39 +38,44 @@ router.put("/:email", async (req, res) => {
       where: { email: email },
     });
     if (result[0] === 1) {
-      res.status(200).send("Usuario modificado");
+      res.status(200).json({ message: "Usuario modificado", modification });
     } else {
-      res.status(404).send("Usuario no encontrado");
+      res.status(404).send("Usuario no encontrado"); // Corregido: utiliza send en lugar de message
     }
   } catch (e) {
     res.status(500).send("Error: " + e.message);
   }
 });
 
-//PUT / baneo de User (SOLO LO PUEDE HACER ADMIN)
-// http://localhost:3001/user/baneo/:email
-router.put("/baneo/:email", async (req, res) => {
+
+
+router.put('/baneo/:email', async (req, res) => {
   const { email } = req.params;
 
   try {
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      return res.status(404).send("Usuario no encontrado");
+      return res.status(404).send('Usuario no encontrado');
     }
 
-    const newActiveState = user.active === true ? false : true;
+    // if (!user.admin) {
+    //   return res.status(403).send('Acceso no autorizado');
+    // }
+
+    const newActiveState = !user.active;
 
     await User.update({ active: newActiveState }, { where: { email } });
 
     const message = newActiveState
-      ? "Se activó el usuario correctamente"
-      : "El usuario ha sido bloqueado exitosamente";
+      ? 'Se activó el usuario correctamente'
+      : 'El usuario ha sido bloqueado exitosamente';
     return res.status(200).send(message);
   } catch (e) {
-    return res.status(500).send("Error: " + e.message);
+    return res.status(500).send('Error: ' + e.message);
   }
 });
+
 
 // http://localhost:3001/user/baneo/:email
 router.put("/activar/:email", async (req, res) => {
@@ -114,92 +105,64 @@ router.put("/activar/:email", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.findOrCreate({
+    const [user, created] = await User.findOrCreate({
       where: {
         email: req.body.email,
-        nombreEmpresa: req.body.nombreEmpresa,
-        nombreEstablecimiento: req.body.nombreEstablecimiento,
-        cuit: req.body.cuit,
-        telefono: req.body.telefono,
-        provincia: req.body.provincia,
-        ciudad: req.body.ciudad,
-        direccion: req.body.direccion,
-        password: req.body.password,
+        // nombreEmpresa: req.body.nombreEmpresa,
+        password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString(),
       },
     });
 
-    //   // nodemailer
-    //   const transporter = nodemailer.createTransport(sendgridTransport({
-    //         auth: {
-    //            api_key: process.env.CREDENTIAL,
-    //         },
-    //      }))
-
-    //      await transporter.sendMail({
-    //         to: req.body.email,
-    //         from: "pruebabringit@gmail.com",
-    //         subject: "Correo recibido satisfactoriamente",
-    //         html: `<h3>Bienvenido a Bring It App, ${req.body.name}!</h3>
-    //           <p>Estamos muy contentos de que formes parte de esta gran comunidad
-    //           te invito a que te suscribas a nuestra newsletter
-    //           <br />
-    //           para recibir ofertas interesantes a futuro
-    //           </p>
-    //           `,
-    //      });
-
-    res
-      .status(201)
-      .send(newUser[1] ? "Usuario creado" : "El usuario ya existe");
-  } catch (e) {
-    res.send("error:" + e);
-  }
-  // }
-});
-
-//POST / LOG IN para ingreso de usuario
-// http://localhost:3001/user/login
-// router.post("/login", async (req, res) => {
-//   try {
-//     const userLogin = await User.findByPk(req.body.email);
-//     if (!userLogin) return res.status(201).send("Usuario no encontrado");
-//     const hashedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
-//     const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
-//     if(originalPassword !== req.body.password) return res.status(201).send(`Datos incorrectos`);
-//     if (userLogin.deleted) return res.status(201).send('Usuario bloqueado');
-//     const accessToken = jwt.sign({
-//       email: userLogin.email,
-//       isBusiness: userLogin.isBusiness,
-//       isAdmin: userLogin.isAdmin
-//     }, process.env.JWT_SEC, { expiresIn: '30m' });
-
-//     const { password, ...others } = userLogin;
-
-//     res.status(200).json({others, accessToken});
-//   } catch (error) {
-//     res.status(404).send(`error:${error.message}`);
-//   }
-// });
-
-router.post("/login", async (req, res) => {
-  const { email, password, active } = req.body;
-  try {
-    const userLogin = await User.findByPk(email);
-    if (!userLogin) return res.status(201).send("Usuario no encontrado");
-    else {
-      if (
-        userLogin.email === email &&
-        userLogin.password === password &&
-        userLogin.active === true
-      ) {
-        return res.status(201).json(userLogin);
-      } else {
-        return res.status(201).send("Datos incorrectos");
-      }
+    if (created) {
+      res.status(201).json({message:"Usuario creado", created});
+    } else {
+      res.status(200).json({warning:"El usuario ya existe", user});
     }
   } catch (error) {
-    res.status(404).send(`error:${e.message}`);
+    res.status(500).send("Error: " + error);
   }
 });
+
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const userLogin = await User.findByPk(email);
+    if (!userLogin) {
+      return res.status(401).json({ warning: "Usuario no encontrado" });
+    }
+
+    const decryptedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
+    const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+
+    if (originalPassword !== password) {
+      return res.status(401).json({ warning: "Contraseña incorrecta" });
+    }
+
+    if (!userLogin.active) {
+      return res.status(401).json({ warning: "Usuario bloqueado" });
+    }
+
+    // Generar token JWT
+    const token = jwt.sign({ userId: userLogin.userId }, process.env.JWT_SEC, {
+      expiresIn: '1h', // El token expirará en 1 hora
+    });
+
+    return res.status(200).json({ message: 'Usuario logeado correctamente', userLogin, token });
+  } catch (error) {
+    console.error("Error al ingresar al sistema:", error);
+    return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
+  }
+});
+
+router.post("/logout", (req, res) => {  
+  // Enviar una respuesta exitosa indicando que el usuario se ha deslogueado correctamente
+  try {
+    return res.status(200).json({ message: "Usuario deslogueado correctamente" });
+  } catch (error) {
+    return res.status(500).json({message:"Ocurrió un error al salir del sistema"})
+  }
+});
+
 
 module.exports = router;

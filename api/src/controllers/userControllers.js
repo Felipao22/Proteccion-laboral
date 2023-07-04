@@ -2,6 +2,7 @@ const axios = require ('axios');
 const {User, File } = require ('../db');
 const jsonUsers = require('../json/users.json');
 const users = jsonUsers.usuarios
+const CryptoJS = require('crypto-js');
 
 //Funcion del GET / GET ALL USERS
 async function getUsers (){
@@ -27,20 +28,33 @@ async function getUserByEmail (email){
     }
 }
 
-  // SAVE DATA FROM JSON TO DB
-  const apiUsers = async () => {
-    try {
-      const foundUsers = await User.findOne();
-      if (!foundUsers) {
-        await User.bulkCreate(users);
-        console.log(`Users saved successfully!`);
-      } else {
-        console.log(`Users already loaded`);
-      }
-    } catch (error) {
-      console.log(`Error at apiUsers function: ${error}`);
+
+
+
+const apiUsers = async () => {
+  try {
+    const foundUsers = await User.findOne();
+    if (!foundUsers) {
+      const usersToCreate = users.map(user => {
+        const encryptedPassword = CryptoJS.AES.encrypt(user.password, process.env.PASS_SEC).toString();
+        return {
+          ...user,
+          password: encryptedPassword,
+          isAdmin: user.isAdmin ? true : false // Asignar isAdmin: true si user.isAdmin es true, de lo contrario, asignar false
+        };
+      });
+
+      await User.bulkCreate(usersToCreate);
+      console.log(`Users saved successfully!`);
+    } else {
+      console.log(`Users already loaded`);
     }
-  };
+  } catch (error) {
+    console.log(`Error at apiUsers function: ${error}`);
+  }
+};
+
+
 
 module.exports = {
     getUsers,
