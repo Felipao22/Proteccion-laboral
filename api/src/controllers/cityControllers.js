@@ -16,7 +16,7 @@ const apiCity = async () => {
 			console.log(`Cities already loaded`)
 		}	
 	} catch(error) {
-		console.log(`Error at apiInfo function: ${error}`);
+		console.log(`Error at apiCity function: ${error}`);
 	}
 }
 

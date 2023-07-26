@@ -52,16 +52,26 @@
     },
     {
         "id": "11",
+        "name": "Reportes de incidencia",
+        "categoryId":[2]
+    },
+    {
+        "id": "12",
+        "name": "Constancia de visita",
+        "categoryId":[2]
+    },
+    {
+        "id": "13",
         "name": "Capacitación",
         "categoryId":[3]
     },
     {
-        "id": "12",
+        "id": "14",
         "name": "Cronogroma del servicio",
         "categoryId":[3]
     },
     {
-        "id": "13",
+        "id": "15",
         "name": "Plan Anual de Capacitaciones",
         "categoryId":[3]
     }

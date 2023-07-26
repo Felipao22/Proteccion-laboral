@@ -13,6 +13,13 @@
             "password": "cristian",
             "deleted":false,
             "isAdmin":true
+        },
+        {
+            "userId": 3,
+            "email":"felipe@gmail.com",
+            "password": "felipe",
+            "deleted":false,
+            "isAdmin":false
         }
     ]
 }

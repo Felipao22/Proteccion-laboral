@@ -1,11 +1,14 @@
 const { Router } = require("express");
 const { getUsers, getUserByEmail } = require("../controllers/userControllers");
-const { User } = require("../db");
+const { User, Branch } = require("../db");
 const jwt = require('jsonwebtoken');
 const { isAuth } = require("../controllers/authControllers");
 const CryptoJS = require('crypto-js');
+const { getUserBranches } = require("../controllers/userBranchController");
 
 const router = Router();
+
+router.get("/:email/branch", getUserBranches);
 
 //GET / GET ALL USERS
 // http://localhost:3001/user
@@ -108,7 +111,7 @@ router.post("/", async (req, res) => {
     const [user, created] = await User.findOrCreate({
       where: {
         email: req.body.email,
-        // nombreEmpresa: req.body.nombreEmpresa,
+        nombreEmpresa: req.body.nombreEmpresa,
         password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString(),
       },
     });
@@ -124,10 +127,55 @@ router.post("/", async (req, res) => {
 });
 
 
+// router.post("/login", async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     const userLogin = await User.findByPk(email);
+
+//     if (!userLogin) {
+//       return res.status(401).json({ warning: "Usuario no encontrado" });
+//     }
+
+//     const decryptedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
+//     const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+
+//     if (originalPassword !== password) {
+//       return res.status(401).json({ warning: "Contraseña incorrecta" });
+//     }
+
+//     if (!userLogin.active) {
+//       return res.status(401).json({ warning: "Usuario bloqueado" });
+//     }
+
+//     // Generar token JWT
+//     const token = jwt.sign({ userId: userLogin.userId }, process.env.JWT_SEC, {
+//       expiresIn: '1h', // El token expirará en 1 hora
+//     });
+//     return res.status(200).json({ message: 'Usuario logeado correctamente', userLogin, token });
+//   } catch (error) {
+//     console.error("Error al ingresar al sistema:", error);
+//     console.log(error.data.message)
+//     return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
+//   }
+// });
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
+
+    // prueba para logear usuario con branch
+    // const userLogin = await User.findByPk(email, {
+    //   include: {
+    //     model: Branch,
+    //     attributes: ["branchId", "nombreSede", "ciudad", "direccion", "telefono"],
+    //     where: { active: true },
+    //   },
+    // });
     const userLogin = await User.findByPk(email);
+    if (!userLogin) {
+      return res.status(401).json({ warning: "Usuario no encontrado" });
+    }
+
     if (!userLogin) {
       return res.status(401).json({ warning: "Usuario no encontrado" });
     }
@@ -148,9 +196,14 @@ router.post("/login", async (req, res) => {
       expiresIn: '1h', // El token expirará en 1 hora
     });
 
-    return res.status(200).json({ message: 'Usuario logeado correctamente', userLogin, token });
+    return res.status(200).json({
+      message: 'Usuario logeado correctamente',
+      userLogin,
+      token,
+    });
   } catch (error) {
     console.error("Error al ingresar al sistema:", error);
+    console.log(error.data.message)
     return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
   }
 });

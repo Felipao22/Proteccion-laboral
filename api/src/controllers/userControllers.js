@@ -1,26 +1,26 @@
-const axios = require ('axios');
-const {User, File } = require ('../db');
+const axios = require('axios')
 const jsonUsers = require('../json/users.json');
 const users = jsonUsers.usuarios
+const { User, Branch } = require('../db');
 const CryptoJS = require('crypto-js');
 
 //Funcion del GET / GET ALL USERS
-async function getUsers (){
-    try {
-       const foundUsers = await User.findAll({
-        include: [{ model: File }],
-       });
-       return foundUsers;
-    }catch(e){
-        return (`No se encontraron usuarios cargados en la base de datos, ${e.message}`)
-    }
+async function getUsers() {
+  try {
+    const foundUsers = await User.findAll({
+      include: [{ model: Branch }],
+    });
+    return foundUsers;
+  } catch (e) {
+    return `No se encontraron usuarios cargados en la base de datos, ${e.message}`;
+  }
 }
 
 // Funcion del GET / GET ALL USERS
 async function getUserByEmail (email){
     try {
         const foundUser = await User.findByPk (email,{
-            include: [{ model: File }]
+            include: [{ model: Branch }]
         });      
         return foundUser;  
     }catch(e){

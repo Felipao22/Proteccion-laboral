@@ -13,11 +13,7 @@ module.exports = (sequelize) => {
       },
       nombre: {
         type: DataTypes.STRING,
-
-      },
-      provinceId:{
-        type: DataTypes.STRING
-      }   
+      } 
     },
     {
         timestamps: false

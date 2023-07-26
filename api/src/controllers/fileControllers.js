@@ -5,7 +5,8 @@ const fs = require("fs");
 
 //Fucion del POST Files
 async function uploadFile(req, res) {
-  const { kindId, email } = req.body;
+  const { kindId, branchBranchId } = req.body;
+  console.log(branchBranchId)
   try {
     const {
       originalname: name,
@@ -14,10 +15,10 @@ async function uploadFile(req, res) {
       size: size,
     } = req.file;
 
-    if (!kindId || !email) {
+    if (!kindId || !branchBranchId) {
       return res
         .status(400)
-        .json({ message: "Debe proporcionar el campo email y kindId" });
+        .json({ message: "Debe proporcionar el campo Establecimiento/Obras y tipo de archivo" });
     }
     const newFile = await File.create({
       name,
@@ -25,7 +26,7 @@ async function uploadFile(req, res) {
       data,
       size,
       kindId: kindId,
-      userEmail: email,
+      branchBranchId: branchBranchId,
     });
 
     res.json({ message: 'Archivo subido correctamente', file: newFile });
