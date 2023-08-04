@@ -1,57 +1,44 @@
-const { DataTypes} = require('sequelize');
-const uniqid = require ('uniqid');
+const { DataTypes } = require("sequelize");
+const uniqid = require("uniqid");
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('user', {
-    userId:{
+  sequelize.define("user", {
+    userId: {
       type: DataTypes.STRING,
       defaultValue: () => uniqid(),
     },
     email: {
-      type: DataTypes.STRING, 
+      type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,  
+      primaryKey: true,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
-  },
+      allowNull: false,
+    },
     nombreEmpresa: {
       type: DataTypes.STRING,
-    },     
-    nombreEstablecimiento: {
-        type: DataTypes.STRING,
-    }, 
+    },
     cuit: {
       type: DataTypes.STRING,
     },
-    provincia: {
-      type: DataTypes.STRING,
-    },
-    ciudad: {
-      type: DataTypes.STRING,
-    },
-    direccion: {
-      type: DataTypes.STRING,
-    },
-    telefono: {
-      type: DataTypes.STRING,
-
-    },
     deleted: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: false,
     },
     active: {
       type: DataTypes.BOOLEAN,
-
-      defaultValue: true
+      defaultValue: true,
     },
     isAdmin: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: false,
     },
-  }, );
+    isSuperAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+  });
 };

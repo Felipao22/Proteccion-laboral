@@ -40,7 +40,8 @@ const apiUsers = async () => {
         return {
           ...user,
           password: encryptedPassword,
-          isAdmin: user.isAdmin ? true : false // Asignar isAdmin: true si user.isAdmin es true, de lo contrario, asignar false
+          isAdmin: user.isAdmin ? true : false,
+          isSuperAdmin: user.isSuperAdmin ? true : false // Asignar isAdmin: true si user.isAdmin es true, de lo contrario, asignar false
         };
       });
 

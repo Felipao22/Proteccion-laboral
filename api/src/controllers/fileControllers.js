@@ -2,34 +2,105 @@ const { File, Kind } = require("../db");
 const { Op } = require("sequelize");
 const path = require("path");
 const fs = require("fs");
+const iconv = require("iconv-lite");
+const encodings = ["utf-8", "latin1", "windows-1252"];
 
 //Fucion del POST Files
+// async function uploadFile(req, res) {
+//   const { kindId, branchBranchId } = req.body;
+//   console.log(branchBranchId)
+//   try {
+//     const {
+//       originalname:name,
+//       mimetype: type,
+//       path: data,
+//       size: size,
+//     } = req.file;
+
+//     if (!kindId || !branchBranchId) {
+//       return res
+//         .status(400)
+//         .json({ message: "Debe proporcionar el campo Establecimiento/Obras y tipo de archivo" });
+//     }
+
+//     const newFile = await File.create({
+//       name,
+//       type,
+//       data,
+//       size,
+//       kindId: kindId,
+//       branchBranchId: branchBranchId,
+//     });
+
+//     res.json({ message: 'Archivo subido correctamente', file: newFile });
+//   } catch (error) {
+//     console.error("Error al subir el archivo:", error);
+//     res.status(500).json({ message: "Ocurrió un error al subir el archivo" });
+//   }
+// }
+
 async function uploadFile(req, res) {
   const { kindId, branchBranchId } = req.body;
-  console.log(branchBranchId)
+
   try {
     const {
-      originalname: name,
+      originalname,
       mimetype: type,
       path: data,
       size: size,
     } = req.file;
 
     if (!kindId || !branchBranchId) {
-      return res
-        .status(400)
-        .json({ message: "Debe proporcionar el campo Establecimiento/Obras y tipo de archivo" });
+      return res.status(400).json({
+        message: "Debe proporcionar el campo Establecimiento/Obras y tipo de archivo",
+      });
     }
-    const newFile = await File.create({
-      name,
-      type,
-      data,
-      size,
-      kindId: kindId,
-      branchBranchId: branchBranchId,
-    });
 
-    res.json({ message: 'Archivo subido correctamente', file: newFile });
+     // Agregar fecha al nombre del archivo en formato DD/MM/AA
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = String(date.getFullYear()).slice(-2);
+    const formattedDate = `${day}/${month}/${year}`;
+    const fileExtension = path.extname(originalname);
+    const fileNameWithoutExtension = path.basename(originalname, fileExtension);
+    const fileNameWithDate = `${fileNameWithoutExtension} - ${formattedDate}${fileExtension}`;
+
+    // Función recursiva para intentar cada codificación hasta encontrar una válida
+    function tryDecoding(index) {
+      if (index >= encodings.length) {
+        // Si se han probado todas las codificaciones y ninguna funcionó, usar nombre original
+        const newFile = File.create({
+          name: fileNameWithDate,
+          type,
+          data,
+          size,
+          kindId,
+          branchBranchId,
+        });
+        return res.json({ message: "Archivo subido correctamente", file: newFile });
+      }
+
+      const encoding = encodings[index];
+      try {
+        const decodedName = iconv.decode(Buffer.from(fileNameWithDate, "binary"), encoding);
+        const newFile = File.create({
+          name: decodedName,
+          type,
+          data,
+          size,
+          kindId,
+          branchBranchId,
+        });
+        return res.json({ message: "Archivo subido correctamente", file: newFile });
+      } catch (err) {
+        // Si hubo un error con la codificación, intentar con la siguiente
+        tryDecoding(index + 1);
+      }
+    }
+
+    // Comenzar con el primer intento de decodificación
+    tryDecoding(0);
   } catch (error) {
     console.error("Error al subir el archivo:", error);
     res.status(500).json({ message: "Ocurrió un error al subir el archivo" });

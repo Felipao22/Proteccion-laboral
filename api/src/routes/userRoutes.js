@@ -112,6 +112,7 @@ router.post("/", async (req, res) => {
       where: {
         email: req.body.email,
         nombreEmpresa: req.body.nombreEmpresa,
+        cuit: req.body.cuit,
         password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString(),
       },
     });
@@ -159,51 +160,186 @@ router.post("/", async (req, res) => {
 //   }
 // });
 
+// router.post("/login", async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     const userAdmin = await User.findByPk(email,{where: {isAdmin: true}})
+//     if(userAdmin){
+
+//     }
+//     // prueba para logear usuario con branch
+//     const userLogin = await User.findByPk(email, {
+//       include: {
+//         model: Branch,
+//         where: { active: true },
+//       },
+//     });
+//     // const userLogin = await User.findByPk(email);
+//     // if (!userLogin) {
+//     //   return res.status(401).json({ warning: "Usuario no encontrado" });
+//     // }
+
+//     if (!userLogin) {
+//       return res.status(401).json({ warning: "Usuario no encontrado" });
+//     }
+
+//     const decryptedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
+//     const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+
+//     if (originalPassword !== password) {
+//       return res.status(401).json({ warning: "Contraseña incorrecta" });
+//     }
+
+//     if (!userLogin.active) {
+//       return res.status(401).json({ warning: "Usuario bloqueado" });
+//     }
+
+//     // Generar token JWT
+//     const token = jwt.sign({ userId: userLogin.userId }, process.env.JWT_SEC, {
+//       expiresIn: '1h', // El token expirará en 1 hora
+//     });
+
+//     return res.status(200).json({
+//       message: 'Usuario logeado correctamente',
+//       userLogin,
+//       token,
+//     });
+//   } catch (error) {
+//     console.error("Error al ingresar al sistema:", error);
+//     console.log(error.data.message)
+//     return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
+//   }
+// });
+
+// actual
+// router.post("/login", async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     const userAdmin = await User.findOne({ where: { email, isAdmin: true } });
+//     if (userAdmin) {
+//       // Si el usuario no es admin, no incluir el modelo Branch
+//       const decryptedPassword = CryptoJS.AES.decrypt(userAdmin.password, process.env.PASS_SEC);
+//       const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+      
+//       if (originalPassword !== password) {
+//         return res.status(401).json({ warning: "Contraseña incorrecta" });
+//       }
+
+//       // Generate token JWT
+//       const token = jwt.sign({ userId: userAdmin.userId }, process.env.JWT_SEC, {
+//         expiresIn: '1h', // el token expira en 1 hora
+//       });
+
+//       return res.status(200).json({
+//         message: 'Administrador logeado correctamente',
+//         user: userAdmin,
+//         token,
+//       });
+//     }
+
+//     // Si el usuario no es admin, agregar modelo Branch
+//     const userLogin = await User.findOne({
+//       where: { email },
+//       include: {
+//         model: Branch,
+//         where: { active: true },
+//       },
+//     });
+
+//     if (!userLogin) {
+//       return res.status(401).json({ warning: "Usuario no encontrado" });
+//     }
+
+//     const decryptedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
+//     const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+
+//     if (originalPassword !== password) {
+//       return res.status(401).json({ warning: "Contraseña incorrecta" });
+//     }
+
+//     if (!userLogin.active) {
+//       return res.status(401).json({ warning: "Usuario bloqueado" });
+//     }
+
+//     // Generar token JWT
+//     const token = jwt.sign({ userId: userLogin.userId }, process.env.JWT_SEC, {
+//       expiresIn: '1h', // el token expira en 1 hora
+//     });
+
+//     return res.status(200).json({
+//       message: 'Usuario logeado correctamente',
+//       user: userLogin,
+//       token,
+//     });
+//   } catch (error) {
+//     console.error("Error al ingresar al sistema:", error);
+//     console.log(error.message);
+//     return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
+//   }
+// });
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
+    const userAdmin = await User.findOne({ where: { email, isAdmin: true } });
+    if (userAdmin) {
+      // Si el usuario no es admin, no incluir el modelo Branch
+      const decryptedPassword = CryptoJS.AES.decrypt(userAdmin.password, process.env.PASS_SEC);
+      const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
+      
+      if (originalPassword !== password) {
+        return res.status(401).json({ error: "Contraseña incorrecta" });
+      }
 
-    // prueba para logear usuario con branch
-    // const userLogin = await User.findByPk(email, {
-    //   include: {
-    //     model: Branch,
-    //     attributes: ["branchId", "nombreSede", "ciudad", "direccion", "telefono"],
-    //     where: { active: true },
-    //   },
-    // });
-    const userLogin = await User.findByPk(email);
-    if (!userLogin) {
-      return res.status(401).json({ warning: "Usuario no encontrado" });
+      // Generate token JWT
+      const token = jwt.sign({ userId: userAdmin.userId }, process.env.JWT_SEC, {
+        expiresIn: '1h', // el token expira en 1 hora
+      });
+
+      return res.status(200).json({
+        message: 'Administrador logeado correctamente',
+        user: userAdmin,
+        token,
+      });
     }
 
+    // Si el usuario no es admin, agregar modelo Branch
+    const userLogin = await User.findOne({
+      where: { email },
+      include: {
+        model: Branch,
+        where: { active: true },
+      },
+    });
+
     if (!userLogin) {
-      return res.status(401).json({ warning: "Usuario no encontrado" });
+      return res.status(404).json({ error: "Usuario no encontrado" });
     }
 
     const decryptedPassword = CryptoJS.AES.decrypt(userLogin.password, process.env.PASS_SEC);
     const originalPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
 
     if (originalPassword !== password) {
-      return res.status(401).json({ warning: "Contraseña incorrecta" });
+      return res.status(401).json({ error: "Contraseña incorrecta" });
     }
 
     if (!userLogin.active) {
-      return res.status(401).json({ warning: "Usuario bloqueado" });
+      return res.status(401).json({ error: "Usuario bloqueado" });
     }
 
     // Generar token JWT
     const token = jwt.sign({ userId: userLogin.userId }, process.env.JWT_SEC, {
-      expiresIn: '1h', // El token expirará en 1 hora
+      expiresIn: '1h', // el token expira en 1 hora
     });
 
     return res.status(200).json({
       message: 'Usuario logeado correctamente',
-      userLogin,
+      user: userLogin,
       token,
     });
   } catch (error) {
     console.error("Error al ingresar al sistema:", error);
-    console.log(error.data.message)
+    console.log(error.message);
     return res.status(500).json({ message: "Ocurrió un error al ingresar al sistema" });
   }
 });

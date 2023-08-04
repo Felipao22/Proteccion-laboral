@@ -25,9 +25,11 @@ const {apiKind} = require('./src/controllers/kindControllers.js');
 const { apiUsers } = require('./src/controllers/userControllers.js');
 const { apiBranches} = require('./src/controllers/userBranchController.js');
 
+const port = 3001 ?? process.env.PORT;
+
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
-  server.listen(process.env.PORT, async () => {
+  server.listen(port, async () => {
     await apiCity();
     await apiCategory();
     await apiKind();

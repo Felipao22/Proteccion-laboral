@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_USER_FL0, DB_PASSWORD_Fl0, DB_HOST_Fl0
 } = process.env;
 
 let sequelize =
@@ -31,8 +31,16 @@ let sequelize =
         ssl: true,
       })
   : new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/proteccion`,
-    { logging: false, native: false }
+    `postgres://${DB_USER_FL0}:${DB_PASSWORD_Fl0}@${DB_HOST_Fl0}/proteccion`,
+    { logging: false, native: false,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, // Solo para pruebas, puedes remover esto en producción
+        },
+      },
+      sslmode: 'require', // Agregar esta línea para forzar el uso de SSL
+    }
   );
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
