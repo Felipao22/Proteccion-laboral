@@ -1,41 +1,63 @@
 {
   "name": "proteccion-app",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emailjs/browser": "^3.10.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@mui/icons-material": "^5.10.6",
-    "@mui/material": "^5.10.6",
-    "@tabler/icons": "^2.1.2",
-    "antd": "^5.2.2",
-    "axios": "^0.27.2",
-    "bootstrap": "^5.1.3",
-    "mdb-react-ui-kit": "^4.2.0",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.7.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.4.0",
-    "react-router-dom": "^5.3.3",
-    "react-scripts": "5.0.1",
-    "react-spinners": "^0.13.8",
-    "sweetalert2": "^11.4.33",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@emailjs/browser": "^3.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.6",
+    "@popperjs/core": "^2.11.7",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tabler/icons": "^2.22.0",
+    "antd": "^5.9.2",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.0",
+    "formik": "^2.4.2",
+    "jest-localstorage-mock": "^2.4.26",
+    "jwt-decode": "^3.1.2",
+    "mdb-react-ui-kit": "^6.1.0",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.10.1",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.14.0",
+    "react-scripts": "^5.0.1",
+    "react-spinners": "^0.13.8",
+    "react-toastify": "^9.1.3",
+    "sweetalert2": "^11.7.12"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "happy-dom": "^10.9.0",
+    "vite": "^4.3.9",
+    "vitest": "^0.34.1"
   },
   "browserslist": {
     "production": [
@@ -48,8 +70,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "overrides": {
-    "autoprefixer": "10.4.5"
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   MDBFooter,
@@ -106,6 +106,15 @@ export default function Footer() {
                   style={{ textDecoration: "none" }}
                 >
                   Contacto
+                </Link>
+              </p>
+              <p>
+                <Link
+                  to="/login"
+                  className="text-reset"
+                  style={{ textDecoration: "none" }}
+                >
+                  Iniciar sesión
                 </Link>
               </p>
             </MDBCol>

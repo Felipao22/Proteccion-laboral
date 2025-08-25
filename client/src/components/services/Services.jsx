@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./services.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "antd";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Services() {
   const observer = new IntersectionObserver((entries) => {
@@ -21,7 +21,7 @@ export default function Services() {
     hiddenElements.forEach((el) => observer.observe(el));
   });
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [isModalGestionOpen, setIsModalGestionOpen] = useState(false);
   const showModal = () => {
@@ -34,7 +34,7 @@ export default function Services() {
       left: 0,
       behavior: "auto",
     });
-    history.push("/services");
+    navigate("/services");
   };
   const handleGestionCancel = () => {
     setIsModalGestionOpen(false);
@@ -51,7 +51,7 @@ export default function Services() {
       left: 0,
       behavior: "auto",
     });
-    history.push("/services");
+    navigate("/services");
   };
   const handlePrevencionCancel = () => {
     setIsModalPrevencionOpen(false);
@@ -69,7 +69,7 @@ export default function Services() {
       left: 0,
       behavior: "auto",
     });
-    history.push("/services");
+    navigate("/services");
   };
   const handleAsesoramientoCancel = () => {
     setIsModalAsesoramientoOpen(false);

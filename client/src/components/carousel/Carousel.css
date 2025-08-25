@@ -40,7 +40,7 @@
 
 .carousel-fade .carousel-item,
 .carousel-item img {
-  object-fit: cover;
+  object-fit: fill;
   max-height: 80vh;
 }
 

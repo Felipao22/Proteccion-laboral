@@ -1,4 +1,4 @@
-import Footer from "../footer/Footer";
+import Footer from "../footer/Footer.jsx";
 import "./Soluciones.css";
 import { Carousel } from "react-bootstrap";
 import soluciones from "../../assets/soluciones.webp";

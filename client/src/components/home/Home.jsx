@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import Carousel from "../carousel/Carousel";
-import "./Home.css";
-import Footer from "../footer/Footer";
-import Services from "../services/Services";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import { useEffect } from "react";
+import Carousel from "../carousel/Carousel.jsx";
+import Footer from "../footer/Footer.jsx";
+import Services from "../services/Services.jsx";
+import "./Home.css";
 
 export default function Home() {
   const observer = new IntersectionObserver((entries) => {

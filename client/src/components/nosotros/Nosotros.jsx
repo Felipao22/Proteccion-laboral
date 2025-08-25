@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../footer/Footer.jsx";
 import "./Nosotros.css";
 import nosotros from "../../assets/nosotros.webp";

@@ -4,7 +4,7 @@
 
 .text-soluciones {
   margin: 3.75rem;
-  font-family: YuGothL;
+  font-family: Poppins;
   color: black;
   font-weight: bolder;
   position: relative;
@@ -34,7 +34,7 @@
   font-size: 1.28rem;
   font-weight: 900;
   line-height: 1.688rem;
-  font-family: YuGothL;
+  font-family: Poppins;
 }
 .column-ul {
   column-count: 2;
@@ -52,7 +52,7 @@
   margin: 0.625rem;
   letter-spacing: 0.25rem;
   font-weight: bold;
-  font-family: YuGothL, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 @media (max-width: 768px) {
   .text-overlaySoluciones {
