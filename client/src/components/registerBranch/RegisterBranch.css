@@ -1,0 +1,54 @@
+.container-register {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.password-requirements {
+  margin-top: 20px;
+}
+
+.close-button {
+  margin-left: 10px;
+  background-color: #ff4444;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 6px;
+}
+
+.close-button:hover {
+  background-color: #ff0000;
+}
+
+.success {
+  color: rgb(49, 206, 1);
+}
+
+.register .ant-form-item-label:before {
+  content: " *";
+  color: red;
+}
+
+.text-register {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: Poppins, sans-serif;
+  hyphens: auto;
+}
+
+@media only screen and (max-width: 1124px) {
+  .text-register {
+    font-size: large;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .text-register {
+    font-size: 16px;
+    text-align: start;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}

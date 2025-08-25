@@ -1,0 +1,21 @@
+.progress-bar{
+    margin-top: 50px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 767px) {
+    .progress-bar h4 {
+      font-size: 18px;
+    }
+  
+    .progress-bar p {
+      font-size: 12px;
+    }
+  
+  }

@@ -1,0 +1,12 @@
+.button-cambiar{
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 313px) {
+    .button-cambiar{
+        margin-bottom: 10px;
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+  }

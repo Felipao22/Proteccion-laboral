@@ -1,0 +1,27 @@
+.boton-logout {
+    width: 140px;
+    height: 45px;
+    font-family: Poppins;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    background-color:red;
+    color:white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top:50px;
+    margin-left: 20px;
+    }
+  
+  .boton-logout:hover {
+    background-color:red;
+      box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.396);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+

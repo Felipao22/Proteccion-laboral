@@ -1,0 +1,85 @@
+.input-text {
+  position: relative;
+  margin-top: 30px;
+}
+
+.input-email {
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  border: 1px solid #e0e3e9;
+  padding: 0 10px;
+  outline: 0;
+  font-size: 14px;
+  font-family: Poppins, sans-serif !important;
+}
+
+.input-password {
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  border: 1px solid #e0e3e9;
+  padding: 0 10px;
+  padding-right: 27px;
+  outline: 0;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+.col-login {
+  padding: 1rem;
+  margin-bottom: 3rem;
+  /* margin-top: 3rem; */
+}
+@media only screen and (max-width: 576px) {
+  .col-login {
+    margin: 0;
+  }
+}
+
+.img-fluid {
+  margin-top: 8px;
+  margin-left: -5px;
+}
+
+@media only screen and (max-width: 576px) {
+  .img-fluid {
+    margin-left: -10px;
+  }
+}
+.boton-login {
+  width: 140px;
+  height: 45px;
+  font-family: Poppins, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  background-color: rgba(15, 65, 162, 1);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.boton-login:hover {
+  background-color: rgb(49, 120, 200);
+  box-shadow: 0px 15px 20px rgb(49, 120, 200);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.label-font {
+  font-family: Poppins, sans-serif;
+}
+
+@media only screen and (max-width: 576px) {
+  .text-welcome {
+    font-size: 1.4rem;
+  }
+}
